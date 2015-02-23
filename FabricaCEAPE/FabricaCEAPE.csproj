@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{072922BB-77E7-46B4-AC6D-B8690AD79360}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FabricaCEAPE</RootNamespace>
+    <AssemblyName>FabricaCEAPE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\..\Downloads\Compressed\Binaries\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ArticuloPedido.cs" />
+    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\ControlPCC.cs" />
+    <Compile Include="Clases\Departamento.cs" />
+    <Compile Include="Clases\DetalleEntrega.cs" />
+    <Compile Include="Clases\EntregaProductoTerminado.cs" />
+    <Compile Include="Clases\IngredienteReceta.cs" />
+    <Compile Include="Clases\Localidad.cs" />
+    <Compile Include="Clases\Login.cs" />
+    <Compile Include="Clases\Marca.cs" />
+    <Compile Include="Clases\MateriaPrima.cs" />
+    <Compile Include="Clases\MateriaPrimaReceta.cs" />
+    <Compile Include="Clases\MDIEstilo.cs" />
+    <Compile Include="Clases\Medida.cs" />
+    <Compile Include="Clases\Pais.cs" />
+    <Compile Include="Clases\Pedido.cs" />
+    <Compile Include="Clases\Persona.cs" />
+    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\ProductoTerminado.cs" />
+    <Compile Include="Clases\Proveedor.cs" />
+    <Compile Include="Clases\Provincia.cs" />
+    <Compile Include="Clases\Receta.cs" />
+    <Compile Include="Clases\SeleccionProducto.cs" />
+    <Compile Include="Clases\TipoEnvasado.cs" />
+    <Compile Include="Clases\TipoMateriaPrima.cs" />
+    <Compile Include="Clases\TipoProducto.cs" />
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Clases\Validacion.cs" />
+    <Compile Include="Clases\Repartidor.cs" />
+    <Compile Include="Clases\Zona.cs" />
+    <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Datos\DatosCliente.cs" />
+    <Compile Include="Datos\DatosControlPCC.cs" />
+    <Compile Include="Datos\DatosDetalleEntrega.cs" />
+    <Compile Include="Datos\DatosEntregaProductoTerminado.cs" />
+    <Compile Include="Datos\DatosIngredienteReceta.cs" />
+    <Compile Include="Datos\DatosArticuloPedido.cs" />
+    <Compile Include="Datos\DatosDepartamento.cs" />
+    <Compile Include="Datos\DatosMateriaPrima.cs" />
+    <Compile Include="Datos\DatosMateriaPrimaReceta.cs" />
+    <Compile Include="Datos\DatosProductoTerminado.cs" />
+    <Compile Include="Datos\DatosReceta.cs" />
+    <Compile Include="Datos\DatosPedido.cs" />
+    <Compile Include="Datos\DatosProveedor.cs" />
+    <Compile Include="Datos\DatosLocalidad.cs" />
+    <Compile Include="Datos\DatosLogin.cs" />
+    <Compile Include="Datos\DatosMarca.cs" />
+    <Compile Include="Datos\DatosMedida.cs" />
+    <Compile Include="Datos\DatosProvincia.cs" />
+    <Compile Include="Datos\DatosPais.cs" />
+    <Compile Include="Datos\DatosRepartidor.cs" />
+    <Compile Include="Datos\DatosSeleccionProducto.cs" />
+    <Compile Include="Datos\DatosTipoEnvasado.cs" />
+    <Compile Include="Datos\DatosTipoMateriaPrima.cs" />
+    <Compile Include="Datos\DatosTipoProducto.cs" />
+    <Compile Include="Datos\DatosUsuario.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Datos\DatosZona.cs" />
+    <Compile Include="Datos\DatosProducto.cs" />
+    <Compile Include="Datos\Session.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\WaterMarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vistas\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarArticuloPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarArticuloPedido.Designer.cs">
+      <DependentUpon>FrmEditarArticuloPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarCliente.Designer.cs">
+      <DependentUpon>FrmEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarControlPCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarControlPCC.Designer.cs">
+      <DependentUpon>FrmEditarControlPCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarDepartamento.Designer.cs">
+      <DependentUpon>FrmEditarDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\FrmEditarIngredienteReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarIngredienteReceta.Designer.cs">
+      <DependentUpon>FrmEditarIngredienteReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarLocalidad.Designer.cs">
+      <DependentUpon>FrmEditarLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMarca.Designer.cs">
+      <DependentUpon>FrmEditarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMateriaPrima.Designer.cs">
+      <DependentUpon>FrmEditarMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMateriaPrimaReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMateriaPrimaReceta.designer.cs">
+      <DependentUpon>FrmEditarMateriaPrimaReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarMedida.Designer.cs">
+      <DependentUpon>FrmEditarMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarPais.Designer.cs">
+      <DependentUpon>FrmEditarPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarPedido.Designer.cs">
+      <DependentUpon>FrmEditarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProducto.Designer.cs">
+      <DependentUpon>FrmEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProductoTerminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProductoTerminado.Designer.cs">
+      <DependentUpon>FrmEditarProductoTerminado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProveedor.Designer.cs">
+      <DependentUpon>FrmEditarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarProvincia.Designer.cs">
+      <DependentUpon>FrmEditarProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarReceta.Designer.cs">
+      <DependentUpon>FrmEditarReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarRepartidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarRepartidor.Designer.cs">
+      <DependentUpon>FrmEditarRepartidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarTipoMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarTipoMateriaPrima.Designer.cs">
+      <DependentUpon>FrmEditarTipoMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarTipoProducto.Designer.cs">
+      <DependentUpon>FrmEditarTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarUsuario.Designer.cs">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarZonaa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditarZonaa.Designer.cs">
+      <DependentUpon>FrmEditarZonaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEditTipoEnvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEditTipoEnvasado.Designer.cs">
+      <DependentUpon>FrmEditTipoEnvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEntradaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEntradaProducto.Designer.cs">
+      <DependentUpon>FrmEntradaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmEntregaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmEntregaProducto.Designer.cs">
+      <DependentUpon>FrmEntregaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaCliente.Designer.cs">
+      <DependentUpon>FrmListaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaControlPCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaControlPCC.Designer.cs">
+      <DependentUpon>FrmListaControlPCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaDepartamento.Designer.cs">
+      <DependentUpon>FrmListaDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaLocalidad.Designer.cs">
+      <DependentUpon>FrmListaLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMarca.Designer.cs">
+      <DependentUpon>FrmListaMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMateriaPrima.Designer.cs">
+      <DependentUpon>FrmListaMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMateriaPrimaReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMateriaPrimaReceta.Designer.cs">
+      <DependentUpon>FrmListaMateriaPrimaReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaMedida.Designer.cs">
+      <DependentUpon>FrmListaMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaPais.Designer.cs">
+      <DependentUpon>FrmListaPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProducto.Designer.cs">
+      <DependentUpon>FrmListaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProductoTerminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProductoTerminado.Designer.cs">
+      <DependentUpon>FrmListaProductoTerminado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProveedor.Designer.cs">
+      <DependentUpon>FrmListaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaProvincia.Designer.cs">
+      <DependentUpon>FrmListaProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaReceta.Designer.cs">
+      <DependentUpon>FrmListaReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaRepartidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaRepartidor.Designer.cs">
+      <DependentUpon>FrmListaRepartidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaTipoEnvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaTipoEnvasado.Designer.cs">
+      <DependentUpon>FrmListaTipoEnvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaTipoMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaTipoMateriaPrima.Designer.cs">
+      <DependentUpon>FrmListaTipoMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaTipoProducto.Designer.cs">
+      <DependentUpon>FrmListaTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaUsuario.Designer.cs">
+      <DependentUpon>FrmListaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaZona.Designer.cs">
+      <DependentUpon>FrmListaZona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmListaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmListaPedido.Designer.cs">
+      <DependentUpon>FrmListaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmSalidaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmSalidaStock.Designer.cs">
+      <DependentUpon>FrmSalidaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FrmVerPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmVerPedido.Designer.cs">
+      <DependentUpon>FrmVerPedido.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vistas\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarArticuloPedido.resx">
+      <DependentUpon>FrmEditarArticuloPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarCliente.resx">
+      <DependentUpon>FrmEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarControlPCC.resx">
+      <DependentUpon>FrmEditarControlPCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarDepartamento.resx">
+      <DependentUpon>FrmEditarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarIngredienteReceta.resx">
+      <DependentUpon>FrmEditarIngredienteReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarLocalidad.resx">
+      <DependentUpon>FrmEditarLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarMarca.resx">
+      <DependentUpon>FrmEditarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarMateriaPrima.resx">
+      <DependentUpon>FrmEditarMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarMateriaPrimaReceta.resx">
+      <DependentUpon>FrmEditarMateriaPrimaReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarMedida.resx">
+      <DependentUpon>FrmEditarMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarPais.resx">
+      <DependentUpon>FrmEditarPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarPedido.resx">
+      <DependentUpon>FrmEditarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarProducto.resx">
+      <DependentUpon>FrmEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarProductoTerminado.resx">
+      <DependentUpon>FrmEditarProductoTerminado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarProveedor.resx">
+      <DependentUpon>FrmEditarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarProvincia.resx">
+      <DependentUpon>FrmEditarProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarReceta.resx">
+      <DependentUpon>FrmEditarReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarRepartidor.resx">
+      <DependentUpon>FrmEditarRepartidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarTipoMateriaPrima.resx">
+      <DependentUpon>FrmEditarTipoMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarTipoProducto.resx">
+      <DependentUpon>FrmEditarTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarUsuario.resx">
+      <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditarZonaa.resx">
+      <DependentUpon>FrmEditarZonaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEditTipoEnvasado.resx">
+      <DependentUpon>FrmEditTipoEnvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEntradaProducto.resx">
+      <DependentUpon>FrmEntradaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmEntregaProducto.resx">
+      <DependentUpon>FrmEntregaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaCliente.resx">
+      <DependentUpon>FrmListaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaControlPCC.resx">
+      <DependentUpon>FrmListaControlPCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaDepartamento.resx">
+      <DependentUpon>FrmListaDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaLocalidad.resx">
+      <DependentUpon>FrmListaLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaMarca.resx">
+      <DependentUpon>FrmListaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaMateriaPrima.resx">
+      <DependentUpon>FrmListaMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaMateriaPrimaReceta.resx">
+      <DependentUpon>FrmListaMateriaPrimaReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaMedida.resx">
+      <DependentUpon>FrmListaMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaPais.resx">
+      <DependentUpon>FrmListaPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaProducto.resx">
+      <DependentUpon>FrmListaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaProductoTerminado.resx">
+      <DependentUpon>FrmListaProductoTerminado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaProveedor.resx">
+      <DependentUpon>FrmListaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaProvincia.resx">
+      <DependentUpon>FrmListaProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaReceta.resx">
+      <DependentUpon>FrmListaReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaRepartidor.resx">
+      <DependentUpon>FrmListaRepartidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaTipoEnvasado.resx">
+      <DependentUpon>FrmListaTipoEnvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaTipoMateriaPrima.resx">
+      <DependentUpon>FrmListaTipoMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaTipoProducto.resx">
+      <DependentUpon>FrmListaTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaUsuario.resx">
+      <DependentUpon>FrmListaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaZona.resx">
+      <DependentUpon>FrmListaZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmListaPedido.resx">
+      <DependentUpon>FrmListaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmSalidaStock.resx">
+      <DependentUpon>FrmSalidaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FrmVerPedido.resx">
+      <DependentUpon>FrmVerPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.ArticuloPedido.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Cliente.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.ControlPCC.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Departamento.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.DetalleEntrega.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.EntregaProductoTerminado.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.IngredienteReceta.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Localidad.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Login.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Marca.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.MateriaPrima.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Medida.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Pais.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Pedido.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Persona.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Producto.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.ProductoTerminado.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Proveedor.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Provincia.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Receta.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Repartidor.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.SeleccionProducto.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.TipoEnvasado.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.TipoMateriaPrima.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.TipoProducto.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Usuario.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Validacion.datasource" />
+    <None Include="Properties\DataSources\FabricaCEAPE.Clases.Zona.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\men14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sprig2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bust %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verification5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basic14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sale13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earth77 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye1061.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supermarket20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivery23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivery362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meter7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bars11.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
