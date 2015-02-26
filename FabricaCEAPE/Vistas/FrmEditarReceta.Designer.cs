@@ -290,6 +290,7 @@
             this.cbProducto.Size = new System.Drawing.Size(206, 21);
             this.cbProducto.TabIndex = 31;
             this.cbProducto.ValueMember = "IdProducto";
+            this.cbProducto.DropDownClosed += new System.EventHandler(this.cbProducto_DropDownClosed);
             // 
             // productoBindingSource
             // 

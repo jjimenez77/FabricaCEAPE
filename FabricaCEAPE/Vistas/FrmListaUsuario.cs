@@ -52,19 +52,23 @@ namespace FabricaCEAPE.Vistas
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 Usuario u = (Usuario)usuarioBindingSource.Current;
 
                 Usuario us = DatosUsuario.getUsuarioPorLogin(GlobalClass.GlobalVar); //usuario actual
 
-                if (!DatosUsuario.enUso(u.Id) || us.Id != u.Id)
+                Login l = DatosLogin.getLogin(u.Login.Id);
+
+                if (!DatosUsuario.enUso(u.Id) && us.Id != u.Id)
                 {
                     u.Activo = false;
+                    l.Activo = false;
 
                     if (MessageBox.Show("¿Esta seguro de eliminar a " + u.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         DatosUsuario.Modificar(u);
+                        DatosLogin.Modificar(l);
                         Actualizar();
                     }
                 }
@@ -72,11 +76,11 @@ namespace FabricaCEAPE.Vistas
                 {
                     MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
-            }
-            catch
-            {
-                MessageBox.Show("No seleccionó nada");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("No seleccionó nada");
+            //}
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)

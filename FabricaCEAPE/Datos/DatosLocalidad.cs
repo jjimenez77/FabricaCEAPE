@@ -195,7 +195,7 @@ namespace FabricaCEAPE.Datos
             //Repartidores
             SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Localidades left join Usuarios on Localidades.id = Usuarios.idLocalidad where Usuarios.idLocalidad = @id");
             //Zonas
-            SqlCommand cmd3 = new SqlCommand("SELECT COUNT(*) FROM Localidades left join Usuarios on Localidades.id = Usuarios.idLocalidad where Usuarios.idLocalidad = @id");
+            SqlCommand cmd3 = new SqlCommand("SELECT COUNT(*) FROM Localidades left join Zona on Localidades.id = Zona.idLocalidad where Zona.idLocalidad = @id");
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Connection = cnn;

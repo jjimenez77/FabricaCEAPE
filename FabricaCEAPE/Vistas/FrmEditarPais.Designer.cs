@@ -55,7 +55,7 @@
             // btnAceptar
             // 
             btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            btnAceptar.Cursor = System.Windows.Forms.Cursors.Cross;
+            btnAceptar.Cursor = System.Windows.Forms.Cursors.Default;
             btnAceptar.Location = new System.Drawing.Point(203, 76);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new System.Drawing.Size(75, 23);

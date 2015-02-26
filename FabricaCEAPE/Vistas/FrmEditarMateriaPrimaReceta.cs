@@ -116,6 +116,12 @@ namespace FabricaCEAPE.Vistas
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosMateriaPrimaReceta.existe(nombreWaterMarkTextBox.Text))
+            {
+                error = "La materia prima ya existe";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
             else
             {
                 nombreWaterMarkTextBox.BackColor = colorOk;

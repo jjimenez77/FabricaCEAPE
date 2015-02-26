@@ -271,7 +271,15 @@ namespace FabricaCEAPE.Vistas
         {
             bool resultados = true;
             string error = null;
-            
+
+            if (DatosReceta.existe((int)cbProducto.SelectedValue))
+            {
+                error = "Ya existe una receta para este producto";
+
+                errorProvider1.SetError(cbProducto, error);
+                resultados = false;
+            }
+
             if (string.IsNullOrEmpty(observacionesTextBox.Text))
             {
                 error = "Ingrese alguna observacion";
@@ -370,6 +378,18 @@ namespace FabricaCEAPE.Vistas
 
             DatosReceta.Modificar(r);
             Close();
+        }
+
+        private void cbProducto_DropDownClosed(object sender, EventArgs e)
+        {
+            if (DatosReceta.existe((int)cbProducto.SelectedValue))
+            {
+                errorProvider1.SetError(cbProducto, "Ya existe una receta para este producto");
+            }
+            else
+            {
+                errorProvider1.SetError(cbProducto, String.Empty);
+            }
         }
     }
 }

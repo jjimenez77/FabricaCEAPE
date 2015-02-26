@@ -30,16 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nombreLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarProducto));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             nombreLabel1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nombreLabel1
+            // 
+            nombreLabel1.AutoSize = true;
+            nombreLabel1.Location = new System.Drawing.Point(13, 50);
+            nombreLabel1.Name = "nombreLabel1";
+            nombreLabel1.Size = new System.Drawing.Size(47, 13);
+            nombreLabel1.TabIndex = 17;
+            nombreLabel1.Text = "Nombre:";
             // 
             // btnAceptar
             // 
@@ -75,33 +85,25 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Editar producto";
             // 
-            // nombreLabel1
-            // 
-            nombreLabel1.AutoSize = true;
-            nombreLabel1.Location = new System.Drawing.Point(13, 50);
-            nombreLabel1.Name = "nombreLabel1";
-            nombreLabel1.Size = new System.Drawing.Size(47, 13);
-            nombreLabel1.TabIndex = 17;
-            nombreLabel1.Text = "Nombre:";
-            // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoBindingSource, "Nombre", true));
             this.nombreTextBox.Location = new System.Drawing.Point(66, 47);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(209, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(206, 20);
             this.nombreTextBox.TabIndex = 18;
             this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             this.nombreTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nombreTextBox_Validating);
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Producto);
             // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Producto);
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // FrmEditarProducto
             // 
@@ -121,8 +123,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar productos";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

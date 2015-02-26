@@ -91,6 +91,12 @@ namespace FabricaCEAPE.Vistas
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosTipoMateriaPrima.existe(nombreTextBox.Text))
+            {
+                error = "El tipo de materia prima ya existe";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
             else
             {
                 nombreTextBox.BackColor = colorOk;

@@ -59,7 +59,7 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 TipoProducto p = (TipoProducto)tipoProductoBindingSource.Current;
-                if (!DatosTipoProducto.enUso(p.Id))
+                if (!DatosTipoProducto.enUso(p.IdTipoProducto))
                 {
                     p.Activo = false;
 

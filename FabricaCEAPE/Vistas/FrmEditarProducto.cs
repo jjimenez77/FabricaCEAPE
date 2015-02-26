@@ -44,6 +44,12 @@ namespace FabricaCEAPE.Vistas
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosProducto.existe(nombreTextBox.Text))
+            {
+                error = "El producto ya existe";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
             else
             {
                 nombreTextBox.BackColor = colorOk;

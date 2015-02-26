@@ -101,6 +101,12 @@ namespace FabricaCEAPE.Vistas
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosTipoEnvasado.existe(nombreWaterMarkTextBox.Text))
+            {
+                error = "El tipo de envasado ya existe";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
             else
             {
                 nombreWaterMarkTextBox.BackColor = colorOk;

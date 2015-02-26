@@ -208,9 +208,9 @@ namespace FabricaCEAPE.Datos
             cnn.Open();
 
             //Clientes
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Zonas left join Cliente on Zonas.idZona = Cliente.idCliente where Cliente.idCliente = @id");
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Zona left join Cliente on Zona.idZona = Cliente.idCliente where Cliente.idCliente = @id");
             //Repartidores
-            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Zonas left join Repartidores on Zonas.idZona = Repartidores.idZona where Repartidores.idZona = @id");
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Zona left join Repartidores on Zona.idZona = Repartidores.idZona where Repartidores.idZona = @id");
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Connection = cnn;

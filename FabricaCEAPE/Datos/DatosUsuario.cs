@@ -363,11 +363,11 @@ namespace FabricaCEAPE.Datos
             cnn.Open();
 
             //Recetas
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Usuarios left join Recetas on Usuarios.id = Recetas.id where Recetas.id = @id");
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Usuarios left join Recetas on Usuarios.id = Recetas.idUsuario where Recetas.idUsuario = @id");
             //Pedidos
-            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Usuarios left join Pedidos on Usuarios.id = Pedidos.id where Pedidos.id = @id");
-            //ControlIPCC
-            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM ControlIPCC left join Pedidos on Usuarios.id = ControlIPCC.idControlPCC where ControlIPCC.idControlPCC = @id");
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Usuarios left join Pedidos on Usuarios.id = Pedidos.idUsuario where Pedidos.idUsuario = @id");
+            //ControlPCC
+            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Usuarios left join ControlPCC on Usuarios.id = ControlPCC.idUsuario where ControlPCC.idUsuario = @id");
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Connection = cnn;
@@ -385,6 +385,7 @@ namespace FabricaCEAPE.Datos
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
             int count2 = Convert.ToInt32(cmd2.ExecuteScalar());
+
             if (count == 0 && count1 == 0 && count2 == 0)
                 return false;
             else

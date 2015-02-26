@@ -33,14 +33,14 @@
             System.Windows.Forms.Button btnAceptar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarMateriaPrimaReceta));
             this.label1 = new System.Windows.Forms.Label();
-            this.materiaPrimaRecetaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nombreWaterMarkTextBox = new wmgCMS.WaterMarkTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.nombreWaterMarkTextBox = new wmgCMS.WaterMarkTextBox();
+            this.materiaPrimaRecetaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nombreLabel = new System.Windows.Forms.Label();
             btnAceptar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaRecetaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaRecetaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
@@ -55,7 +55,7 @@
             // btnAceptar
             // 
             btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            btnAceptar.Cursor = System.Windows.Forms.Cursors.Cross;
+            btnAceptar.Cursor = System.Windows.Forms.Cursors.Default;
             btnAceptar.Location = new System.Drawing.Point(203, 76);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -74,23 +74,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Editar materia prima de receta";
             // 
-            // materiaPrimaRecetaBindingSource
-            // 
-            this.materiaPrimaRecetaBindingSource.DataSource = typeof(FabricaCEAPE.Clases.MateriaPrimaReceta);
-            // 
-            // nombreWaterMarkTextBox
-            // 
-            this.nombreWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materiaPrimaRecetaBindingSource, "Nombre", true));
-            this.nombreWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.nombreWaterMarkTextBox.Location = new System.Drawing.Point(65, 40);
-            this.nombreWaterMarkTextBox.Name = "nombreWaterMarkTextBox";
-            this.nombreWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
-            this.nombreWaterMarkTextBox.TabIndex = 1;
-            this.nombreWaterMarkTextBox.WaterMarkColor = System.Drawing.Color.Gray;
-            this.nombreWaterMarkTextBox.WaterMarkText = "Cereales de almoaditas de chocolate";
-            this.nombreWaterMarkTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreWaterMarkTextBox_KeyPress);
-            this.nombreWaterMarkTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nombreWaterMarkTextBox_Validating);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -106,9 +89,26 @@
             // 
             // errorProvider1
             // 
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // nombreWaterMarkTextBox
+            // 
+            this.nombreWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materiaPrimaRecetaBindingSource, "Nombre", true));
+            this.nombreWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.nombreWaterMarkTextBox.Location = new System.Drawing.Point(65, 40);
+            this.nombreWaterMarkTextBox.Name = "nombreWaterMarkTextBox";
+            this.nombreWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
+            this.nombreWaterMarkTextBox.TabIndex = 1;
+            this.nombreWaterMarkTextBox.WaterMarkColor = System.Drawing.Color.Gray;
+            this.nombreWaterMarkTextBox.WaterMarkText = "Cereales de almoaditas de chocolate";
+            this.nombreWaterMarkTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreWaterMarkTextBox_KeyPress);
+            this.nombreWaterMarkTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nombreWaterMarkTextBox_Validating);
+            // 
+            // materiaPrimaRecetaBindingSource
+            // 
+            this.materiaPrimaRecetaBindingSource.DataSource = typeof(FabricaCEAPE.Clases.MateriaPrimaReceta);
             // 
             // FrmEditarMateriaPrimaReceta
             // 
@@ -125,9 +125,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmEditarMateriaPrimaReceta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2-=``";
-            ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaRecetaBindingSource)).EndInit();
+            this.Text = "Editar materia prima de receta";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaRecetaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

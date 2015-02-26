@@ -92,6 +92,12 @@ namespace FabricaCEAPE.Datos
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosDepartamento.existe(nombreTextBox.Text))
+            {
+                error = "El departamento ya existe";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
             else
             {
                 nombreTextBox.BackColor = colorOk;

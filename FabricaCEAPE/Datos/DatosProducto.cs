@@ -135,8 +135,8 @@ namespace FabricaCEAPE.Datos
             SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Producto left join Recetas on Producto.idProducto = Recetas.idProducto where Producto.idProducto = @id");
             //Producto terminado
             SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Producto left join ProductoTerminado on Producto.idProducto = ProductoTerminado.idProducto where ProductoTerminado.idProducto = @id");
-            //ControlIPCC
-            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Producto left join ControlIPCC on Producto.idProducto = ControlIPCC.idProducto where ControlIPCC.idProducto = @id");
+            //ControlPCC
+            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Producto left join ControlPCC on Producto.idProducto = ControlPCC.idProducto where ControlPCC.idProducto = @id");
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Connection = cnn;
@@ -156,6 +156,27 @@ namespace FabricaCEAPE.Datos
             int count2 = Convert.ToInt32(cmd2.ExecuteScalar());
 
             if (count == 0 && count1 == 0 && count2 == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool existe(string nombre)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Producto where activo = 1 and nombre = @nombre");
+
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
                 return false;
             else
                 return true;

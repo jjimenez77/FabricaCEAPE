@@ -101,6 +101,12 @@ namespace FabricaCEAPE.Vistas
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosTipoProducto.existe(nombreWaterMarkTextBox.Text))
+            {
+                error = "El tipo de producto ya existe";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
             else
             {
                 nombreWaterMarkTextBox.BackColor = colorOk;
