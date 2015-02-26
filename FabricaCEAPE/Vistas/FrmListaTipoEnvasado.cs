@@ -64,12 +64,19 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 TipoEnvasado p = (TipoEnvasado)tipoEnvasadoBindingSource.Current;
-                p.Activo = false;
-
-                if (MessageBox.Show("¿Esta seguro de borrar a " + p.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (!DatosTipoEnvasado.enUso(p.IdTipoEnvasado))
                 {
-                    DatosTipoEnvasado.Modificar(p);
-                    Actualizar();
+                    p.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + p.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosTipoEnvasado.Modificar(p);
+                        Actualizar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
             }
             catch

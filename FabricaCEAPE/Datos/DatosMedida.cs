@@ -124,5 +124,48 @@ namespace FabricaCEAPE.Datos
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Materias primas
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Medidas left join MateriasPrimas on Medidas.id = MateriasPrimas.idMedida where MateriasPrimas.idMedida = @id");
+            //Producto terminado
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Medidas left join ProductoTerminado on Medidas.id = ProductoTerminado.idUnidadDeMedida where ProductoTerminado.idUnidadDeMedida = @id");
+            //Articulos pedidos
+            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Medidas left join ArticulosPedidos on Medidas.id = ArticulosPedidos.idMedida where ArticulosPedidos.idMedida = @id");
+            //Ingredientes recetas
+            SqlCommand cmd3 = new SqlCommand("SELECT COUNT(*) FROM Medidas left join IngredientesRecetas on Medidas.id = IngredientesRecetas.idMedida where IngredientesRecetas.idMedida = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+
+            cmd1.Parameters.AddWithValue("@id", id);
+            cmd1.Connection = cnn;
+            cmd1.ExecuteNonQuery();
+
+            cmd2.Parameters.AddWithValue("@id", id);
+            cmd2.Connection = cnn;
+            cmd2.ExecuteNonQuery();
+
+            cmd3.Parameters.AddWithValue("@id", id);
+            cmd3.Connection = cnn;
+            cmd3.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
+            int count2 = Convert.ToInt32(cmd2.ExecuteScalar());
+            int count3 = Convert.ToInt32(cmd3.ExecuteScalar());
+
+            if (count == 0 && count1 == 0 && count2 == 0 && count3 == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

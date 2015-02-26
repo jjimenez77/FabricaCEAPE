@@ -17,7 +17,7 @@ namespace FabricaCEAPE.Datos
             //abro la conexion
             cnn.Open();
 
-            SqlCommand cmd = new SqlCommand("select * from Producto");
+            SqlCommand cmd = new SqlCommand("select * from Producto where activo = 1 order by nombre");
             //SqlCommand cmd = new SqlCommand("SELECT Zona.nombre, Localidad.nombre as NombreLocalidad FROM Zona, Localidad where Zona.idLocalidad=Localidad.idLocalidad");
             //asigno la conexion al comando
             cmd.Connection = cnn;
@@ -123,6 +123,42 @@ namespace FabricaCEAPE.Datos
             cmd.Connection = cnn;
             cmd.ExecuteNonQuery();
             cnn.Close();
+        }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Recetas
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Producto left join Recetas on Producto.idProducto = Recetas.idProducto where Producto.idProducto = @id");
+            //Producto terminado
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Producto left join ProductoTerminado on Producto.idProducto = ProductoTerminado.idProducto where ProductoTerminado.idProducto = @id");
+            //ControlIPCC
+            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Producto left join ControlIPCC on Producto.idProducto = ControlIPCC.idProducto where ControlIPCC.idProducto = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+
+            cmd1.Parameters.AddWithValue("@id", id);
+            cmd1.Connection = cnn;
+            cmd1.ExecuteNonQuery();
+
+            cmd2.Parameters.AddWithValue("@id", id);
+            cmd2.Connection = cnn;
+            cmd2.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
+            int count2 = Convert.ToInt32(cmd2.ExecuteScalar());
+
+            if (count == 0 && count1 == 0 && count2 == 0)
+                return false;
+            else
+                return true;
         }
     }
 }

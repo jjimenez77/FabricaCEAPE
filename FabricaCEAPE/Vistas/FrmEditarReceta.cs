@@ -15,10 +15,12 @@ namespace FabricaCEAPE.Vistas
     public partial class FrmEditarReceta : Form
     {
         int id;
-        public FrmEditarReceta(int id)
+        bool crearModificar; //crear = true //modificar = false
+        public FrmEditarReceta(int id, bool crearModificar) //
         {
             InitializeComponent();
             this.id = id;
+            this.crearModificar = crearModificar;
 
             productoBindingSource.DataSource = DatosProducto.getProductos();
             Actualizar();
@@ -36,7 +38,7 @@ namespace FabricaCEAPE.Vistas
 
                 Receta r = (Receta)recetaBindingSource.Current;
 
-                if (r.Producto.Nombre != "")
+                if (!crearModificar)
                 {
                     this.Text = "Editar receta de " + r.Producto.Nombre;
                 }  
@@ -52,11 +54,14 @@ namespace FabricaCEAPE.Vistas
         {
             Receta r = (Receta)recetaBindingSource.Current;
             r.Activo = false;
-            if (MessageBox.Show("¿Esta seguro de borrar a " + r.Producto.Nombre, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //if (MessageBox.Show("¿Esta seguro de borrar a " + r.Producto.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //{
+            if (crearModificar)
             {
                 DatosReceta.Modificar(r);
-                Close();
             }
+            Close();
+            //}
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -356,6 +361,15 @@ namespace FabricaCEAPE.Vistas
             {
                 MessageBox.Show("No seleccionó nada");
             }
+        }
+
+        private void btnCancelarr_Click(object sender, EventArgs e)
+        {
+            Receta r = (Receta)recetaBindingSource.Current;
+            r.Activo = false;
+
+            DatosReceta.Modificar(r);
+            Close();
         }
     }
 }

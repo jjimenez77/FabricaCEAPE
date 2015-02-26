@@ -19,7 +19,7 @@ namespace FabricaCEAPE.Datos
             //abro la conexion
             cnn.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT idEntrega,idProducto,cantidad  FROM DetalleEntrega order by DetalleEntrega.cantidad ASC ");
+            SqlCommand cmd = new SqlCommand("SELECT idEntrega, idProducto, cantidad  FROM DetalleEntrega order by DetalleEntrega.cantidad ASC ");
 
             //asigno la conexion al comando
             cmd.Connection = cnn;

@@ -145,5 +145,26 @@ namespace FabricaCEAPE.Datos
 
             return paises;
         }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Paises left join Provincias on Paises.id = Provincias.idPais where Provincias.idPais = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

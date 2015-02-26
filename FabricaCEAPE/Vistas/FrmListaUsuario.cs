@@ -55,12 +55,22 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 Usuario u = (Usuario)usuarioBindingSource.Current;
-                u.Activo = false;
 
-                if (MessageBox.Show("¿Esta seguro de dar de baja a " + u.Nombre +"?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Usuario us = DatosUsuario.getUsuarioPorLogin(GlobalClass.GlobalVar); //usuario actual
+
+                if (!DatosUsuario.enUso(u.Id) || us.Id != u.Id)
                 {
-                    DatosUsuario.Modificar(u);
-                    Actualizar();
+                    u.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + u.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosUsuario.Modificar(u);
+                        Actualizar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
             }
             catch

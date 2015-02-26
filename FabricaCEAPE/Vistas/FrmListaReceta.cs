@@ -66,7 +66,7 @@ namespace FabricaCEAPE.Vistas
             receta.Activo = true;
             DatosReceta.Crear(receta);
 
-            FrmEditarReceta r = new FrmEditarReceta((int)DatosReceta.getUltimaReceta());
+            FrmEditarReceta r = new FrmEditarReceta((int)DatosReceta.getUltimaReceta(), true);
             r.ShowDialog();
             Actualizar(); 
         }
@@ -94,7 +94,7 @@ namespace FabricaCEAPE.Vistas
         {
             try
             {
-                FrmEditarReceta edit = new FrmEditarReceta(((Receta)recetaBindingSource.Current).Id);
+                FrmEditarReceta edit = new FrmEditarReceta(((Receta)recetaBindingSource.Current).Id, false);
                 edit.ShowDialog();
                 Actualizar();
             }
@@ -141,7 +141,7 @@ namespace FabricaCEAPE.Vistas
                 if (e.RowIndex > -1 && e.ColumnIndex > -1)
                 {
                     int seleccion = dgRecetas.CurrentRow.Index;
-                    FrmEditarReceta edit = new FrmEditarReceta(((Receta)dgRecetas.Rows[seleccion].DataBoundItem).Id);
+                    FrmEditarReceta edit = new FrmEditarReceta(((Receta)dgRecetas.Rows[seleccion].DataBoundItem).Id, false);
                     edit.ShowDialog();
                     Actualizar();
                 }

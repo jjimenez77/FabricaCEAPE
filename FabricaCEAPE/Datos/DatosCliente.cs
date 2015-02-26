@@ -330,5 +330,26 @@ namespace FabricaCEAPE.Datos
                 return Lista;
             }
         }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Clientes left join EntregaProductoTerminado on Clientes.id = EntregaProductoTerminado.idEmpresa where EntregaProductoTerminado.idEmpresa = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

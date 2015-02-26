@@ -211,7 +211,6 @@ namespace FabricaCEAPE.Vistas
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
             }
-
             else if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;

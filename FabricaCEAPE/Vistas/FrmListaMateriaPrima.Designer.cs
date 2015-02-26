@@ -157,8 +157,9 @@
             this.materiaPrimaDataGridView.AllowUserToDeleteRows = false;
             this.materiaPrimaDataGridView.AllowUserToResizeColumns = false;
             this.materiaPrimaDataGridView.AllowUserToResizeRows = false;
-            this.materiaPrimaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materiaPrimaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materiaPrimaDataGridView.AutoGenerateColumns = false;
             this.materiaPrimaDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.materiaPrimaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -180,7 +181,7 @@
             this.materiaPrimaDataGridView.ReadOnly = true;
             this.materiaPrimaDataGridView.RowHeadersVisible = false;
             this.materiaPrimaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.materiaPrimaDataGridView.Size = new System.Drawing.Size(1238, 271);
+            this.materiaPrimaDataGridView.Size = new System.Drawing.Size(1257, 271);
             this.materiaPrimaDataGridView.StandardTab = true;
             this.materiaPrimaDataGridView.TabIndex = 1;
             this.materiaPrimaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.materiaPrimaDataGridView_CellDoubleClick);

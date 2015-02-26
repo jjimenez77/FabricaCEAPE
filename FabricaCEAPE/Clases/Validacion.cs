@@ -12,7 +12,7 @@ namespace FabricaCEAPE.Clases
     {
         public static bool esNumero(Control mitextbox)
         {
-            Regex regex = new Regex(@"^[0-9]+$");
+            Regex regex = new Regex(@"^[0-9 ,]+$");
             return regex.IsMatch(mitextbox.Text);
         }
 

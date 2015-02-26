@@ -181,5 +181,48 @@ namespace FabricaCEAPE.Datos
 
             return l;
         }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Proveedores
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Localidades left join Proveedores on Localidades.id = Proveedores.idLocalidad where Proveedores.idLocalidad = @id");
+            //Repartidores
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Localidades left join Repartidores on Localidades.id = Repartidores.idLocalidad where Repartidores.idLocalidad = @id");
+            //Repartidores
+            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM Localidades left join Usuarios on Localidades.id = Usuarios.idLocalidad where Usuarios.idLocalidad = @id");
+            //Zonas
+            SqlCommand cmd3 = new SqlCommand("SELECT COUNT(*) FROM Localidades left join Usuarios on Localidades.id = Usuarios.idLocalidad where Usuarios.idLocalidad = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+
+            cmd1.Parameters.AddWithValue("@id", id);
+            cmd1.Connection = cnn;
+            cmd1.ExecuteNonQuery();
+
+            cmd2.Parameters.AddWithValue("@id", id);
+            cmd2.Connection = cnn;
+            cmd2.ExecuteNonQuery();
+
+            cmd3.Parameters.AddWithValue("@id", id);
+            cmd3.Connection = cnn;
+            cmd3.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
+            int count2 = Convert.ToInt32(cmd2.ExecuteScalar());
+            int count3 = Convert.ToInt32(cmd3.ExecuteScalar());
+
+            if (count == 0 && count1 == 0 && count2 == 0 && count3 == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

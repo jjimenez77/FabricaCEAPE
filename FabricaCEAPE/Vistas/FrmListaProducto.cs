@@ -59,12 +59,19 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 Producto p = (Producto)productoBindingSource.Current;
-                p.Activo = false;
-
-                if (MessageBox.Show("¿Esta seguro de borrar a " + p.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (!DatosProducto.enUso(p.IdProducto))
                 {
-                    DatosProducto.Modificar(p);
-                    Actualizar();
+                    p.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + p.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosProducto.Modificar(p);
+                        Actualizar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
             }
             catch

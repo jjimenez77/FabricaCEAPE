@@ -81,21 +81,28 @@ namespace FabricaCEAPE.Vistas
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 Localidad l = (Localidad)localidadBindingSource.Current;
-                l.Activo = false;
-
-                if (MessageBox.Show("¿Esta seguro de borrar a " + l.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (!DatosLocalidad.enUso(l.Id))
                 {
-                    DatosLocalidad.Modificar(l);
-                    Actualizar();
+                    l.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + l.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosLocalidad.Modificar(l);
+                        Actualizar();
+                    }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("No seleccionó nada");
-            }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
+                }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("No seleccionó nada");
+            //}
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)

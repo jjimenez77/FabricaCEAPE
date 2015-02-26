@@ -33,8 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
-            this.TipoUsuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
@@ -43,11 +42,13 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.cbSelector = new System.Windows.Forms.ToolStripComboBox();
-            this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
+            this.cbSelector = new System.Windows.Forms.ToolStripComboBox();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoUsuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +61,9 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
-            this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // usuarioDataGridView
@@ -108,19 +108,9 @@
             this.usuarioDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellDoubleClick);
             this.usuarioDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.usuarioDataGridView_CellFormatting);
             // 
-            // TipoUsuarios
+            // usuarioBindingSource
             // 
-            this.TipoUsuarios.DataPropertyName = "TipoUsuarios";
-            this.TipoUsuarios.HeaderText = "Tipo";
-            this.TipoUsuarios.Name = "TipoUsuarios";
-            this.TipoUsuarios.ReadOnly = true;
-            // 
-            // Sexos
-            // 
-            this.Sexos.DataPropertyName = "Sexos";
-            this.Sexos.HeaderText = "Sexo";
-            this.Sexos.Name = "Sexos";
-            this.Sexos.ReadOnly = true;
+            this.usuarioBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Usuario);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -197,14 +187,10 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
-            // cbSelector
+            // toolStripSeparator3
             // 
-            this.cbSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSelector.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.cbSelector.Name = "cbSelector";
-            this.cbSelector.Size = new System.Drawing.Size(206, 25);
-            this.cbSelector.ToolTipText = "Seleccione el tipo de busqueda";
-            this.cbSelector.DropDownClosed += new System.EventHandler(this.cbSelector_DropDownClosed);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // txtBuscar
             // 
@@ -215,10 +201,14 @@
             this.txtBuscar.ToolTipText = "Buscar usuario por nombre";
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
-            // toolStripSeparator3
+            // cbSelector
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.cbSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSelector.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cbSelector.Name = "cbSelector";
+            this.cbSelector.Size = new System.Drawing.Size(206, 25);
+            this.cbSelector.ToolTipText = "Seleccione el tipo de busqueda";
+            this.cbSelector.DropDownClosed += new System.EventHandler(this.cbSelector_DropDownClosed);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -233,6 +223,20 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Apellido";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // TipoUsuarios
+            // 
+            this.TipoUsuarios.DataPropertyName = "TipoUsuarios";
+            this.TipoUsuarios.HeaderText = "Tipo";
+            this.TipoUsuarios.Name = "TipoUsuarios";
+            this.TipoUsuarios.ReadOnly = true;
+            // 
+            // Sexos
+            // 
+            this.Sexos.DataPropertyName = "Sexos";
+            this.Sexos.HeaderText = "Sexo";
+            this.Sexos.Name = "Sexos";
+            this.Sexos.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -327,13 +331,9 @@
             this.Login.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Login.DataPropertyName = "Login";
             this.Login.HeaderText = "Nombre de usuario";
-            this.Login.MinimumWidth = 100;
+            this.Login.MinimumWidth = 80;
             this.Login.Name = "Login";
             this.Login.ReadOnly = true;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Usuario);
             // 
             // FrmListaUsuario
             // 
@@ -346,9 +346,9 @@
             this.Name = "FrmListaUsuario";
             this.Text = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,6 +366,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripTextBox txtBuscar;
+        private System.Windows.Forms.ToolStripComboBox cbSelector;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoUsuarios;
@@ -382,8 +385,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripTextBox txtBuscar;
-        private System.Windows.Forms.ToolStripComboBox cbSelector;
     }
 }

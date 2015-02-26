@@ -8,7 +8,7 @@ namespace FabricaCEAPE.Datos
 {
     class Conexion
     {
-        public static string conexion = "data source=NOÉ-PC\\SQL; initial catalog = FabricaCEAPE; integrated security=true";
+        public static string conexion = "data source=VIVOBOOK\\SQLEXPRESS; initial catalog = FabricaCEAPE; integrated security=true";
         public static string Connection
         {
             get { return conexion; }

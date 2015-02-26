@@ -99,9 +99,9 @@
             cuitLabel.AutoSize = true;
             cuitLabel.Location = new System.Drawing.Point(13, 95);
             cuitLabel.Name = "cuitLabel";
-            cuitLabel.Size = new System.Drawing.Size(28, 13);
+            cuitLabel.Size = new System.Drawing.Size(64, 13);
             cuitLabel.TabIndex = 5;
-            cuitLabel.Text = "Cuit:";
+            cuitLabel.Text = "CUIL/CUIT:";
             // 
             // direccionLabel
             // 

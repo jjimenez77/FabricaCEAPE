@@ -355,5 +355,40 @@ namespace FabricaCEAPE.Datos
 
             return usuarios;
         }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Recetas
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Usuarios left join Recetas on Usuarios.id = Recetas.id where Recetas.id = @id");
+            //Pedidos
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Usuarios left join Pedidos on Usuarios.id = Pedidos.id where Pedidos.id = @id");
+            //ControlIPCC
+            SqlCommand cmd2 = new SqlCommand("SELECT COUNT(*) FROM ControlIPCC left join Pedidos on Usuarios.id = ControlIPCC.idControlPCC where ControlIPCC.idControlPCC = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+
+            cmd1.Parameters.AddWithValue("@id", id);
+            cmd1.Connection = cnn;
+            cmd1.ExecuteNonQuery();
+
+            cmd2.Parameters.AddWithValue("@id", id);
+            cmd2.Connection = cnn;
+            cmd2.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
+            int count2 = Convert.ToInt32(cmd2.ExecuteScalar());
+            if (count == 0 && count1 == 0 && count2 == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

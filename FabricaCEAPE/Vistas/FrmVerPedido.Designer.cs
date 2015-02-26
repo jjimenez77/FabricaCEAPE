@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.articuloPedidoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.articuloPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.txtDeptoOrigen = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txtDeptoDestino = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -38,21 +40,19 @@
             this.txtConcepto = new System.Windows.Forms.ToolStripLabel();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.articuloPedidoDataGridView = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDescripcion = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDescripcion = new System.Windows.Forms.Label();
+            this.articuloPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtDeptoOrigen = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingNavigator)).BeginInit();
             this.articuloPedidoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,9 +83,24 @@
             this.articuloPedidoBindingNavigator.TabIndex = 0;
             this.articuloPedidoBindingNavigator.Text = "bindingNavigator1";
             // 
-            // articuloPedidoBindingSource
+            // toolStripLabel3
             // 
-            this.articuloPedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ArticuloPedido);
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(46, 22);
+            this.toolStripLabel3.Text = "Origen:";
+            // 
+            // txtDeptoOrigen
+            // 
+            this.txtDeptoOrigen.Name = "txtDeptoOrigen";
+            this.txtDeptoOrigen.Size = new System.Drawing.Size(86, 22);
+            this.txtDeptoOrigen.Text = "toolStripLabel4";
+            this.txtDeptoOrigen.ToolTipText = "Departamento de origen";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel1
             // 
@@ -148,6 +163,7 @@
             this.dataGridViewTextBoxColumn5});
             this.articuloPedidoDataGridView.DataSource = this.articuloPedidoBindingSource;
             this.articuloPedidoDataGridView.Location = new System.Drawing.Point(12, 29);
+            this.articuloPedidoDataGridView.MultiSelect = false;
             this.articuloPedidoDataGridView.Name = "articuloPedidoDataGridView";
             this.articuloPedidoDataGridView.ReadOnly = true;
             this.articuloPedidoDataGridView.RowHeadersVisible = false;
@@ -155,6 +171,24 @@
             this.articuloPedidoDataGridView.Size = new System.Drawing.Size(683, 318);
             this.articuloPedidoDataGridView.StandardTab = true;
             this.articuloPedidoDataGridView.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtDescripcion);
+            this.panel1.Location = new System.Drawing.Point(701, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(212, 318);
+            this.panel1.TabIndex = 2;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.AutoSize = true;
+            this.txtDescripcion.Location = new System.Drawing.Point(4, 4);
+            this.txtDescripcion.MaximumSize = new System.Drawing.Size(210, 0);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(35, 13);
+            this.txtDescripcion.TabIndex = 0;
+            this.txtDescripcion.Text = "label1";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -189,46 +223,13 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // panel1
+            // articuloPedidoBindingSource
             // 
-            this.panel1.Controls.Add(this.txtDescripcion);
-            this.panel1.Location = new System.Drawing.Point(701, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 318);
-            this.panel1.TabIndex = 2;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.AutoSize = true;
-            this.txtDescripcion.Location = new System.Drawing.Point(4, 4);
-            this.txtDescripcion.MaximumSize = new System.Drawing.Size(210, 0);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(35, 13);
-            this.txtDescripcion.TabIndex = 0;
-            this.txtDescripcion.Text = "label1";
+            this.articuloPedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ArticuloPedido);
             // 
             // pedidoBindingSource
             // 
             this.pedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Pedido);
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(46, 22);
-            this.toolStripLabel3.Text = "Origen:";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // txtDeptoOrigen
-            // 
-            this.txtDeptoOrigen.Name = "txtDeptoOrigen";
-            this.txtDeptoOrigen.Size = new System.Drawing.Size(86, 22);
-            this.txtDeptoOrigen.Text = "toolStripLabel4";
-            this.txtDeptoOrigen.ToolTipText = "Departamento de origen";
             // 
             // FrmVerPedido
             // 
@@ -247,10 +248,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingNavigator)).EndInit();
             this.articuloPedidoBindingNavigator.ResumeLayout(false);
             this.articuloPedidoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

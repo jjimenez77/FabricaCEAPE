@@ -34,9 +34,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.cbSelector = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.productoDataGridView = new System.Windows.Forms.DataGridView();
             this.nombreTipoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +53,6 @@
             this.nombreTipoEnvasadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreSeleccionProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoTerminadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).BeginInit();
             this.productoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoDataGridView)).BeginInit();
@@ -115,6 +115,25 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton3.Image = global::FabricaCEAPE.Properties.Resources.next21;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(49, 22);
+            this.toolStripButton3.Text = "Salir";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::FabricaCEAPE.Properties.Resources.delete96;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(70, 22);
+            this.toolStripButton2.Text = "Eliminar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // txtBuscar
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -133,24 +152,15 @@
             this.cbSelector.ToolTipText = "Seleccione el tipo de busqueda";
             this.cbSelector.DropDownClosed += new System.EventHandler(this.cbSelector_DropDownClosed);
             // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton3.Image = global::FabricaCEAPE.Properties.Resources.next21;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(49, 22);
-            this.toolStripButton3.Text = "Salir";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
             // productoDataGridView
             // 
             this.productoDataGridView.AllowUserToAddRows = false;
             this.productoDataGridView.AllowUserToDeleteRows = false;
             this.productoDataGridView.AllowUserToResizeColumns = false;
             this.productoDataGridView.AllowUserToResizeRows = false;
-            this.productoDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.productoDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.productoDataGridView.AutoGenerateColumns = false;
             this.productoDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.productoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -175,7 +185,7 @@
             this.productoDataGridView.ReadOnly = true;
             this.productoDataGridView.RowHeadersVisible = false;
             this.productoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productoDataGridView.Size = new System.Drawing.Size(1306, 294);
+            this.productoDataGridView.Size = new System.Drawing.Size(1322, 294);
             this.productoDataGridView.StandardTab = true;
             this.productoDataGridView.TabIndex = 1;
             this.productoDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productoDataGridView_CellDoubleClick);
@@ -266,8 +276,10 @@
             // 
             // nombreSeleccionProductoDataGridViewTextBoxColumn
             // 
+            this.nombreSeleccionProductoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.DataPropertyName = "NombreSeleccionProducto";
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.HeaderText = "NombreSeleccionProducto";
+            this.nombreSeleccionProductoDataGridViewTextBoxColumn.MinimumWidth = 130;
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.Name = "nombreSeleccionProductoDataGridViewTextBoxColumn";
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -275,16 +287,7 @@
             // 
             this.productoTerminadoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ProductoTerminado);
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = global::FabricaCEAPE.Properties.Resources.delete96;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(70, 22);
-            this.toolStripButton2.Text = "Eliminar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // FrmListaProducto
+            // FrmListaProductoTerminado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,7 +295,7 @@
             this.Controls.Add(this.productoDataGridView);
             this.Controls.Add(this.productoBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmListaProducto";
+            this.Name = "FrmListaProductoTerminado";
             this.Text = "Productos";
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).EndInit();
             this.productoBindingNavigator.ResumeLayout(false);
@@ -322,6 +325,7 @@
         private System.Windows.Forms.ToolStripComboBox cbSelector;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.BindingSource productoTerminadoBindingSource;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreTipoProductoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaElaboracionDataGridViewTextBoxColumn;
@@ -335,6 +339,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadPorCajaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreTipoEnvasadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreSeleccionProductoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

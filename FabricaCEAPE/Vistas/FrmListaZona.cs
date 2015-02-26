@@ -77,12 +77,19 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 Zona z = (Zona)zonaBindingSource.Current;
-                z.Activo = false;
-
-                if (MessageBox.Show("¿Esta seguro de borrar a " + z.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (!DatosZona.enUso(z.IdZona))
                 {
-                    DatosZona.Modificar(z);
-                    Actualizar();
+                    z.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + z.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosZona.Modificar(z);
+                        Actualizar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
             }
             catch

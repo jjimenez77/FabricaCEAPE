@@ -62,12 +62,19 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 Pais p = (Pais)paisBindingSource.Current;
-                p.Activo = false;
-
-                if (MessageBox.Show("¿Esta seguro de borrar a " + p.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (!DatosPais.enUso(p.Id))
                 {
-                    DatosPais.Modificar(p);
-                    Actualizar();
+                    p.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + p.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosPais.Modificar(p);
+                        Actualizar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
             }
             catch

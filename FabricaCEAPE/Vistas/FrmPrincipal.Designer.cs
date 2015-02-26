@@ -380,6 +380,7 @@
             this.btnSalirS,
             this.btnMateriaPrimaReceta,
             this.btnProductoTerminado,
+            this.btnProducto,
             this.btnTipoProducto,
             this.toolStripSeparator4,
             this.btnCliente,
@@ -389,7 +390,6 @@
             this.btnSalidaStock,
             this.btnEntradaStock,
             this.btnDespachoStock,
-            this.btnProducto,
             this.btnControlCalidad,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);

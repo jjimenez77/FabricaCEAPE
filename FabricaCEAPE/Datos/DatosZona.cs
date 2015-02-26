@@ -19,7 +19,7 @@ namespace FabricaCEAPE.Datos
             //abro la conexion
             cnn.Open();
 
-            SqlCommand cmd = new SqlCommand("select idZona,nombre, idLocalidad,activo from Zona where activo = 1");
+            SqlCommand cmd = new SqlCommand("select idZona, nombre, idLocalidad,activo from Zona where activo = 1 order by nombre");
             //SqlCommand cmd = new SqlCommand("SELECT Zona.nombre, Localidad.nombre as NombreLocalidad FROM Zona, Localidad where Zona.idLocalidad=Localidad.idLocalidad");
             //asigno la conexion al comando
             cmd.Connection = cnn;
@@ -199,6 +199,35 @@ namespace FabricaCEAPE.Datos
             cnn.Close();
 
             return zonas;
+        }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Clientes
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Zonas left join Cliente on Zonas.idZona = Cliente.idCliente where Cliente.idCliente = @id");
+            //Repartidores
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Zonas left join Repartidores on Zonas.idZona = Repartidores.idZona where Repartidores.idZona = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+
+            cmd1.Parameters.AddWithValue("@id", id);
+            cmd1.Connection = cnn;
+            cmd1.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
+
+            if (count == 0 && count1 == 0)
+                return false;
+            else
+                return true;
         }
     }
 }

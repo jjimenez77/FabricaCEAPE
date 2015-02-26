@@ -84,6 +84,7 @@ namespace FabricaCEAPE.Vistas
                     return;
 
                 Producto p = (Producto)productoBindingSource.Current;
+                p.Activo = true;
                 if (p.IdProducto == 0)
                 {
                     DatosProducto.Crear(p);

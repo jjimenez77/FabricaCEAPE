@@ -122,9 +122,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(266, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Cajas a entrar:";
+            this.label1.Text = "Cajas a sumar:";
             // 
             // label2
             // 

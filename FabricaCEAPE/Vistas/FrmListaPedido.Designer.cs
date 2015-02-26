@@ -42,18 +42,18 @@
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.cbSelector = new System.Windows.Forms.ToolStripComboBox();
             this.menu = new System.Windows.Forms.ToolStrip();
-            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartamentoDeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Visto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pedidoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTextBoxColumn1
@@ -173,19 +173,6 @@
             this.menu.TabStop = true;
             this.menu.Text = "menu";
             // 
-            // pedidoBindingSource
-            // 
-            this.pedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Pedido);
-            // 
-            // Departamento
-            // 
-            this.Departamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Departamento.DataPropertyName = "Departamento";
-            this.Departamento.HeaderText = "Departamento de destino";
-            this.Departamento.MinimumWidth = 130;
-            this.Departamento.Name = "Departamento";
-            this.Departamento.ReadOnly = true;
-            // 
             // DepartamentoDeUsuario
             // 
             this.DepartamentoDeUsuario.DataPropertyName = "DepartamentoDeUsuario";
@@ -193,38 +180,6 @@
             this.DepartamentoDeUsuario.Name = "DepartamentoDeUsuario";
             this.DepartamentoDeUsuario.ReadOnly = true;
             this.DepartamentoDeUsuario.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Usuario";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Usuario emisor";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "FechaEmitido";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Fecha emitido";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Descripcion";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Concepto";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Concepto";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 130;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // Visto
             // 
@@ -266,6 +221,51 @@
             this.pedidoDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pedidoDataGridView_CellDoubleClick);
             this.pedidoDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.pedidoDataGridView_CellFormatting);
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Concepto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Concepto";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 130;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Descripcion";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "FechaEmitido";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Fecha emitido";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Usuario";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Usuario emisor";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // Departamento
+            // 
+            this.Departamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Departamento.DataPropertyName = "Departamento";
+            this.Departamento.HeaderText = "Departamento de destino";
+            this.Departamento.MinimumWidth = 130;
+            this.Departamento.Name = "Departamento";
+            this.Departamento.ReadOnly = true;
+            // 
+            // pedidoBindingSource
+            // 
+            this.pedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Pedido);
+            // 
             // FrmListaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,8 +278,8 @@
             this.Text = "Pedidos";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

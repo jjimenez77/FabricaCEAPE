@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.productoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -39,6 +38,7 @@
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.menu = new System.Windows.Forms.ToolStrip();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.productoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             this.menu.SuspendLayout();
@@ -50,6 +50,8 @@
             this.productoDataGridView.AllowUserToDeleteRows = false;
             this.productoDataGridView.AllowUserToResizeColumns = false;
             this.productoDataGridView.AllowUserToResizeRows = false;
+            this.productoDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.productoDataGridView.AutoGenerateColumns = false;
             this.productoDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.productoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -62,18 +64,10 @@
             this.productoDataGridView.ReadOnly = true;
             this.productoDataGridView.RowHeadersVisible = false;
             this.productoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productoDataGridView.Size = new System.Drawing.Size(183, 308);
+            this.productoDataGridView.Size = new System.Drawing.Size(203, 308);
             this.productoDataGridView.StandardTab = true;
             this.productoDataGridView.TabIndex = 1;
             this.productoDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productoDataGridView_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 180;
             // 
             // productoBindingSource
             // 
@@ -145,6 +139,15 @@
             this.menu.TabIndex = 1;
             this.menu.Text = "menu";
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 180;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // FrmListaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,7 +171,6 @@
 
         private System.Windows.Forms.BindingSource productoBindingSource;
         private System.Windows.Forms.DataGridView productoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnModificar;
@@ -176,5 +178,6 @@
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.ToolStrip menu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

@@ -81,5 +81,34 @@ namespace FabricaCEAPE.Datos
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+
+        public static bool enUso(int id)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Usuarios
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Departamentos left join Usuarios on Departamentos.id = Usuarios.idDepartamento where Usuarios.idDepartamento = @id");
+            //Pedidos
+            SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Departamentos left join Pedidos on Departamentos.id = Pedidos.idDepartamento where Pedidos.idDepartamento = @id");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+
+            cmd1.Parameters.AddWithValue("@id", id);
+            cmd1.Connection = cnn;
+            cmd1.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
+
+            if (count == 0 && count1 == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

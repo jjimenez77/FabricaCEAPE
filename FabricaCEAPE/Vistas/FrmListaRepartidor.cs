@@ -71,12 +71,19 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 Repartidor r = (Repartidor)repartidorBindingSource.Current;
-                r.Activo = false;
-
-                if (MessageBox.Show("¿Esta seguro de borrar a " + r.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (!DatosRepartidor.enUso(r.Id))
                 {
-                    DatosRepartidor.Modificar(r);
-                    Actualizar();
+                    r.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + r.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosRepartidor.Modificar(r);
+                        Actualizar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
             }
             catch

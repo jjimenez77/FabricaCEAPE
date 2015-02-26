@@ -79,12 +79,19 @@ namespace FabricaCEAPE.Vistas
             try
             {
                 TipoMateriaPrima t = (TipoMateriaPrima)tipoMateriaPrimaBindingSource.Current;
-                t.Activo = false;
-
-                if (MessageBox.Show("¿Esta seguro de borrar a " + t.Nombre +"?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (!DatosTipoMateriaPrima.enUso(t.Id))
                 {
-                    DatosTipoMateriaPrima.Modificar(t);
-                    Actualizar();
+                    t.Activo = false;
+
+                    if (MessageBox.Show("¿Esta seguro de eliminar a " + t.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        DatosTipoMateriaPrima.Modificar(t);
+                        Actualizar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
             }
             catch

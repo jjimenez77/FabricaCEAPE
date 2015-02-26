@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -76,7 +77,7 @@
             this.cbSelector});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(843, 25);
+            this.menu.Size = new System.Drawing.Size(827, 25);
             this.menu.TabIndex = 0;
             this.menu.TabStop = true;
             this.menu.Text = "menu";
@@ -181,7 +182,7 @@
             this.dgRecetas.ReadOnly = true;
             this.dgRecetas.RowHeadersVisible = false;
             this.dgRecetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgRecetas.Size = new System.Drawing.Size(793, 221);
+            this.dgRecetas.Size = new System.Drawing.Size(803, 221);
             this.dgRecetas.StandardTab = true;
             this.dgRecetas.TabIndex = 1;
             this.dgRecetas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRecetas_CellDoubleClick);
@@ -250,6 +251,7 @@
             this.productoDataGridViewTextBoxColumn1.HeaderText = "Nombre";
             this.productoDataGridViewTextBoxColumn1.Name = "productoDataGridViewTextBoxColumn1";
             this.productoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.productoDataGridViewTextBoxColumn1.Width = 150;
             // 
             // observacionesDataGridViewTextBoxColumn1
             // 
@@ -257,6 +259,7 @@
             this.observacionesDataGridViewTextBoxColumn1.HeaderText = "Observaciones";
             this.observacionesDataGridViewTextBoxColumn1.Name = "observacionesDataGridViewTextBoxColumn1";
             this.observacionesDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.observacionesDataGridViewTextBoxColumn1.Width = 150;
             // 
             // tiempoDataGridViewTextBoxColumn1
             // 
@@ -282,7 +285,10 @@
             // fechaCreacionDataGridViewTextBoxColumn1
             // 
             this.fechaCreacionDataGridViewTextBoxColumn1.DataPropertyName = "FechaCreacion";
-            this.fechaCreacionDataGridViewTextBoxColumn1.HeaderText = "FechaCreacion";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.fechaCreacionDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.fechaCreacionDataGridViewTextBoxColumn1.HeaderText = "Fecha de creacion";
             this.fechaCreacionDataGridViewTextBoxColumn1.Name = "fechaCreacionDataGridViewTextBoxColumn1";
             this.fechaCreacionDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -297,7 +303,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 261);
+            this.ClientSize = new System.Drawing.Size(827, 261);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.dgRecetas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

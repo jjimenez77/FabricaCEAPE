@@ -45,7 +45,7 @@ namespace FabricaCEAPE.Vistas
         {
             Pedido p = (Pedido)pedidoBindingSource.Current;
 
-            if (MessageBox.Show("¿Esta seguro de eliminar el pedido?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro de cancelar el pedido?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DatosPedido.Eliminar(p);
                 Close();

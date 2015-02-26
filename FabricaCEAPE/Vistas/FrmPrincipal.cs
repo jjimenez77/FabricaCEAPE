@@ -80,6 +80,8 @@ namespace FabricaCEAPE.Vistas
                 //
                 //produccion
                 btnRecetas.Visible = true;
+                btnMateriaPrimaReceta.Visible = true;
+                btnProductoTerminado.Visible = true;
                 btnProducto.Visible = true;
                 btnTipoProducto.Visible = true;
                 toolStripSeparator4.Visible = true;
@@ -90,6 +92,7 @@ namespace FabricaCEAPE.Vistas
                 btnSalidaStock.Visible = true;
                 btnEntradaStock.Visible = true;
                 btnDespachoStock.Visible = true;
+                btnControlCalidad.Visible = true;
 
                 this.Text = "Administrador :: Sistema CEAPE";
             }
@@ -124,6 +127,8 @@ namespace FabricaCEAPE.Vistas
                     //
                     //produccion
                     btnRecetas.Visible = false;
+                    btnMateriaPrimaReceta.Visible = false;
+                    btnProductoTerminado.Visible = false;
                     btnProducto.Visible = false;
                     btnTipoProducto.Visible = false;
                     toolStripSeparator4.Visible = false;
@@ -134,6 +139,7 @@ namespace FabricaCEAPE.Vistas
                     btnSalidaStock.Visible = false;
                     btnEntradaStock.Visible = false;
                     btnDespachoStock.Visible = false;
+                    btnControlCalidad.Visible = false;
                 }
                 //Botones de produccion
                 else if (u.Departamento.Id == 2)
@@ -162,6 +168,8 @@ namespace FabricaCEAPE.Vistas
                     //
                     //produccion
                     btnRecetas.Visible = true;
+                    btnMateriaPrimaReceta.Visible = true;
+                    btnProductoTerminado.Visible = true;
                     btnProducto.Visible = true;
                     btnTipoProducto.Visible = true;
                     toolStripSeparator4.Visible = true;
@@ -172,6 +180,7 @@ namespace FabricaCEAPE.Vistas
                     btnSalidaStock.Visible = false;
                     btnEntradaStock.Visible = false;
                     btnDespachoStock.Visible = false;
+                    btnControlCalidad.Visible = false;
                 }
                 //Botones de producto terminado
                 else if (u.Departamento.Id == 3)
@@ -200,6 +209,8 @@ namespace FabricaCEAPE.Vistas
                     //
                     //produccion
                     btnRecetas.Visible = false;
+                    btnMateriaPrimaReceta.Visible = false;
+                    btnProductoTerminado.Visible = false;
                     btnProducto.Visible = false;
                     btnTipoProducto.Visible = false;
                     toolStripSeparator4.Visible = false;
@@ -210,6 +221,8 @@ namespace FabricaCEAPE.Vistas
                     btnSalidaStock.Visible = true;
                     btnEntradaStock.Visible = true;
                     btnDespachoStock.Visible = true;
+                                        btnControlCalidad.Visible = false;
+
                 }
             }
 
