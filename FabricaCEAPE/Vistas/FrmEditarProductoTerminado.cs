@@ -363,6 +363,7 @@ namespace FabricaCEAPE.Vistas
         {
             if (!Validacion.esNumero(waterMarkTextBox5) || waterMarkTextBox5.Text == "0")
             {
+                waterMarkTextBox5.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox5, "Introduzca la cantidad de cajas");
             }
             else
@@ -376,6 +377,7 @@ namespace FabricaCEAPE.Vistas
         {
             if (!Validacion.esNumero(waterMarkTextBox4) || waterMarkTextBox4.Text == "0")
             {
+                waterMarkTextBox4.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox4, "Introduzca la cantidad");
             }
             else
@@ -394,6 +396,7 @@ namespace FabricaCEAPE.Vistas
             }
             else
             {
+                loteProductoTerminadoWaterMarkTextBox.BackColor = Color.White;
                 errorProvider1.SetError(loteProductoTerminadoWaterMarkTextBox, "Introduzca el lote");
             }
         }
@@ -402,6 +405,7 @@ namespace FabricaCEAPE.Vistas
         {
             if (!Validacion.esNumero(waterMarkTextBox3) || waterMarkTextBox3.Text == "0")
             {
+                waterMarkTextBox3.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox3, "Introduzca el stock");
             }
             else
@@ -415,6 +419,7 @@ namespace FabricaCEAPE.Vistas
         {
             if (!Validacion.esNumero(waterMarkTextBox2) || waterMarkTextBox2.Text == "0")
             {
+                waterMarkTextBox2.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox2, "Introduzca el gramaje");
             }
             else
@@ -429,7 +434,7 @@ namespace FabricaCEAPE.Vistas
             if (Validacion.esNumero(codigoBarraProductoWaterMarkTextBox))
             {
                 errorProvider1.SetError(codigoBarraProductoWaterMarkTextBox, String.Empty);
-                codigoBarraProductoWaterMarkTextBox.BackColor = Color.Honeydew;
+                codigoBarraProductoWaterMarkTextBox.BackColor = Color.White;
             }
             else
             {
@@ -444,30 +449,35 @@ namespace FabricaCEAPE.Vistas
             
             if (string.IsNullOrEmpty(waterMarkTextBox5.Text) || waterMarkTextBox5.Text == "0")
             {
+                waterMarkTextBox5.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox5, "El campo de cajas por tarima es obligatorio");
                 result = false;
             }
 
             if (string.IsNullOrEmpty(waterMarkTextBox4.Text) || waterMarkTextBox4.Text == "0")
             {
+                waterMarkTextBox4.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox4, "El campo de unidad por caja es obligatorio");
                 result = false;
             }
 
             if (string.IsNullOrEmpty(waterMarkTextBox2.Text) || waterMarkTextBox2.Text == "0")
             {
+                waterMarkTextBox2.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox2, "El campo de gramaje es obligatorio");
                 result = false;
             }
 
             if (string.IsNullOrEmpty(loteProductoTerminadoWaterMarkTextBox.Text))
             {
+                loteProductoTerminadoWaterMarkTextBox.BackColor = Color.White;
                 errorProvider1.SetError(loteProductoTerminadoWaterMarkTextBox, "El campo de lote es obligatorio");
                 result = false;
             }
 
             if (string.IsNullOrEmpty(waterMarkTextBox3.Text) || waterMarkTextBox3.Text == "0")
             {
+                waterMarkTextBox3.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox3, "El campo de stock es obligatorio");
                 result = false;
             }

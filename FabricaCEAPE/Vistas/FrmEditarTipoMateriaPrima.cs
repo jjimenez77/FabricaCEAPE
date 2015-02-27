@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarTipoMateriaPrima : Form
     {
+        int id;
         public FrmEditarTipoMateriaPrima(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 tipoMateriaPrimaBindingSource.Add(new TipoMateriaPrima());
@@ -73,6 +74,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del tipo de materia prima";
 
                 errorProvider1.SetError(nombreTextBox, error);
@@ -85,14 +87,20 @@ namespace FabricaCEAPE.Vistas
         private void nombreTextBox_Validating(object sender, CancelEventArgs e)
         {
             string error = null;
-            if (!Validacion.esCadenaNumeroPunto(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
+            if (!Validacion.esCadena(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del tipo de materia prima";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosTipoMateriaPrima.existeTipoMateriaPrimaN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
             else if (DatosTipoMateriaPrima.existe(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "El tipo de materia prima ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);

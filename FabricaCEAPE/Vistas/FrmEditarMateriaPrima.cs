@@ -107,6 +107,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumeroPunto(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de la materia prima";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -156,6 +157,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esNumero(cantidadTextBox) || cantidadTextBox.Text == "0")
             {
+                cantidadTextBox.BackColor = Color.White;
                 error = "Ingrese la cantidad";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -226,6 +228,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(loteTextBox))
             {
+                loteTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de lote";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -244,6 +247,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de la materia prima";
 
                 errorProvider1.SetError(nombreTextBox, error);
@@ -252,6 +256,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(cantidadTextBox.Text) || cantidadTextBox.Text == "0")
             {
+                cantidadTextBox.BackColor = Color.White;
                 error = "Ingrese la cantidad";
 
                 errorProvider1.SetError(cantidadTextBox, error);
@@ -260,6 +265,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(loteTextBox.Text))
             {
+                loteTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de lote";
 
                 errorProvider1.SetError(loteTextBox, error);

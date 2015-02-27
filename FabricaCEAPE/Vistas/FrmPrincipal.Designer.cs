@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEditar = new System.Windows.Forms.Button();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
@@ -87,6 +88,7 @@
             this.btnSalirS = new System.Windows.Forms.ToolStripButton();
             this.btnMateriaPrimaReceta = new System.Windows.Forms.ToolStripButton();
             this.btnProductoTerminado = new System.Windows.Forms.ToolStripButton();
+            this.btnProducto = new System.Windows.Forms.ToolStripButton();
             this.btnTipoProducto = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCliente = new System.Windows.Forms.ToolStripButton();
@@ -96,10 +98,8 @@
             this.btnSalidaStock = new System.Windows.Forms.ToolStripButton();
             this.btnEntradaStock = new System.Windows.Forms.ToolStripButton();
             this.btnDespachoStock = new System.Windows.Forms.ToolStripButton();
-            this.btnProducto = new System.Windows.Forms.ToolStripButton();
             this.btnControlCalidad = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -117,6 +117,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -132,7 +133,19 @@
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(381, 5);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 43;
+            this.btnEditar.Text = "Editar";
+            this.toolTip.SetToolTip(this.btnEditar, "Editar usuario");
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // ribbonTab1
             // 
@@ -302,8 +315,8 @@
             this.medidasToolStripMenuItem,
             this.tipoDeEnvasadoToolStripMenuItem});
             this.ABMToolStripMenuItem.Name = "ABMToolStripMenuItem";
-            this.ABMToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
-            this.ABMToolStripMenuItem.Text = "ABM";
+            this.ABMToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.ABMToolStripMenuItem.Text = "Otros";
             // 
             // paisToolStripMenuItem
             // 
@@ -530,6 +543,17 @@
             this.btnProductoTerminado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProductoTerminado.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
+            // btnProducto
+            // 
+            this.btnProducto.Image = global::FabricaCEAPE.Properties.Resources.publicity;
+            this.btnProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnProducto.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(60, 51);
+            this.btnProducto.Text = "Producto";
+            this.btnProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            // 
             // btnTipoProducto
             // 
             this.btnTipoProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoProducto.Image")));
@@ -624,17 +648,6 @@
             this.btnDespachoStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDespachoStock.Click += new System.EventHandler(this.btnDespachoStock_Click);
             // 
-            // btnProducto
-            // 
-            this.btnProducto.Image = global::FabricaCEAPE.Properties.Resources.publicity;
-            this.btnProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnProducto.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(60, 51);
-            this.btnProducto.Text = "Producto";
-            this.btnProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
             // btnControlCalidad
             // 
             this.btnControlCalidad.Image = global::FabricaCEAPE.Properties.Resources.clipboard105;
@@ -649,7 +662,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 54);
             // 
             // miniToolStrip
             // 
@@ -690,6 +703,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label17);
@@ -718,7 +732,7 @@
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.groupBox1.Location = new System.Drawing.Point(8, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 247);
+            this.groupBox1.Size = new System.Drawing.Size(455, 250);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de usuario";
@@ -834,15 +848,21 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Login", true));
             this.label13.Location = new System.Drawing.Point(160, 225);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 13);
             this.label13.TabIndex = 30;
             this.label13.Text = "label1";
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Usuario);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Departamento", true));
             this.label12.Location = new System.Drawing.Point(160, 206);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
@@ -852,6 +872,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Direccion", true));
             this.label11.Location = new System.Drawing.Point(160, 187);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
@@ -861,6 +882,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumeroDocumento", true));
             this.label9.Location = new System.Drawing.Point(160, 168);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
@@ -870,6 +892,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CorreoElectronicoAlternativo", true));
             this.label8.Location = new System.Drawing.Point(160, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
@@ -879,6 +902,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CorreoElectronico", true));
             this.label7.Location = new System.Drawing.Point(160, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
@@ -888,6 +912,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumeroCelular", true));
             this.label6.Location = new System.Drawing.Point(160, 111);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
@@ -897,6 +922,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NumeroTelefono", true));
             this.label5.Location = new System.Drawing.Point(160, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
@@ -906,6 +932,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "FechaNacimiento", true));
             this.label4.Location = new System.Drawing.Point(160, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
@@ -915,6 +942,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Sexos", true));
             this.label3.Location = new System.Drawing.Point(160, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
@@ -924,6 +952,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
             this.label1.Location = new System.Drawing.Point(160, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -933,6 +962,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "TipoUsuarios", true));
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(160, 35);
             this.label2.Name = "label2";
@@ -969,6 +999,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1018,15 +1049,9 @@
         private System.Windows.Forms.RibbonSeparator ribbonSeparator8;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnUsuario;
-        private System.Windows.Forms.ToolStripButton btnMateriaPrima;
         private System.Windows.Forms.ToolStripButton btnMarca;
-        private System.Windows.Forms.ToolStripButton btnDepartamento;
         private System.Windows.Forms.ToolStripButton btnPedidos;
-        private System.Windows.Forms.ToolStripButton btnRecetas;
         private System.Windows.Forms.ToolStripButton btnSalirS;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolStripButton btnTipoMP;
-        private System.Windows.Forms.ToolStripButton btnProveedor;
         private System.Windows.Forms.ToolStripMenuItem zonaToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label15;
@@ -1056,23 +1081,30 @@
         private System.Windows.Forms.StatusStrip miniToolStrip;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripButton btnCliente;
         private System.Windows.Forms.ToolStripButton btnRepartidor;
-        private System.Windows.Forms.ToolStripButton btnTipoProducto;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton btnSalidaStock;
         private System.Windows.Forms.ToolStripButton btnEntradaStock;
         private System.Windows.Forms.ToolStripButton btnDespachoStock;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem medidasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton btnProductoTerminado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem tipoDeEnvasadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnProducto;
         private System.Windows.Forms.ToolStripButton btnControlCalidad;
-        private System.Windows.Forms.ToolStripButton btnMateriaPrimaReceta;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
+        private System.Windows.Forms.ToolStripButton btnCliente;
+        private System.Windows.Forms.ToolStripButton btnDepartamento;
+        private System.Windows.Forms.ToolStripButton btnMateriaPrima;
+        private System.Windows.Forms.ToolStripButton btnTipoMP;
+        private System.Windows.Forms.ToolStripButton btnProveedor;
+        private System.Windows.Forms.ToolStripButton btnRecetas;
+        private System.Windows.Forms.ToolStripButton btnMateriaPrimaReceta;
+        private System.Windows.Forms.ToolStripButton btnSalidaStock;
+        private System.Windows.Forms.ToolStripButton btnProductoTerminado;
+        private System.Windows.Forms.ToolStripButton btnTipoProducto;
     }
 }
 

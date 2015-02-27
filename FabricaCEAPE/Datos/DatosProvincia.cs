@@ -171,5 +171,50 @@ namespace FabricaCEAPE.Datos
             else
                 return true;
         }
+
+        public static bool existe(string nombre, int idPais)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Provincias where activo = 1 and nombre = @nombre and idPais = @idPais");
+
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Parameters.AddWithValue("@idPais", idPais);
+
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool existeProvinciaN(int id, string nombre)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Provincias where activo = 1 and id = @id and nombre = @nombre");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

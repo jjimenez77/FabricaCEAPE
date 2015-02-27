@@ -145,13 +145,28 @@ namespace FabricaCEAPE.Vistas
                 errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
-
+            
             if (cbLocalidad.SelectedIndex < 0)
             {
                 error = "Seleccione la localidad";
 
                 errorProvider1.SetError(cbLocalidad, error);
                 resultados = false;
+            }
+            else
+            {
+                if (DatosZona.existe(nombreTextBox.Text, (int)cbLocalidad.SelectedValue))
+                {
+                    nombreTextBox.BackColor = Color.White;
+                    error = "La zona ya existe en la localidad seleccionada";
+                    errorProvider1.SetError(nombreTextBox, error);
+                    resultados = false;
+                    if (!DatosZona.existeZonaN(id, nombreTextBox.Text))
+                    {
+                        errorProvider1.SetError(nombreTextBox, "sdfdsf");
+                        resultados = false;
+                    }
+                }
             }
 
             return resultados;

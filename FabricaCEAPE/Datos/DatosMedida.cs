@@ -167,5 +167,91 @@ namespace FabricaCEAPE.Datos
             else
                 return true;
         }
+
+        public static bool existeN(string nombre)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Medidas where activo = 1 and nombre = @nombre");
+
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool existeA(string abreviacion)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Medidas where activo = 1 and abreviacion = @abreviacion");
+
+            cmd.Parameters.AddWithValue("@abreviacion", abreviacion);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool existeMedidaN(int id, string nombre)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Medidas where activo = 1 and id = @id and nombre = @nombre");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool existeMedidaA(int id, string nombre)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Medidas where activo = 1 and id = @id and abreviacion = @nombre");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

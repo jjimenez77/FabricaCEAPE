@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarProducto : Form
     {
+        int id;
         public FrmEditarProducto(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 productoBindingSource.Add(new Producto());
@@ -40,12 +41,18 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadena(nombreTextBox))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del producto";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosProducto.existProductoN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
             else if (DatosProducto.existe(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "El producto ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -121,6 +128,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del producto";
 
                 errorProvider1.SetError(nombreTextBox, error);

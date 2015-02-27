@@ -125,6 +125,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(pesoNetoTextBox.Text))
             {
+                pesoNetoTextBox.BackColor = Color.White;
                 error = "Ingrese el peso";
 
                 errorProvider1.SetError(pesoNetoTextBox, error);
@@ -133,6 +134,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(unidadPorCajaTextBox.Text) || unidadPorCajaTextBox.Text == "0")
             {
+                unidadPorCajaTextBox.BackColor = Color.White;
                 error = "Ingrese las unidades por caja";
 
                 errorProvider1.SetError(unidadPorCajaTextBox, error);
@@ -165,6 +167,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(lotePouchTextBox.Text))
             {
+                lotePouchTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de lote";
 
                 errorProvider1.SetError(lotePouchTextBox, error);
@@ -173,6 +176,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(loteCajaTextBox.Text))
             {
+                loteCajaTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de lote";
 
                 errorProvider1.SetError(loteCajaTextBox, error);
@@ -181,6 +185,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(densidadTextBox.Text))
             {
+                densidadTextBox.BackColor = Color.White;
                 error = "Ingrese la densidad";
 
                 errorProvider1.SetError(densidadTextBox, error);
@@ -189,6 +194,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(secadoHumedadTextBox.Text))
             {
+                secadoHumedadTextBox.BackColor = Color.White;
                 error = "Ingrese la humedad";
 
                 errorProvider1.SetError(secadoHumedadTextBox, error);
@@ -197,6 +203,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(observacionesTextBox.Text))
             {
+                observacionesTextBox.BackColor = Color.White;
                 error = "Ingrese las observaciones";
 
                 errorProvider1.SetError(observacionesTextBox, error);
@@ -232,6 +239,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esNumero(pesoNetoTextBox) || pesoNetoTextBox.Text == "0")
             {
+                pesoNetoTextBox.BackColor = Color.White;
                 error = "Ingrese el peso";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -269,6 +277,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esNumero(unidadPorCajaTextBox) || unidadPorCajaTextBox.Text == "0")
             {
+                unidadPorCajaTextBox.BackColor = Color.White;
                 error = "Ingrese las unidades por caja";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -314,6 +323,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(lotePouchTextBox))
             {
+                lotePouchTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de lote del pouch";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -359,6 +369,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(loteCajaTextBox))
             {
+                loteCajaTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de lote de la caja";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -396,6 +407,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esNumero(densidadTextBox) || densidadTextBox.Text == "0")
             {
+                densidadTextBox.BackColor = Color.White;
                 error = "Ingrese la densidad";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -433,6 +445,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esNumero(secadoHumedadTextBox) || secadoHumedadTextBox.Text == "0")
             {
+                secadoHumedadTextBox.BackColor = Color.White;
                 error = "Ingrese la humedad";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -482,6 +495,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(observacionesTextBox))
             {
+                observacionesTextBox.BackColor = Color.White;
                 error = "Ingrese alguna observacion";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);

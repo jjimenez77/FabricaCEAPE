@@ -156,5 +156,51 @@ namespace FabricaCEAPE.Datos
 
             return ingredientesReceta;
         }
+
+        public static bool existe(int idReceta, int idMateriaPrimaReceta)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM IngredientesRecetas where idReceta = @idReceta and idMateriaPrimaReceta = @idMateriaPrimaReceta");
+
+            cmd.Parameters.AddWithValue("@idReceta", idReceta);
+            cmd.Parameters.AddWithValue("@idMateriaPrimaReceta", idMateriaPrimaReceta);
+
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool existeIngrediente(int id, int idReceta, int idMateriaPrimaReceta)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM IngredientesRecetas where id = @id and idReceta = @idReceta and idMateriaPrimaReceta = @idMateriaPrimaReceta");
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@idReceta", idReceta);
+            cmd.Parameters.AddWithValue("@idMateriaPrimaReceta", idMateriaPrimaReceta);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
     }
 }

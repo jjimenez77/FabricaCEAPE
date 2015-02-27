@@ -208,7 +208,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(301, 261);
-            this.ControlBox = false;
             this.Controls.Add(this.cbLocalidad);
             this.Controls.Add(this.cbProvincia);
             this.Controls.Add(this.cbPais);

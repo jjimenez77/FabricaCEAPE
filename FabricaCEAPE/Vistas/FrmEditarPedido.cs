@@ -122,6 +122,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadena(conceptoTextBox.TextBox))
             {
+                conceptoTextBox.BackColor = Color.White;
                 error = "Ingrese el concepto de pedido";
                 e.Cancel = true;
                 errorProvider1.SetError(conceptoTextBox.TextBox, error);
@@ -138,6 +139,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadena(descripcionTextBox))
             {
+                descripcionTextBox.BackColor = Color.White;
                 error = "Ingrese la descripcion del pedido";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -189,6 +191,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(conceptoTextBox.Text))
             {
+                conceptoTextBox.BackColor = Color.White;
                 error = "Ingrese el concepto de pedido";
 
                 errorProvider1.SetError(conceptoTextBox.TextBox, error);
@@ -197,6 +200,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(descripcionTextBox.Text))
             {
+                descripcionTextBox.BackColor = Color.White;
                 error = "Ingrese la descripcion del pedido";
 
                 errorProvider1.SetError(descripcionTextBox, error);

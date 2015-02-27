@@ -43,20 +43,20 @@
             this.conceptoTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.menu = new System.Windows.Forms.ToolStrip();
             this.articuloPedidoDataGridView = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.descripcionTextBox = new wmgCMS.WaterMarkTextBox();
-            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.articuloPedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.descripcionTextBox = new wmgCMS.WaterMarkTextBox();
+            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             btnAceptar = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -189,6 +189,7 @@
             this.dataGridViewTextBoxColumn5});
             this.articuloPedidoDataGridView.DataSource = this.articuloPedidoBindingSource;
             this.articuloPedidoDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.articuloPedidoDataGridView.MultiSelect = false;
             this.articuloPedidoDataGridView.Name = "articuloPedidoDataGridView";
             this.articuloPedidoDataGridView.ReadOnly = true;
             this.articuloPedidoDataGridView.RowHeadersVisible = false;
@@ -197,30 +198,6 @@
             this.articuloPedidoDataGridView.StandardTab = true;
             this.articuloPedidoDataGridView.TabIndex = 1;
             this.articuloPedidoDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.articuloPedidoDataGridView_CellDoubleClick);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // descripcionTextBox
-            // 
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pedidoBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.descripcionTextBox.Location = new System.Drawing.Point(701, 28);
-            this.descripcionTextBox.Multiline = true;
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(206, 160);
-            this.descripcionTextBox.TabIndex = 2;
-            this.descripcionTextBox.WaterMarkColor = System.Drawing.Color.Gray;
-            this.descripcionTextBox.WaterMarkText = "Descripcion del pedido";
-            this.descripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descripcionTextBox_KeyPress);
-            this.descripcionTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.descripcionTextBox_Validating);
-            // 
-            // pedidoBindingSource
-            // 
-            this.pedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Pedido);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -259,13 +236,36 @@
             // 
             this.articuloPedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ArticuloPedido);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pedidoBindingSource, "Descripcion", true));
+            this.descripcionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.descripcionTextBox.Location = new System.Drawing.Point(701, 28);
+            this.descripcionTextBox.Multiline = true;
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(206, 160);
+            this.descripcionTextBox.TabIndex = 2;
+            this.descripcionTextBox.WaterMarkColor = System.Drawing.Color.Gray;
+            this.descripcionTextBox.WaterMarkText = "Descripcion del pedido";
+            this.descripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descripcionTextBox_KeyPress);
+            this.descripcionTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.descripcionTextBox_Validating);
+            // 
+            // pedidoBindingSource
+            // 
+            this.pedidoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Pedido);
+            // 
             // FrmEditarPedido
             // 
             this.AcceptButton = btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 359);
-            this.ControlBox = false;
             this.Controls.Add(this.descripcionTextBox);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.articuloPedidoDataGridView);
@@ -279,9 +279,9 @@
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloPedidoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

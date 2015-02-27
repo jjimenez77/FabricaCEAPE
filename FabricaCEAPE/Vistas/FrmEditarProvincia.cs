@@ -14,11 +14,12 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarProvincia : Form
     {
+        int id;
         public FrmEditarProvincia(int id)
         {
             InitializeComponent();
             paisBindingSource.DataSource = DatosPais.getPaises();
-
+            this.id = id;
             if (id == 0)
             {
                 provinciaBindingSource.Add(new Provincia());
@@ -75,8 +76,9 @@ namespace FabricaCEAPE.Vistas
         private void nombreTextBox_Validating(object sender, CancelEventArgs e)
         {
             string error = null;
-            if (!Validacion.esCadenaNumeroPunto(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
+            if (!Validacion.esCadena(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del la provincia";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -123,6 +125,17 @@ namespace FabricaCEAPE.Vistas
             {
                 error = "Ingrese el nombre de la provincia";
 
+                errorProvider1.SetError(nombreTextBox, error);
+                resultados = false;
+            }
+            else if (DatosProvincia.existeProvinciaN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
+            else if (DatosProvincia.existe(nombreTextBox.Text, (int)cbPais.SelectedValue))
+            {
+                nombreTextBox.BackColor = Color.White;
+                error = "La provincia ya existe en el pais seleccionado";
                 errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }

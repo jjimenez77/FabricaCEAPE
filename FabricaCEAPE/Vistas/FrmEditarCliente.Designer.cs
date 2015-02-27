@@ -196,7 +196,7 @@
             // fechaInicioDateTimePicker
             // 
             this.fechaInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.clienteBindingSource, "FechaInicio", true));
-            this.fechaInicioDateTimePicker.Location = new System.Drawing.Point(129, 196);
+            this.fechaInicioDateTimePicker.Location = new System.Drawing.Point(126, 196);
             this.fechaInicioDateTimePicker.Name = "fechaInicioDateTimePicker";
             this.fechaInicioDateTimePicker.Size = new System.Drawing.Size(206, 20);
             this.fechaInicioDateTimePicker.TabIndex = 6;
@@ -220,7 +220,7 @@
             // 
             this.direccionWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Direccion", true));
             this.direccionWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.direccionWaterMarkTextBox.Location = new System.Drawing.Point(129, 222);
+            this.direccionWaterMarkTextBox.Location = new System.Drawing.Point(126, 222);
             this.direccionWaterMarkTextBox.Name = "direccionWaterMarkTextBox";
             this.direccionWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
             this.direccionWaterMarkTextBox.TabIndex = 7;
@@ -233,7 +233,7 @@
             // 
             this.numeroTelefonoWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NumeroTelefono", true));
             this.numeroTelefonoWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.numeroTelefonoWaterMarkTextBox.Location = new System.Drawing.Point(129, 118);
+            this.numeroTelefonoWaterMarkTextBox.Location = new System.Drawing.Point(126, 118);
             this.numeroTelefonoWaterMarkTextBox.Name = "numeroTelefonoWaterMarkTextBox";
             this.numeroTelefonoWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
             this.numeroTelefonoWaterMarkTextBox.TabIndex = 3;
@@ -246,7 +246,7 @@
             // 
             this.numeroCelularWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NumeroCelular", true));
             this.numeroCelularWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.numeroCelularWaterMarkTextBox.Location = new System.Drawing.Point(129, 144);
+            this.numeroCelularWaterMarkTextBox.Location = new System.Drawing.Point(126, 144);
             this.numeroCelularWaterMarkTextBox.Name = "numeroCelularWaterMarkTextBox";
             this.numeroCelularWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
             this.numeroCelularWaterMarkTextBox.TabIndex = 4;
@@ -259,7 +259,7 @@
             // 
             this.cuitWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Cuit", true));
             this.cuitWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cuitWaterMarkTextBox.Location = new System.Drawing.Point(129, 92);
+            this.cuitWaterMarkTextBox.Location = new System.Drawing.Point(126, 92);
             this.cuitWaterMarkTextBox.Name = "cuitWaterMarkTextBox";
             this.cuitWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
             this.cuitWaterMarkTextBox.TabIndex = 2;
@@ -272,7 +272,7 @@
             // 
             this.nombreDeContactoWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NombreDeContacto", true));
             this.nombreDeContactoWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.nombreDeContactoWaterMarkTextBox.Location = new System.Drawing.Point(129, 66);
+            this.nombreDeContactoWaterMarkTextBox.Location = new System.Drawing.Point(126, 66);
             this.nombreDeContactoWaterMarkTextBox.Name = "nombreDeContactoWaterMarkTextBox";
             this.nombreDeContactoWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
             this.nombreDeContactoWaterMarkTextBox.TabIndex = 1;
@@ -285,7 +285,7 @@
             // 
             this.nombreWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
             this.nombreWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.nombreWaterMarkTextBox.Location = new System.Drawing.Point(129, 40);
+            this.nombreWaterMarkTextBox.Location = new System.Drawing.Point(126, 40);
             this.nombreWaterMarkTextBox.Name = "nombreWaterMarkTextBox";
             this.nombreWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
             this.nombreWaterMarkTextBox.TabIndex = 0;
@@ -298,7 +298,7 @@
             // 
             this.correoElectronicoWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "CorreoElectronico", true));
             this.correoElectronicoWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.correoElectronicoWaterMarkTextBox.Location = new System.Drawing.Point(129, 170);
+            this.correoElectronicoWaterMarkTextBox.Location = new System.Drawing.Point(126, 170);
             this.correoElectronicoWaterMarkTextBox.Name = "correoElectronicoWaterMarkTextBox";
             this.correoElectronicoWaterMarkTextBox.Size = new System.Drawing.Size(206, 20);
             this.correoElectronicoWaterMarkTextBox.TabIndex = 5;
@@ -314,7 +314,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(266, 444);
+            this.btnAceptar.Location = new System.Drawing.Point(268, 444);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 13;
@@ -327,7 +327,7 @@
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.CausesValidation = false;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(185, 444);
+            this.btnCancelar.Location = new System.Drawing.Point(187, 444);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 12;
@@ -376,7 +376,7 @@
             this.cbPais.DisplayMember = "Nombre";
             this.cbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPais.FormattingEnabled = true;
-            this.cbPais.Location = new System.Drawing.Point(113, 9);
+            this.cbPais.Location = new System.Drawing.Point(110, 9);
             this.cbPais.Name = "cbPais";
             this.cbPais.Size = new System.Drawing.Size(206, 21);
             this.cbPais.TabIndex = 8;
@@ -389,7 +389,7 @@
             this.cbZona.DisplayMember = "Nombre";
             this.cbZona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbZona.FormattingEnabled = true;
-            this.cbZona.Location = new System.Drawing.Point(113, 90);
+            this.cbZona.Location = new System.Drawing.Point(110, 90);
             this.cbZona.Name = "cbZona";
             this.cbZona.Size = new System.Drawing.Size(206, 21);
             this.cbZona.TabIndex = 11;
@@ -402,7 +402,7 @@
             this.cbLocalidad.DisplayMember = "Nombre";
             this.cbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocalidad.FormattingEnabled = true;
-            this.cbLocalidad.Location = new System.Drawing.Point(113, 63);
+            this.cbLocalidad.Location = new System.Drawing.Point(110, 63);
             this.cbLocalidad.Name = "cbLocalidad";
             this.cbLocalidad.Size = new System.Drawing.Size(206, 21);
             this.cbLocalidad.TabIndex = 10;
@@ -415,7 +415,7 @@
             this.cbProvincia.DisplayMember = "Nombre";
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FormattingEnabled = true;
-            this.cbProvincia.Location = new System.Drawing.Point(113, 36);
+            this.cbProvincia.Location = new System.Drawing.Point(110, 36);
             this.cbProvincia.Name = "cbProvincia";
             this.cbProvincia.Size = new System.Drawing.Size(206, 21);
             this.cbProvincia.TabIndex = 9;
@@ -428,7 +428,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(353, 479);
+            this.ClientSize = new System.Drawing.Size(355, 479);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAceptar);

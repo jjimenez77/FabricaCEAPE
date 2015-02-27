@@ -44,6 +44,7 @@
             System.Windows.Forms.Label unidadPorCajaLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label pesoNetoLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarControlPCC));
             this.controlPCCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colorFormaOlorCheckBox = new System.Windows.Forms.CheckBox();
             this.densidadTextBox = new System.Windows.Forms.TextBox();
@@ -210,6 +211,15 @@
             nombreLabel.Size = new System.Drawing.Size(53, 13);
             nombreLabel.TabIndex = 33;
             nombreLabel.Text = "Producto:";
+            // 
+            // pesoNetoLabel1
+            // 
+            pesoNetoLabel1.AutoSize = true;
+            pesoNetoLabel1.Location = new System.Drawing.Point(13, 70);
+            pesoNetoLabel1.Name = "pesoNetoLabel1";
+            pesoNetoLabel1.Size = new System.Drawing.Size(60, 13);
+            pesoNetoLabel1.TabIndex = 37;
+            pesoNetoLabel1.Text = "Peso Neto:";
             // 
             // controlPCCBindingSource
             // 
@@ -391,16 +401,9 @@
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // pesoNetoLabel1
-            // 
-            pesoNetoLabel1.AutoSize = true;
-            pesoNetoLabel1.Location = new System.Drawing.Point(13, 70);
-            pesoNetoLabel1.Name = "pesoNetoLabel1";
-            pesoNetoLabel1.Size = new System.Drawing.Size(60, 13);
-            pesoNetoLabel1.TabIndex = 37;
-            pesoNetoLabel1.Text = "Peso Neto:";
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // pesoNetoTextBox
             // 
@@ -412,9 +415,11 @@
             // 
             // FrmEditarControlPCC
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(383, 486);
             this.Controls.Add(pesoNetoLabel1);
             this.Controls.Add(this.pesoNetoTextBox);

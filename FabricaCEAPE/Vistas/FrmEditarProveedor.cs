@@ -197,6 +197,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del proveedor";
 
                 errorProvider1.SetError(nombreTextBox, error);
@@ -206,6 +207,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreDeContactoTextBox.Text))
             {
+                nombreDeContactoTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de contacto";
 
                 errorProvider1.SetError(nombreDeContactoTextBox, error);
@@ -214,6 +216,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(cuitTextBox.Text))
             {
+                cuitTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de CUIL/CUIT";
 
                 errorProvider1.SetError(cuitTextBox, error);
@@ -222,6 +225,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(numeroTelefonoTextBox.Text))
             {
+                numeroTelefonoTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de telefono";
 
                 errorProvider1.SetError(numeroTelefonoTextBox, error);
@@ -230,6 +234,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(numeroCelularTextBox.Text))
             {
+                numeroCelularTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de celular";
 
                 errorProvider1.SetError(numeroCelularTextBox, error);
@@ -238,6 +243,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(correoElectronicoTextBox.Text))
             {
+                correoElectronicoTextBox.BackColor = Color.White;
                 error = "Ingrese el correo electronico";
 
                 errorProvider1.SetError(correoElectronicoTextBox, error);
@@ -258,6 +264,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(direccionTextBox.Text)) //verifica si es nulo o vacio, verifica si es nullo o espacio
             {
+                direccionTextBox.BackColor = Color.White;
                 error = "Ingrese la direccion";
 
                 errorProvider1.SetError(direccionTextBox, error);
@@ -280,7 +287,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumeroPunto(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del proveedor";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosProveedor.existeProveedorN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
+            else if (DatosProveedor.existeNombre(nombreTextBox.Text))
+            {
+                nombreTextBox.BackColor = Color.White;
+                error = "El nombre de proveedor ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -329,6 +348,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadena(nombreDeContactoTextBox))
             {
+                nombreDeContactoTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre contacto";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -371,7 +391,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(cuitTextBox))
             {
+                cuitTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de CUIL/CUIT";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosProveedor.existeProveedorC(id, cuitTextBox.Text))
+            {
+                errorProvider1.SetError(cuitTextBox, String.Empty);
+            }
+            else if (DatosProveedor.existeC(cuitTextBox.Text))
+            {
+                cuitTextBox.BackColor = Color.White;
+                error = "El numero de CUIL/CUIT ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -416,7 +448,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esTelefono(numeroTelefonoTextBox))
             {
+                numeroTelefonoTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de telefono";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosProveedor.existeProveedorNT(id, numeroTelefonoTextBox.Text))
+            {
+                errorProvider1.SetError(numeroTelefonoTextBox, String.Empty);
+            }
+            else if (DatosProveedor.existeNumeroTelefono(numeroTelefonoTextBox.Text))
+            {
+                numeroTelefonoTextBox.BackColor = Color.White;
+                error = "El numero de telefono ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -458,7 +502,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esEmail(correoElectronicoTextBox))
             {
+                correoElectronicoTextBox.BackColor = Color.White;
                 error = "Ingrese el correo electronico";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosProveedor.existeProveedorCO(id, correoElectronicoTextBox.Text))
+            {
+                errorProvider1.SetError(correoElectronicoTextBox, String.Empty);
+            }
+            else if (DatosProveedor.existeCorreoE(correoElectronicoTextBox.Text))
+            {
+                correoElectronicoTextBox.BackColor = Color.White;
+                error = "El correo electronico ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -488,7 +544,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esTelefono(numeroCelularTextBox))
             {
+                numeroCelularTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de celular";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosProveedor.existeProveedorNC(id, numeroCelularTextBox.Text))
+            {
+                errorProvider1.SetError(numeroCelularTextBox, String.Empty);
+            }
+            else if (DatosProveedor.existeNumeroCelular(numeroCelularTextBox.Text))
+            {
+                numeroCelularTextBox.BackColor = Color.White;
+                error = "El numero de celular ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -555,6 +623,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumeroPunto(direccionTextBox) || direccionTextBox.Text.Trim() == String.Empty)
             {
+                direccionTextBox.BackColor = Color.White;
                 error = "Ingrese la direccion";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);

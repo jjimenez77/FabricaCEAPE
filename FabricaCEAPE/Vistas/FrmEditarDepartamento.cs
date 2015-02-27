@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Datos
 {
     public partial class FrmEditarDepartamento : Form
     {
+        int id;
         public FrmEditarDepartamento(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 departamentoBindingSource.Add(new Departamento());
@@ -74,6 +75,7 @@ namespace FabricaCEAPE.Datos
 
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del departamento";
 
                 errorProvider1.SetError(nombreTextBox, error);
@@ -88,12 +90,18 @@ namespace FabricaCEAPE.Datos
             string error = null;
             if (!Validacion.esCadena(nombreTextBox))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del departamento";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosDepartamento.existeDepartamentoN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
             else if (DatosDepartamento.existe(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "El departamento ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);

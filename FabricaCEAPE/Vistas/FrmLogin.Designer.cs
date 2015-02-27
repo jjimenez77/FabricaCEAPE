@@ -34,9 +34,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.error = new System.Windows.Forms.Label();
+            this.txtContrasena = new wmgCMS.WaterMarkTextBox();
+            this.txtUsuario = new wmgCMS.WaterMarkTextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -73,7 +73,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(143, 153);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -83,25 +83,10 @@
             this.btnAceptar.Location = new System.Drawing.Point(224, 153);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 7;
+            this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(82, 52);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(217, 20);
-            this.txtUsuario.TabIndex = 3;
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.Location = new System.Drawing.Point(82, 92);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '#';
-            this.txtContrasena.Size = new System.Drawing.Size(217, 20);
-            this.txtContrasena.TabIndex = 5;
             // 
             // error
             // 
@@ -112,6 +97,26 @@
             this.error.Size = new System.Drawing.Size(0, 13);
             this.error.TabIndex = 8;
             // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtContrasena.Location = new System.Drawing.Point(82, 89);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(214, 20);
+            this.txtContrasena.TabIndex = 1;
+            this.txtContrasena.WaterMarkColor = System.Drawing.Color.Gray;
+            this.txtContrasena.WaterMarkText = "Contraseña";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtUsuario.Location = new System.Drawing.Point(82, 49);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(214, 20);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.WaterMarkColor = System.Drawing.Color.Gray;
+            this.txtUsuario.WaterMarkText = "Usuario";
+            // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnAceptar;
@@ -120,9 +125,9 @@
             this.AutoSize = true;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(311, 188);
-            this.Controls.Add(this.error);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.error);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label3);
@@ -147,8 +152,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label error;
+        private wmgCMS.WaterMarkTextBox txtUsuario;
+        private wmgCMS.WaterMarkTextBox txtContrasena;
     }
 }

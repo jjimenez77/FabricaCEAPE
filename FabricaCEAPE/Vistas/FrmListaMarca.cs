@@ -20,22 +20,7 @@ namespace FabricaCEAPE.Vistas
 
             this.txtBuscar.Focus();
 
-            Actualizar();
-
-            //ScrollableControl ctl = dtgMarcas.Controls;
-
-            //if (dtgMarcas.VerticalScrollingOffset > dtgMarcas..width(DataGridViewElementStates.Visible))
-
-            //{
-            //dtgMarcas.Width = dtgMarcas.colum.Width;
-            //}
-
-           // VScrollBar vb = sender as VScrollBar;
-
-            //DataGridViewColumn column = dtgMarcas.Columns[0];
-            ////column.Width = 200;
-            //dtgMarcas.Width = 200 + column.Width;
-
+            Actualizar();     
         }
 
         private void Actualizar()

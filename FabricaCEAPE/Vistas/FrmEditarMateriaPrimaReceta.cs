@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarMateriaPrimaReceta : Form
     {
+        int id;
         public FrmEditarMateriaPrimaReceta(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 materiaPrimaRecetaBindingSource.Add(new MateriaPrimaReceta());
@@ -73,6 +74,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreWaterMarkTextBox.Text))
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de la materia prima";
 
                 errorProvider1.SetError(nombreWaterMarkTextBox, error);
@@ -112,12 +114,18 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumeroPunto(nombreWaterMarkTextBox) || nombreWaterMarkTextBox.Text.Trim() == String.Empty)
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de la materia prima";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosMateriaPrimaReceta.existeMateriaPrimaRecetaN(id, nombreWaterMarkTextBox.Text))
+            {
+                errorProvider1.SetError(nombreWaterMarkTextBox, String.Empty);
+            }
             else if (DatosMateriaPrimaReceta.existe(nombreWaterMarkTextBox.Text))
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "La materia prima ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);

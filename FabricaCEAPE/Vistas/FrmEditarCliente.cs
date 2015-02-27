@@ -264,6 +264,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumeroPunto(nombreWaterMarkTextBox) || nombreWaterMarkTextBox.Text.Trim() == String.Empty)
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del cliente";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -280,6 +281,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadena(nombreDeContactoWaterMarkTextBox))
             {
+                nombreDeContactoWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de contacto";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -351,7 +353,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(cuitWaterMarkTextBox))
             {
+                cuitWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de CUIL/CUIT";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosCliente.existeClienteC(id, cuitWaterMarkTextBox.Text))
+            {
+                errorProvider1.SetError(cuitWaterMarkTextBox, String.Empty);
+            }
+            else if (DatosCliente.existeC(cuitWaterMarkTextBox.Text))
+            {
+                cuitWaterMarkTextBox.BackColor = Color.White;
+                error = "El numero de CUIL/CUIT ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -393,7 +407,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esTelefono(numeroTelefonoWaterMarkTextBox))
             {
+                numeroTelefonoWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de telefono";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosCliente.existeClienteNT(id, numeroTelefonoWaterMarkTextBox.Text))
+            {
+                errorProvider1.SetError(numeroTelefonoWaterMarkTextBox, String.Empty);
+            }
+            else if (DatosCliente.existeNumeroTelefono(numeroTelefonoWaterMarkTextBox.Text))
+            {
+                numeroTelefonoWaterMarkTextBox.BackColor = Color.White;
+                error = "El numero de telefono ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -409,7 +435,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esTelefono(numeroCelularWaterMarkTextBox))
             {
+                numeroCelularWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de celular";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosCliente.existeClienteNC(id, numeroCelularWaterMarkTextBox.Text))
+            {
+                errorProvider1.SetError(numeroCelularWaterMarkTextBox, String.Empty);
+            }
+            else if (DatosCliente.existeNumeroCelular(numeroCelularWaterMarkTextBox.Text))
+            {
+                numeroCelularWaterMarkTextBox.BackColor = Color.White;
+                error = "El numero de celular ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -427,7 +465,6 @@ namespace FabricaCEAPE.Vistas
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
             }
-
             else if (Char.IsSeparator(e.KeyChar))
             {
                 e.Handled = true;
@@ -439,7 +476,19 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esEmail(correoElectronicoWaterMarkTextBox))
             {
+                correoElectronicoWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el correo electronico";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosCliente.existeClienteCO(id, correoElectronicoWaterMarkTextBox.Text))
+            {
+                errorProvider1.SetError(correoElectronicoWaterMarkTextBox, String.Empty);
+            }
+            else if (DatosCliente.existeCorreoE(correoElectronicoWaterMarkTextBox.Text))
+            {
+                correoElectronicoWaterMarkTextBox.BackColor = Color.White;
+                error = "El correo electronico ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -488,6 +537,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumeroPunto(direccionWaterMarkTextBox) || direccionWaterMarkTextBox.Text.Trim() == String.Empty)
             {
+                direccionWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese la direccion";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -533,6 +583,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreWaterMarkTextBox.Text))
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del cliente";
 
                 errorProvider1.SetError(nombreWaterMarkTextBox, error);
@@ -541,6 +592,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreDeContactoWaterMarkTextBox.Text))
             {
+                nombreDeContactoWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de contacto";
 
                 errorProvider1.SetError(nombreDeContactoWaterMarkTextBox, error);
@@ -549,6 +601,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(cuitWaterMarkTextBox.Text))
             {
+                cuitWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de CUIL/CUIT";
 
                 errorProvider1.SetError(cuitWaterMarkTextBox, error);
@@ -557,6 +610,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(numeroTelefonoWaterMarkTextBox.Text))
             {
+                numeroTelefonoWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de telefono";
 
                 errorProvider1.SetError(numeroTelefonoWaterMarkTextBox, error);
@@ -565,6 +619,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(numeroCelularWaterMarkTextBox.Text))
             {
+                numeroCelularWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el numero de celular";
 
                 errorProvider1.SetError(numeroCelularWaterMarkTextBox, error);
@@ -573,6 +628,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(correoElectronicoWaterMarkTextBox.Text))
             {
+                correoElectronicoWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el correo electronico";
 
                 errorProvider1.SetError(correoElectronicoWaterMarkTextBox, error);
@@ -593,6 +649,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(direccionWaterMarkTextBox.Text)) //verifica si es nulo o vacio, verifica si es nullo o espacio
             {
+                direccionWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese la direccion";
 
                 errorProvider1.SetError(direccionWaterMarkTextBox, error);

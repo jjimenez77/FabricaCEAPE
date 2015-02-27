@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.localidadDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.localidadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menu = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
@@ -42,8 +44,6 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.cbProvincia = new System.Windows.Forms.ToolStripComboBox();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.localidadDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localidadBindingSource)).BeginInit();
             this.menu.SuspendLayout();
@@ -65,6 +65,7 @@
             this.dataGridViewTextBoxColumn4});
             this.localidadDataGridView.DataSource = this.localidadBindingSource;
             this.localidadDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.localidadDataGridView.MultiSelect = false;
             this.localidadDataGridView.Name = "localidadDataGridView";
             this.localidadDataGridView.ReadOnly = true;
             this.localidadDataGridView.RowHeadersVisible = false;
@@ -73,6 +74,23 @@
             this.localidadDataGridView.StandardTab = true;
             this.localidadDataGridView.TabIndex = 1;
             this.localidadDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.localidadDataGridView_CellDoubleClick);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Provincia";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Provincia";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 130;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // localidadBindingSource
             // 
@@ -176,23 +194,6 @@
             this.cbProvincia.Size = new System.Drawing.Size(206, 25);
             this.cbProvincia.ToolTipText = "Provincias";
             this.cbProvincia.DropDownClosed += new System.EventHandler(this.cbProvincia_DropDownClosed_1);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Provincia";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Provincia";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 130;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // FrmListaLocalidad
             // 

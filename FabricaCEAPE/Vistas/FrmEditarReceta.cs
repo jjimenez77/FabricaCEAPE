@@ -16,6 +16,7 @@ namespace FabricaCEAPE.Vistas
     {
         int id;
         bool crearModificar; //crear = true //modificar = false
+        bool seleccionaProducto = false;
         public FrmEditarReceta(int id, bool crearModificar) //
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace FabricaCEAPE.Vistas
                 recetaBindingSource.Add(DatosReceta.getReceta(id));
 
                 cbProducto.SelectedItem = ((Receta)recetaBindingSource.Current).Producto;
-                cbProducto.SelectedItem = ((Receta)recetaBindingSource.Current).Producto.IdProducto;
+                cbProducto.SelectedValue = ((Receta)recetaBindingSource.Current).Producto.IdProducto;
 
                 Receta r = (Receta)recetaBindingSource.Current;
 
@@ -175,6 +176,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(observacionesTextBox))
             {
+                observacionesTextBox.BackColor = Color.White;
                 error = "Ingrese alguna observacion";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -191,6 +193,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(tiempoTextBox))
             {
+                tiempoTextBox.BackColor = Color.White;
                 error = "Ingrese el tiempo recomendado";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -207,6 +210,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(temperaturaTextBox))
             {
+                temperaturaTextBox.BackColor = Color.White;
                 error = "Ingrese la temperatura recomendada";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -223,6 +227,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumero(otrosTextBox))
             {
+                otrosTextBox.BackColor = Color.White;
                 error = "Ingrese alguna observacion extra";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -272,16 +277,36 @@ namespace FabricaCEAPE.Vistas
             bool resultados = true;
             string error = null;
 
-            if (DatosReceta.existe((int)cbProducto.SelectedValue))
+            //if (seleccionaProducto == false)
+            //{
+            //    error = "Seleccione un producto";
+            //    errorProvider1.SetError(cbProducto, error);
+            //    resultados = false;
+            //}
+            //else
+            //{
+            //    errorProvider1.SetError(cbProducto, String.Empty);
+            //}
+
+            if (DatosReceta.existeReceta(id, (int)cbProducto.SelectedValue))
+            {
+                errorProvider1.SetError(cbProducto, String.Empty);
+            }
+            else if (DatosReceta.existe((int)cbProducto.SelectedValue))
             {
                 error = "Ya existe una receta para este producto";
 
                 errorProvider1.SetError(cbProducto, error);
                 resultados = false;
             }
+            else
+            {
+                errorProvider1.SetError(cbProducto, String.Empty);
+            }
 
             if (string.IsNullOrEmpty(observacionesTextBox.Text))
             {
+                observacionesTextBox.BackColor = Color.White;
                 error = "Ingrese alguna observacion";
 
                 errorProvider1.SetError(observacionesTextBox, error);
@@ -290,6 +315,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(tiempoTextBox.Text))
             {
+                tiempoTextBox.BackColor = Color.White;
                 error = "Ingrese el tiempo recomendado";
 
                 errorProvider1.SetError(tiempoTextBox, error);
@@ -298,6 +324,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(temperaturaTextBox.Text))
             {
+                temperaturaTextBox.BackColor = Color.White;
                 error = "Ingrese la temperatura recomendada";
 
                 errorProvider1.SetError(temperaturaTextBox, error);
@@ -306,6 +333,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(otrosTextBox.Text))
             {
+                otrosTextBox.BackColor = Color.White;
                 error = "Ingrese alguna otra observacion";
 
                 errorProvider1.SetError(otrosTextBox, error);
@@ -382,10 +410,16 @@ namespace FabricaCEAPE.Vistas
 
         private void cbProducto_DropDownClosed(object sender, EventArgs e)
         {
-            if (DatosReceta.existe((int)cbProducto.SelectedValue))
+            //seleccionaProducto = true;
+
+            if (DatosReceta.existeReceta(id, (int)cbProducto.SelectedValue))
             {
-                errorProvider1.SetError(cbProducto, "Ya existe una receta para este producto");
+                errorProvider1.SetError(cbProducto, String.Empty);
             }
+            else if (DatosReceta.existe((int)cbProducto.SelectedValue))
+            {
+                errorProvider1.SetError(cbProducto, "Ya existe una receta sdasdsadpara este producto");
+            }   
             else
             {
                 errorProvider1.SetError(cbProducto, String.Empty);

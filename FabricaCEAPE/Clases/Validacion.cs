@@ -36,7 +36,7 @@ namespace FabricaCEAPE.Clases
 
         public static bool esCadenaNumeroPunto(Control mitextbox)
         {
-            Regex regex = new Regex(@"^[a-zA-Z0-9\s\,\.\''\-]*$");
+            Regex regex = new Regex(@"^{3,}[a-zA-Z0-9\s\,\.\''\-]*$");
             return regex.IsMatch(mitextbox.Text);
         }
 

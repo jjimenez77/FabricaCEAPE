@@ -20,7 +20,6 @@ namespace FabricaCEAPE.Vistas
             InitializeComponent();
             paisBindingSource.DataSource = DatosPais.getPaises();
             this.id = id;
-
             if (id == 0)
             {
                 ActualizarCB();
@@ -107,8 +106,9 @@ namespace FabricaCEAPE.Vistas
         private void nombreTextBox_Validating(object sender, CancelEventArgs e)
         {
             string error = null;
-            if (!Validacion.esCadenaNumeroPunto(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
+            if (!Validacion.esCadena(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de la localidad";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -152,17 +152,28 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de la localidad";
 
                 errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
-
-            if (cbProvincia.SelectedIndex < 0)
+            else if (DatosLocalidad.existeLocalidadN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
+            else if (cbProvincia.SelectedIndex < 0)
             {
                 error = "Seleccione la provincia";
 
                 errorProvider1.SetError(cbProvincia, error);
+                resultados = false;
+            }
+            else if (DatosLocalidad.existe(nombreTextBox.Text, (int)cbProvincia.SelectedValue))
+            {
+                nombreTextBox.BackColor = Color.White;
+                error = "La localidad ya existe en la provincia seleccionada";
+                errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
 

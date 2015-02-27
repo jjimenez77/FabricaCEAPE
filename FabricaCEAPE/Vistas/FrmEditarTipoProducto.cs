@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarTipoProducto : Form
     {
+        int id;
         public FrmEditarTipoProducto(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 tipoProductoBindingSource.Add(new TipoProducto());
@@ -97,12 +98,18 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadenaNumeroPunto(nombreWaterMarkTextBox) || nombreWaterMarkTextBox.Text.Trim() == String.Empty)
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del tipo de producto";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosTipoProducto.existeProductoN(id, nombreWaterMarkTextBox.Text))
+            {
+                errorProvider1.SetError(nombreWaterMarkTextBox, String.Empty);
+            }
             else if (DatosTipoProducto.existe(nombreWaterMarkTextBox.Text))
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "El tipo de producto ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -121,6 +128,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreWaterMarkTextBox.Text))
             {
+                nombreWaterMarkTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del tipo de productos";
 
                 errorProvider1.SetError(nombreWaterMarkTextBox, error);

@@ -198,7 +198,7 @@
             this.fechaInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.proveedorBindingSource, "FechaInicio", true));
             this.fechaInicioDateTimePicker.Location = new System.Drawing.Point(126, 197);
             this.fechaInicioDateTimePicker.Name = "fechaInicioDateTimePicker";
-            this.fechaInicioDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaInicioDateTimePicker.Size = new System.Drawing.Size(206, 20);
             this.fechaInicioDateTimePicker.TabIndex = 7;
             this.fechaInicioDateTimePicker.DropDown += new System.EventHandler(this.fechaInicioDateTimePicker_DropDown);
             // 
@@ -210,7 +210,7 @@
             this.cbPais.FormattingEnabled = true;
             this.cbPais.Location = new System.Drawing.Point(109, 9);
             this.cbPais.Name = "cbPais";
-            this.cbPais.Size = new System.Drawing.Size(200, 21);
+            this.cbPais.Size = new System.Drawing.Size(206, 21);
             this.cbPais.TabIndex = 9;
             this.cbPais.ValueMember = "Id";
             this.cbPais.DropDownClosed += new System.EventHandler(this.cbPais_DropDownClosed);
@@ -222,7 +222,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(258, 434);
+            this.btnAceptar.Location = new System.Drawing.Point(268, 434);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 13;
@@ -235,7 +235,7 @@
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.CausesValidation = false;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(177, 434);
+            this.btnCancelar.Location = new System.Drawing.Point(187, 434);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 12;
@@ -251,7 +251,7 @@
             this.cbProvincia.FormattingEnabled = true;
             this.cbProvincia.Location = new System.Drawing.Point(109, 36);
             this.cbProvincia.Name = "cbProvincia";
-            this.cbProvincia.Size = new System.Drawing.Size(200, 21);
+            this.cbProvincia.Size = new System.Drawing.Size(207, 21);
             this.cbProvincia.TabIndex = 10;
             this.cbProvincia.ValueMember = "Id";
             this.cbProvincia.DropDownClosed += new System.EventHandler(this.cbProvincia_DropDownClosed);
@@ -268,7 +268,7 @@
             this.cbLocalidad.FormattingEnabled = true;
             this.cbLocalidad.Location = new System.Drawing.Point(109, 63);
             this.cbLocalidad.Name = "cbLocalidad";
-            this.cbLocalidad.Size = new System.Drawing.Size(200, 21);
+            this.cbLocalidad.Size = new System.Drawing.Size(206, 21);
             this.cbLocalidad.TabIndex = 11;
             this.cbLocalidad.ValueMember = "Id";
             this.cbLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.cbLocalidad_Validating);
@@ -283,7 +283,7 @@
             this.nombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.nombreTextBox.Location = new System.Drawing.Point(126, 41);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(206, 20);
             this.nombreTextBox.TabIndex = 1;
             this.nombreTextBox.WaterMarkColor = System.Drawing.Color.Gray;
             this.nombreTextBox.WaterMarkText = "La Serenisima";
@@ -296,7 +296,7 @@
             this.cuitTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cuitTextBox.Location = new System.Drawing.Point(126, 93);
             this.cuitTextBox.Name = "cuitTextBox";
-            this.cuitTextBox.Size = new System.Drawing.Size(200, 20);
+            this.cuitTextBox.Size = new System.Drawing.Size(206, 20);
             this.cuitTextBox.TabIndex = 3;
             this.cuitTextBox.WaterMarkColor = System.Drawing.Color.Gray;
             this.cuitTextBox.WaterMarkText = "94628298";
@@ -309,7 +309,7 @@
             this.nombreDeContactoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.nombreDeContactoTextBox.Location = new System.Drawing.Point(126, 67);
             this.nombreDeContactoTextBox.Name = "nombreDeContactoTextBox";
-            this.nombreDeContactoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombreDeContactoTextBox.Size = new System.Drawing.Size(206, 20);
             this.nombreDeContactoTextBox.TabIndex = 2;
             this.nombreDeContactoTextBox.WaterMarkColor = System.Drawing.Color.Gray;
             this.nombreDeContactoTextBox.WaterMarkText = "Juan Martinez";
@@ -322,7 +322,7 @@
             this.numeroTelefonoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.numeroTelefonoTextBox.Location = new System.Drawing.Point(126, 119);
             this.numeroTelefonoTextBox.Name = "numeroTelefonoTextBox";
-            this.numeroTelefonoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.numeroTelefonoTextBox.Size = new System.Drawing.Size(206, 20);
             this.numeroTelefonoTextBox.TabIndex = 4;
             this.numeroTelefonoTextBox.WaterMarkColor = System.Drawing.Color.Gray;
             this.numeroTelefonoTextBox.WaterMarkText = "3434916604";
@@ -335,7 +335,7 @@
             this.numeroCelularTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.numeroCelularTextBox.Location = new System.Drawing.Point(126, 145);
             this.numeroCelularTextBox.Name = "numeroCelularTextBox";
-            this.numeroCelularTextBox.Size = new System.Drawing.Size(200, 20);
+            this.numeroCelularTextBox.Size = new System.Drawing.Size(206, 20);
             this.numeroCelularTextBox.TabIndex = 5;
             this.numeroCelularTextBox.WaterMarkColor = System.Drawing.Color.Gray;
             this.numeroCelularTextBox.WaterMarkText = "3434916633";
@@ -348,7 +348,7 @@
             this.correoElectronicoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.correoElectronicoTextBox.Location = new System.Drawing.Point(126, 171);
             this.correoElectronicoTextBox.Name = "correoElectronicoTextBox";
-            this.correoElectronicoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.correoElectronicoTextBox.Size = new System.Drawing.Size(206, 20);
             this.correoElectronicoTextBox.TabIndex = 6;
             this.correoElectronicoTextBox.WaterMarkColor = System.Drawing.Color.Gray;
             this.correoElectronicoTextBox.WaterMarkText = "nombre@sitio.com";
@@ -361,7 +361,7 @@
             this.direccionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.direccionTextBox.Location = new System.Drawing.Point(126, 223);
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(200, 20);
+            this.direccionTextBox.Size = new System.Drawing.Size(206, 20);
             this.direccionTextBox.TabIndex = 8;
             this.direccionTextBox.WaterMarkColor = System.Drawing.Color.Gray;
             this.direccionTextBox.WaterMarkText = "25 de Mayo 493";
@@ -384,7 +384,7 @@
             this.groupBox4.Controls.Add(this.cbLocalidad);
             this.groupBox4.Location = new System.Drawing.Point(17, 249);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(327, 85);
+            this.groupBox4.Size = new System.Drawing.Size(335, 87);
             this.groupBox4.TabIndex = 59;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Localidad";
@@ -395,8 +395,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(345, 469);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(355, 469);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.direccionTextBox);
             this.Controls.Add(this.correoElectronicoTextBox);

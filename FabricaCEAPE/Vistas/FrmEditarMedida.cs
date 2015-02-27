@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarZona : Form
     {
+        int id;
         public FrmEditarZona(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 medidaBindingSource.Add(new Medida());
@@ -101,6 +102,17 @@ namespace FabricaCEAPE.Vistas
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosMedida.existeMedidaN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
+            else if (DatosMedida.existeN(nombreTextBox.Text))
+            {
+                nombreTextBox.BackColor = Color.White;
+                error = "La medida ya existe";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
             else
             {
                 nombreTextBox.BackColor = colorOk;
@@ -139,6 +151,17 @@ namespace FabricaCEAPE.Vistas
             if (!Validacion.esCadena(abreviacionTextBox))
             {
                 error = "Ingrese la abreviacion de la medida";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
+            }
+            else if (DatosMedida.existeMedidaA(id, abreviacionTextBox.Text))
+            {
+                errorProvider1.SetError(abreviacionTextBox, String.Empty);
+            }
+            else if (DatosMedida.existeA(abreviacionTextBox.Text))
+            {
+                abreviacionTextBox.BackColor = Color.White;
+                error = "La abreviacion ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }

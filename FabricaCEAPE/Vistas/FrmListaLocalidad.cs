@@ -81,8 +81,8 @@ namespace FabricaCEAPE.Vistas
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 Localidad l = (Localidad)localidadBindingSource.Current;
                 if (!DatosLocalidad.enUso(l.Id))
                 {
@@ -98,11 +98,11 @@ namespace FabricaCEAPE.Vistas
                 {
                     MessageBox.Show("El objeto seleccionado no puede ser eliminado");
                 }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("No seleccionó nada");
-            //}
+            }
+            catch
+            {
+                MessageBox.Show("No seleccionó nada");
+            }
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)

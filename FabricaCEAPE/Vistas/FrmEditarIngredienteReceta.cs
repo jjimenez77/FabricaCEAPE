@@ -15,10 +15,12 @@ namespace FabricaCEAPE.Vistas
     public partial class FrmEditarIngredienteReceta : Form
     {
         int idReceta;
+        int id;
         public FrmEditarIngredienteReceta(int id, int idReceta)
         {
             InitializeComponent();
             this.idReceta = idReceta;
+            this.id = id;
             medidaBindingSource.DataSource = DatosMedida.getMedidas();
             materiaPrimaRecetaBindingSource.DataSource = DatosMateriaPrimaReceta.getMateriaPrimaRecetas();
 
@@ -79,11 +81,6 @@ namespace FabricaCEAPE.Vistas
             {
                 MessageBox.Show("Complete todos los campos");
             }
-        }
-
-        private void nombreLabel_Click(object sender, EventArgs e)
-        {
-
         }
 
         Color colorOk = (Color)((new ColorConverter()).ConvertFromString("#bbda68"));
@@ -183,6 +180,22 @@ namespace FabricaCEAPE.Vistas
             bool resultados = true;
             string error = null;
 
+            if (DatosIngredienteReceta.existeIngrediente(id, idReceta, (int)cbMateriaPrimaReceta.SelectedValue))
+            {
+                errorProvider1.SetError(cbMateriaPrimaReceta, String.Empty);
+            }
+            else if (DatosIngredienteReceta.existe(idReceta, (int)cbMateriaPrimaReceta.SelectedValue))
+            {
+                error = "Ya existe el ingrediente";
+
+                errorProvider1.SetError(cbMateriaPrimaReceta, error);
+                resultados = false;
+            }
+            else
+            {
+                errorProvider1.SetError(cbMateriaPrimaReceta, String.Empty);
+            }
+
             if (string.IsNullOrEmpty(textBox2.Text))
             {
                 error = "Ingrese la descripcion del ingrediente";
@@ -199,6 +212,22 @@ namespace FabricaCEAPE.Vistas
                 resultados = false;
             }
             return resultados;
+        }
+
+        private void cbMateriaPrimaReceta_DropDownClosed(object sender, EventArgs e)
+        {
+            if (DatosIngredienteReceta.existeIngrediente(id, idReceta, (int)cbMateriaPrimaReceta.SelectedValue))
+            {
+                errorProvider1.SetError(cbMateriaPrimaReceta, String.Empty);
+            }
+            else if (DatosIngredienteReceta.existe(idReceta, (int)cbMateriaPrimaReceta.SelectedValue))
+            {
+                errorProvider1.SetError(cbMateriaPrimaReceta, "Ya existe el ingrediente");
+            }
+            else
+            {
+                errorProvider1.SetError(cbMateriaPrimaReceta, String.Empty);
+            }
         }
     }
 }

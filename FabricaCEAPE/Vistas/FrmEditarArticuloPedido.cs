@@ -84,6 +84,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadena(nombreTextBox))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del articulo";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -125,6 +126,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esCadena(descripcionTextBox))
             {
+                descripcionTextBox.BackColor = Color.White;
                 error = "Ingrese la descripcion del articulo";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -174,6 +176,7 @@ namespace FabricaCEAPE.Vistas
             string error = null;
             if (!Validacion.esNumero(cantidadTextBox) || cantidadTextBox.Text == "0")
             {
+                cantidadTextBox.BackColor = Color.White;
                 error = "Ingrese la cantidad";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -217,6 +220,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del articulo";
 
                 errorProvider1.SetError(nombreTextBox, error);
@@ -225,6 +229,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(descripcionTextBox.Text))
             {
+                descripcionTextBox.BackColor = Color.White;
                 error = "Ingrese la descripcion del articulo";
 
                 errorProvider1.SetError(descripcionTextBox, error);
@@ -233,6 +238,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(cantidadTextBox.Text) || cantidadTextBox.Text == "0")
             {
+                cantidadTextBox.BackColor = Color.White;
                 error = "Ingrese la cantidad";
 
                 errorProvider1.SetError(cantidadTextBox, error);

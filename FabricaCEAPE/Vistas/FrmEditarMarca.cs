@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarMarca : Form
     {
+        int id;
         public FrmEditarMarca(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 marcaBindingSource.Add(new Marca());
@@ -85,15 +86,21 @@ namespace FabricaCEAPE.Vistas
         private void nombreTextBox_Validating(object sender, CancelEventArgs e)
         {
             string error = null;
-            if (!Validacion.esCadenaNumeroPunto(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
+            if (!Validacion.esCadena(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre de la marca";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosMarca.existeMarca(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
             else if (DatosMarca.existe(nombreTextBox.Text))
             {
-                error = "El marca ya existe";
+                nombreTextBox.BackColor = Color.White;
+                error = "La marca ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }

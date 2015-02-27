@@ -159,6 +159,7 @@ namespace FabricaCEAPE.Vistas
         {
             if (Validacion.esNumero(waterMarkTextBox1))
             {
+                waterMarkTextBox1.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox1, String.Empty);
             }
             else
@@ -174,6 +175,7 @@ namespace FabricaCEAPE.Vistas
 
             if (string.IsNullOrEmpty(waterMarkTextBox1.Text))
             {
+                waterMarkTextBox1.BackColor = Color.White;
                 errorProvider1.SetError(waterMarkTextBox1, "El ingreso de cajas es obligatorio");
                 result = false;
             }

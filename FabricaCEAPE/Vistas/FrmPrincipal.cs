@@ -16,42 +16,12 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmPrincipal : Form
     {
-        private int childFormNumber = 0;
-
+        Usuario u = DatosUsuario.getUsuarioPorLogin(GlobalClass.GlobalVar);        
         public FrmPrincipal()
         {
             InitializeComponent();
-            Usuario u = DatosUsuario.getUsuarioPorLogin(GlobalClass.GlobalVar);
-
-            label1.Text = u.Nombre + " " + u.Apellido;
-
-            if (u.TipoUsuario)
-                label2.Text = "Administrador";
-            else
-                label2.Text = "Moderado";
-
-            if (u.Sexo)
-                label3.Text = "Masculino";
-            else
-                label3.Text = "Femenino";
-
-            label4.Text = u.FechaNacimiento.ToShortDateString();
-
-            label5.Text = u.NumeroTelefono;
-
-            label6.Text = String.Format("{0:(###) ###-####}", Convert.ToInt64(u.NumeroCelular));
-
-            label7.Text = u.CorreoElectronico;
-
-            label8.Text = u.CorreoElectronicoAlternativo;
-
-            label9.Text = u.TipoDocumento + " " + u.NumeroDocumento;
-
-            label11.Text = u.Direccion + " - " + u.Localidad.Nombre;
-
-            label12.Text = u.Departamento.Nombre;
-
-            label13.Text = u.Login.Usuario;
+            ///Usuario u = DatosUsuario.getUsuarioPorLogin(GlobalClass.GlobalVar);
+            usuarioBindingSource.Add(DatosUsuario.getUsuario(u.Id));
 
             //Tipo de usuario botones a mostrar
             if (u.TipoUsuario)
@@ -84,7 +54,7 @@ namespace FabricaCEAPE.Vistas
                 btnProductoTerminado.Visible = true;
                 btnProducto.Visible = true;
                 btnTipoProducto.Visible = true;
-                toolStripSeparator4.Visible = true;
+                toolStripSeparator3.Visible = true;
                 //
                 //producto terminado
                 btnCliente.Visible = true;
@@ -99,7 +69,6 @@ namespace FabricaCEAPE.Vistas
             else
             {
                 this.Text = u.Login.Usuario + " - " + u.Departamento.Nombre + " :: Sistema CEAPE";
-
                 //Botones de materia prima
                 if (u.Departamento.Id == 1)
                 {
@@ -131,7 +100,7 @@ namespace FabricaCEAPE.Vistas
                     btnProductoTerminado.Visible = false;
                     btnProducto.Visible = false;
                     btnTipoProducto.Visible = false;
-                    toolStripSeparator4.Visible = false;
+                    toolStripSeparator3.Visible = false;
                     //
                     //producto terminado
                     btnCliente.Visible = false;
@@ -172,7 +141,7 @@ namespace FabricaCEAPE.Vistas
                     btnProductoTerminado.Visible = true;
                     btnProducto.Visible = true;
                     btnTipoProducto.Visible = true;
-                    toolStripSeparator4.Visible = true;
+                    toolStripSeparator3.Visible = false;
                     //
                     //producto terminado
                     btnCliente.Visible = false;
@@ -213,7 +182,7 @@ namespace FabricaCEAPE.Vistas
                     btnProductoTerminado.Visible = false;
                     btnProducto.Visible = false;
                     btnTipoProducto.Visible = false;
-                    toolStripSeparator4.Visible = false;
+                    toolStripSeparator3.Visible = false;
                     //
                     //producto terminado
                     btnCliente.Visible = true;
@@ -221,8 +190,7 @@ namespace FabricaCEAPE.Vistas
                     btnSalidaStock.Visible = true;
                     btnEntradaStock.Visible = true;
                     btnDespachoStock.Visible = true;
-                                        btnControlCalidad.Visible = false;
-
+                    btnControlCalidad.Visible = false;
                 }
             }
 
@@ -238,25 +206,6 @@ namespace FabricaCEAPE.Vistas
                     client.BackColor = Color.Snow;
                     break;
                 }
-            }
-        }
-
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
             }
         }
 
@@ -687,6 +636,20 @@ namespace FabricaCEAPE.Vistas
             Form form1 = new FrmListaMateriaPrimaReceta();
             form1.MdiParent = this;
             form1.Show();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmEditarUsuarioLimitado edit = new FrmEditarUsuarioLimitado(u.Id);
+                edit.ShowDialog();
+                usuarioBindingSource.Add(DatosUsuario.getUsuario(u.Id));
+            }
+            catch
+            {
+                MessageBox.Show("No seleccionó nada");
+            }
         }
     }
 }

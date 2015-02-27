@@ -174,11 +174,12 @@ C:\Users\Jonas\Downloads\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.csproj
 C:\Users\Jonas\Downloads\FabricaCEAPE\FabricaCEAPE\bin\Debug\FabricaCEAPE.exe
 C:\Users\Jonas\Downloads\FabricaCEAPE\FabricaCEAPE\bin\Debug\FabricaCEAPE.pdb
 C:\Users\Jonas\Downloads\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmListaMateriaPrimaReceta.resources
+C:\Users\Noé\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarMateriaPrimaReceta.resources
+C:\Users\Noé\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmListaMateriaPrimaReceta.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\bin\Debug\FabricaCEAPE.exe.config
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\bin\Debug\FabricaCEAPE.exe
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\bin\Debug\FabricaCEAPE.pdb
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\bin\Debug\System.Windows.Forms.Ribbon35.dll
-C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.Form1.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarArticuloPedido.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarCliente.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarControlPCC.resources
@@ -201,6 +202,7 @@ C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarTipoMateriaPrima.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarTipoProducto.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarUsuario.resources
+C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarUsuarioLimitado.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarZonaa.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditTipoEnvasado.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEntradaProducto.resources
@@ -234,5 +236,3 @@ C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.exe
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.pdb
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.csprojResolveAssemblyReference.cache
-C:\Users\Noé\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarMateriaPrimaReceta.resources
-C:\Users\Noé\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmListaMateriaPrimaReceta.resources

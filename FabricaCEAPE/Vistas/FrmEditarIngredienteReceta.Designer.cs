@@ -65,7 +65,6 @@
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 4;
             nombreLabel.Text = "Nombre:";
-            nombreLabel.Click += new System.EventHandler(this.nombreLabel_Click);
             // 
             // label2
             // 
@@ -196,6 +195,7 @@
             this.cbMateriaPrimaReceta.Size = new System.Drawing.Size(206, 21);
             this.cbMateriaPrimaReceta.TabIndex = 1;
             this.cbMateriaPrimaReceta.ValueMember = "Id";
+            this.cbMateriaPrimaReceta.DropDownClosed += new System.EventHandler(this.cbMateriaPrimaReceta_DropDownClosed);
             // 
             // materiaPrimaRecetaBindingSource
             // 
@@ -208,7 +208,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(309, 309);
-            this.ControlBox = false;
             this.Controls.Add(this.cbMateriaPrimaReceta);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);

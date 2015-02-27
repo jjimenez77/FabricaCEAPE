@@ -14,10 +14,11 @@ namespace FabricaCEAPE.Vistas
 {
     public partial class FrmEditarPais : Form
     {
+        int id;
         public FrmEditarPais(int id)
         {
             InitializeComponent();
-
+            this.id = id;
             if (id == 0)
             {
                 paisBindingSource.Add(new Pais());
@@ -70,14 +71,20 @@ namespace FabricaCEAPE.Vistas
         private void nombreTextBox_Validating(object sender, CancelEventArgs e)
         {
             string error = null;
-            if (!Validacion.esCadenaNumeroPunto(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
+            if (!Validacion.esCadena(nombreTextBox) || nombreTextBox.Text.Trim() == String.Empty)
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "Ingrese el nombre del pais";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
+            else if (DatosPais.existPaisN(id, nombreTextBox.Text))
+            {
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
             else if (DatosPais.existe(nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = Color.White;
                 error = "El pais ya existe";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
@@ -122,7 +129,7 @@ namespace FabricaCEAPE.Vistas
             if (string.IsNullOrEmpty(nombreTextBox.Text))
             {
                 error = "Ingrese el nombre del pais";
-
+                nombreTextBox.BackColor = Color.White;
                 errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }

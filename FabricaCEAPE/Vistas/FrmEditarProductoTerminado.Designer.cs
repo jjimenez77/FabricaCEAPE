@@ -45,6 +45,7 @@
             System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarProductoTerminado));
             this.codigoBarraProductoWaterMarkTextBox = new wmgCMS.WaterMarkTextBox();
+            this.productoTerminadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaElaboracionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fechaVencimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.loteProductoTerminadoWaterMarkTextBox = new wmgCMS.WaterMarkTextBox();
@@ -67,7 +68,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbNombreProducto = new System.Windows.Forms.ComboBox();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productoTerminadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             cajasPorTarimaLabel = new System.Windows.Forms.Label();
             codigoBarraProductoLabel = new System.Windows.Forms.Label();
             fechaElaboracionLabel = new System.Windows.Forms.Label();
@@ -82,19 +82,19 @@
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.productoTerminadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoEnvasadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seleccionProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medidaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoTerminadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cajasPorTarimaLabel
             // 
             cajasPorTarimaLabel.AutoSize = true;
-            cajasPorTarimaLabel.Location = new System.Drawing.Point(12, 68);
+            cajasPorTarimaLabel.Location = new System.Drawing.Point(14, 68);
             cajasPorTarimaLabel.Name = "cajasPorTarimaLabel";
             cajasPorTarimaLabel.Size = new System.Drawing.Size(85, 13);
             cajasPorTarimaLabel.TabIndex = 1;
@@ -157,7 +157,7 @@
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(12, 43);
+            nombreLabel.Location = new System.Drawing.Point(14, 41);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 21;
@@ -219,6 +219,7 @@
             // 
             // codigoBarraProductoWaterMarkTextBox
             // 
+            this.codigoBarraProductoWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoTerminadoBindingSource, "CodigoBarraProducto", true));
             this.codigoBarraProductoWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.codigoBarraProductoWaterMarkTextBox.Location = new System.Drawing.Point(131, 383);
             this.codigoBarraProductoWaterMarkTextBox.Name = "codigoBarraProductoWaterMarkTextBox";
@@ -229,8 +230,13 @@
             this.codigoBarraProductoWaterMarkTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigoBarraProductoWaterMarkTextBox_KeyPress);
             this.codigoBarraProductoWaterMarkTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.codigoBarraProductoWaterMarkTextBox_Validating);
             // 
+            // productoTerminadoBindingSource
+            // 
+            this.productoTerminadoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ProductoTerminado);
+            // 
             // fechaElaboracionDateTimePicker
             // 
+            this.fechaElaboracionDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoTerminadoBindingSource, "FechaElaboracion", true));
             this.fechaElaboracionDateTimePicker.Location = new System.Drawing.Point(131, 170);
             this.fechaElaboracionDateTimePicker.Name = "fechaElaboracionDateTimePicker";
             this.fechaElaboracionDateTimePicker.Size = new System.Drawing.Size(206, 20);
@@ -239,6 +245,7 @@
             // 
             // fechaVencimientoDateTimePicker
             // 
+            this.fechaVencimientoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productoTerminadoBindingSource, "FechaVencimiento", true));
             this.fechaVencimientoDateTimePicker.Location = new System.Drawing.Point(131, 196);
             this.fechaVencimientoDateTimePicker.Name = "fechaVencimientoDateTimePicker";
             this.fechaVencimientoDateTimePicker.Size = new System.Drawing.Size(206, 20);
@@ -247,6 +254,7 @@
             // 
             // loteProductoTerminadoWaterMarkTextBox
             // 
+            this.loteProductoTerminadoWaterMarkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoTerminadoBindingSource, "LoteProductoTerminado", true));
             this.loteProductoTerminadoWaterMarkTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.loteProductoTerminadoWaterMarkTextBox.Location = new System.Drawing.Point(131, 117);
             this.loteProductoTerminadoWaterMarkTextBox.Name = "loteProductoTerminadoWaterMarkTextBox";
@@ -263,9 +271,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 24);
+            this.label1.Size = new System.Drawing.Size(138, 24);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Editar producto:";
+            this.label1.Text = "Editar producto";
             // 
             // cbTipoProducto
             // 
@@ -334,7 +342,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(331, 426);
+            this.btnAceptar.Location = new System.Drawing.Point(268, 426);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 15;
@@ -347,7 +355,7 @@
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.CausesValidation = false;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(250, 426);
+            this.btnCancelar.Location = new System.Drawing.Point(187, 426);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 16;
@@ -357,6 +365,7 @@
             // 
             // waterMarkTextBox1
             // 
+            this.waterMarkTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoTerminadoBindingSource, "KgPorTarima", true));
             this.waterMarkTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.waterMarkTextBox1.Location = new System.Drawing.Point(131, 357);
             this.waterMarkTextBox1.Name = "waterMarkTextBox1";
@@ -370,6 +379,7 @@
             // waterMarkTextBox2
             // 
             this.waterMarkTextBox2.CausesValidation = false;
+            this.waterMarkTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoTerminadoBindingSource, "Gramaje", true));
             this.waterMarkTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.waterMarkTextBox2.Location = new System.Drawing.Point(131, 304);
             this.waterMarkTextBox2.Name = "waterMarkTextBox2";
@@ -382,6 +392,7 @@
             // 
             // waterMarkTextBox3
             // 
+            this.waterMarkTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoTerminadoBindingSource, "Stock", true));
             this.waterMarkTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.waterMarkTextBox3.Location = new System.Drawing.Point(131, 145);
             this.waterMarkTextBox3.Name = "waterMarkTextBox3";
@@ -394,6 +405,7 @@
             // 
             // waterMarkTextBox4
             // 
+            this.waterMarkTextBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoTerminadoBindingSource, "UnidadPorCaja", true));
             this.waterMarkTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.waterMarkTextBox4.Location = new System.Drawing.Point(131, 91);
             this.waterMarkTextBox4.Name = "waterMarkTextBox4";
@@ -406,6 +418,7 @@
             // 
             // waterMarkTextBox5
             // 
+            this.waterMarkTextBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoTerminadoBindingSource, "CajasPorTarima", true));
             this.waterMarkTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.waterMarkTextBox5.Location = new System.Drawing.Point(131, 65);
             this.waterMarkTextBox5.Name = "waterMarkTextBox5";
@@ -438,10 +451,6 @@
             // 
             this.productoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.Producto);
             // 
-            // productoTerminadoBindingSource
-            // 
-            this.productoTerminadoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ProductoTerminado);
-            // 
             // FrmEditarProductoTerminado
             // 
             this.AcceptButton = this.btnAceptar;
@@ -449,8 +458,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(418, 461);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(355, 461);
             this.Controls.Add(this.cbNombreProducto);
             this.Controls.Add(this.waterMarkTextBox5);
             this.Controls.Add(this.waterMarkTextBox4);
@@ -486,13 +494,13 @@
             this.Name = "FrmEditarProductoTerminado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar producto";
+            ((System.ComponentModel.ISupportInitialize)(this.productoTerminadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoEnvasadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seleccionProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medidaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoTerminadoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

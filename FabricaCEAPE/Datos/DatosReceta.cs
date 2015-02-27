@@ -18,7 +18,7 @@ namespace FabricaCEAPE.Datos
             cnn.Open();
 
             //Creo el comando sql a utlizar
-            SqlCommand cmd = new SqlCommand("select * from Recetas where activo = 1 order by idProducto");
+            SqlCommand cmd = new SqlCommand("select * from Recetas left join Producto on Recetas.idProducto = Producto.idProducto where Recetas.activo = 1 order by Producto.nombre");
             //asigno la conexion al comando
 
 
@@ -223,6 +223,28 @@ namespace FabricaCEAPE.Datos
             SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Recetas where activo = 1 and idProducto = @id");
 
             cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            //cnn.Close();
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static bool existeReceta(int idReceta, int idProducto)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Connection);
+            //abro la conexion
+            cnn.Open();
+
+            //Creo el comando sql a utlizar
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Recetas where activo = 1 and id = @idReceta and idProducto = @idProducto");
+
+            cmd.Parameters.AddWithValue("@idReceta", idReceta);
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
             cmd.Connection = cnn;
             cmd.ExecuteNonQuery();
             //cnn.Close();

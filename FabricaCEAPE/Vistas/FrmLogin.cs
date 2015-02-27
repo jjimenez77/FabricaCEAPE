@@ -24,8 +24,8 @@ namespace FabricaCEAPE.Vistas
         {
             Login log = new Login();
 
-            log.Usuario = "jjimenez"; // txtUsuario.Text; juan //de produccion
-            log.Contrasena = "holaa"; //txtContrasena.Text; juan
+            log.Usuario = "jjimenez";//txtUsuario.Text; //juan //de produccion
+            log.Contrasena = "holaa"; //txtContrasena.Text; //juan
 
 
             bool exito = false;

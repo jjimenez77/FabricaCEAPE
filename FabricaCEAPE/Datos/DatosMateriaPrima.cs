@@ -18,7 +18,7 @@ namespace FabricaCEAPE.Datos
             cnn.Open();
 
             //Creo el comando sql a utlizar
-            SqlCommand cmd = new SqlCommand("select id, nombre, cantidad, lote, idTipoMateriaPrima, idMedida, idMarca, idProveedor, fechaIngreso, fechaElaboracion, fechaCaducidad, activo from MateriasPrimas where activo = 1 order by nombre");
+            SqlCommand cmd = new SqlCommand("select id, nombre, cantidad, lote, idTipoMateriaPrima, idMedida, idMarca, idProveedor, fechaIngreso, fechaElaboracion, fechaCaducidad, activo from MateriasPrimas where activo = 1 order by fechaIngreso");
             //asigno la conexion al comando
 
             cmd.Connection = cnn;
