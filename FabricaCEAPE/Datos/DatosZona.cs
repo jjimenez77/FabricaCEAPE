@@ -230,17 +230,17 @@ namespace FabricaCEAPE.Datos
                 return true;
         }
 
-        public static bool existe(string nombre, int idPais)
+        public static bool existe(string nombre, int idLocalidad)
         {
             SqlConnection cnn = new SqlConnection(Conexion.Connection);
             //abro la conexion
             cnn.Open();
 
             //Creo el comando sql a utlizar
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Zona where activo = 1 and nombre = @nombre and idLocalidad = @idPais");
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Zona where activo = 1 and nombre = @nombre and idLocalidad = @idLocalidad");
 
             cmd.Parameters.AddWithValue("@nombre", nombre);
-            cmd.Parameters.AddWithValue("@idPais", idPais);
+            cmd.Parameters.AddWithValue("@idLocalidad", idLocalidad);
 
             cmd.Connection = cnn;
             cmd.ExecuteNonQuery();
@@ -253,17 +253,19 @@ namespace FabricaCEAPE.Datos
                 return true;
         }
 
-        public static bool existeZonaN(int id, string nombre)
+        public static bool existeZonaN(int id, string nombre, int idLocalidad)
         {
             SqlConnection cnn = new SqlConnection(Conexion.Connection);
             //abro la conexion
             cnn.Open();
 
             //Creo el comando sql a utlizar
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Zona where activo = 1 and idZona = @id and nombre = @nombre");
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Zona where activo = 1 and idZona = @id and nombre = @nombre and idLocalidad = @idLocalidad");
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Parameters.AddWithValue("@idLocalidad", idLocalidad);
+
             cmd.Connection = cnn;
             cmd.ExecuteNonQuery();
             //cnn.Close();

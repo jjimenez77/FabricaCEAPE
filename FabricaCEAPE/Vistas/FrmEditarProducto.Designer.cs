@@ -57,7 +57,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(212, 87);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 13;
+            this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
@@ -70,7 +70,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(131, 87);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
@@ -91,7 +91,7 @@
             this.nombreTextBox.Location = new System.Drawing.Point(66, 47);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(206, 20);
-            this.nombreTextBox.TabIndex = 18;
+            this.nombreTextBox.TabIndex = 0;
             this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             this.nombreTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nombreTextBox_Validating);
             // 

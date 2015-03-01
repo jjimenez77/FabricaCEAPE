@@ -247,17 +247,19 @@ namespace FabricaCEAPE.Datos
                 return true;
         }
 
-        public static bool existeLocalidadN(int id, string nombre)
+        public static bool existeLocalidadN(int id, string nombre, int idProvincia)
         {
             SqlConnection cnn = new SqlConnection(Conexion.Connection);
             //abro la conexion
             cnn.Open();
 
             //Creo el comando sql a utlizar
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Localidades where activo = 1 and id = @id and nombre = @nombre");
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Localidades where activo = 1 and id = @id and nombre = @nombre and idProvincia = @idProvincia");
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Parameters.AddWithValue("@idProvincia", idProvincia);
+
             cmd.Connection = cnn;
             cmd.ExecuteNonQuery();
             //cnn.Close();

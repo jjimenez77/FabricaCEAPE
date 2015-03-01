@@ -155,6 +155,7 @@
             this.cbLocalidad.Size = new System.Drawing.Size(206, 21);
             this.cbLocalidad.TabIndex = 3;
             this.cbLocalidad.ValueMember = "Id";
+            this.cbLocalidad.DropDownClosed += new System.EventHandler(this.cbLocalidad_DropDownClosed);
             this.cbLocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.cbLocalidad_Validating_1);
             // 
             // localidadBindingSource

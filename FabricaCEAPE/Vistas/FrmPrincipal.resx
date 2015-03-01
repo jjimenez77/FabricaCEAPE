@@ -117,6 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="label10.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="label14.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="label27.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="nombreLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="correoElectronicoAlternativoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="apellidoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="fechaNacimientoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="numeroTelefonoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="direccionLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="correoElectronicoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="numeroCelularLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="numeroDocumentoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="tipoDocumentoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>332, 17</value>
   </metadata>
@@ -272,14 +311,23 @@
   <metadata name="miniToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>910, 17</value>
   </metadata>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>697, 17</value>
-  </metadata>
   <metadata name="usuarioBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <metadata name="paisBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="provinciaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>169, 95</value>
+  </metadata>
+  <metadata name="localidadBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>349, 95</value>
+  </metadata>
+  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>528, 95</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>47</value>
+    <value>54</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -390,4 +438,23 @@
         gA8B+BCADwH4EIC/5/ZvcLT1fGr8I7MAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="errorProvider1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAGAC4AgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgCAAAAkJFoNgAAAAlw
+        SFlzAAAuIwAALiMBeKU/dgAAAmpJREFUKM9l0jtMFFEUBuBz597Zu+wC+5RlWBZjiBCIgBSYGEnUYKMm
+        2JnYqLHTRCtCozH4igkJFQnRktLtsMAKtMCGGJVdAxgLIrhPZ2fd58zs3IcFBjZyqlP8J6f4PySlhKYR
+        1bLzc4dlUwBAOqPq8RNKa3tzgBxssmGX38Zr75dF0ZCMAwAiWAkEvRevtE9eRy66H0P7H1g2pc8+NjfW
+        cbiD+EOgqgAAjsP+FLiebxk5E55+Sjqj/w54ycg9vG9vJ2j/EAghOVOoG6QUlomoGwFY20k6MBx5MY99
+        QQUAyvFFezNBB0aAEGGZvFiQjiMsk1cqwjIBEzowbG8myvFFAFBYLl1bW1GjMWCM63n/jTuhu9P2VoLp
+        +WNTM22XrrJsCgGo0VhtbYXl0sRKfpX1Oo5o0nGg0WCZlP/WvWAhr2qxlrFztdVlQCA5U3wBnstYyS+E
+        ZXYlAFIUcLlIZ7Twao79zoWnngBA+sFNO/nZPTombRspigRgmV3SVIHglkl7+zxnz4t6DWHsHZ9g+ays
+        VYGohz0QrQcBgJDSMoWhR2Zf05ODv25Pqlp35OUCbvcVFmZVrVsihACI1kPcQ6eRx8NKBvYHMULlpTei
+        UuKGLqolfW5GVis41IGomxs68njcQ6MKiXR5xydYag8AFG+bub5mbyVdvf2qFqt/XLV+bGJ/QArupPe8
+        4xMk0tVU3NYG7TuFKJWMgRAACBSECJGNhv39Gx0cjjyfx75gM41H5sanIzQMrudaRsbC088OaRzgqyzF
+        qx/e8WIBGAcAIBgHQq0XLrddO4KvmXdjd4dnUgCAtair53/efwFc10PKn8fA/AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>697, 17</value>
+  </metadata>
 </root>

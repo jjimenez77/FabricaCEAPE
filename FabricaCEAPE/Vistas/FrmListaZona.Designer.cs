@@ -37,6 +37,12 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbPais = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbProvincia = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbLocalidad = new System.Windows.Forms.ToolStripComboBox();
             this.zonaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +64,13 @@
             this.btnModificar,
             this.toolStripSeparator2,
             this.btnEliminar,
-            this.btnSalir});
+            this.btnSalir,
+            this.toolStripSeparator3,
+            this.cbPais,
+            this.toolStripSeparator4,
+            this.cbProvincia,
+            this.toolStripSeparator5,
+            this.cbLocalidad});
             this.zonaBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.zonaBindingNavigator.MoveFirstItem = null;
             this.zonaBindingNavigator.MoveLastItem = null;
@@ -66,7 +78,7 @@
             this.zonaBindingNavigator.MovePreviousItem = null;
             this.zonaBindingNavigator.Name = "zonaBindingNavigator";
             this.zonaBindingNavigator.PositionItem = null;
-            this.zonaBindingNavigator.Size = new System.Drawing.Size(531, 25);
+            this.zonaBindingNavigator.Size = new System.Drawing.Size(1016, 25);
             this.zonaBindingNavigator.TabIndex = 0;
             this.zonaBindingNavigator.TabStop = true;
             this.zonaBindingNavigator.Text = "bindingNavigator1";
@@ -126,6 +138,48 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cbPais
+            // 
+            this.cbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPais.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cbPais.Name = "cbPais";
+            this.cbPais.Size = new System.Drawing.Size(206, 25);
+            this.cbPais.ToolTipText = "Paises";
+            this.cbPais.DropDownClosed += new System.EventHandler(this.cbPais_DropDownClosed);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cbProvincia
+            // 
+            this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cbProvincia.Name = "cbProvincia";
+            this.cbProvincia.Size = new System.Drawing.Size(206, 25);
+            this.cbProvincia.ToolTipText = "Provincias";
+            this.cbProvincia.DropDownClosed += new System.EventHandler(this.cbProvincia_DropDownClosed);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cbLocalidad
+            // 
+            this.cbLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cbLocalidad.Name = "cbLocalidad";
+            this.cbLocalidad.Size = new System.Drawing.Size(206, 25);
+            this.cbLocalidad.ToolTipText = "Localidades";
+            this.cbLocalidad.DropDownClosed += new System.EventHandler(this.cbLocalidad_DropDownClosed);
+            // 
             // zonaDataGridView
             // 
             this.zonaDataGridView.AllowUserToAddRows = false;
@@ -173,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 305);
+            this.ClientSize = new System.Drawing.Size(1016, 305);
             this.Controls.Add(this.zonaDataGridView);
             this.Controls.Add(this.zonaBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -202,5 +256,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripComboBox cbPais;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripComboBox cbProvincia;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripComboBox cbLocalidad;
     }
 }

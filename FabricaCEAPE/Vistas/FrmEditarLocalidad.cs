@@ -158,7 +158,7 @@ namespace FabricaCEAPE.Vistas
                 errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
-            else if (DatosLocalidad.existeLocalidadN(id, nombreTextBox.Text))
+            else if (DatosLocalidad.existeLocalidadN(id, nombreTextBox.Text, (int)cbProvincia.SelectedValue))
             {
                 errorProvider1.SetError(nombreTextBox, String.Empty);
             }

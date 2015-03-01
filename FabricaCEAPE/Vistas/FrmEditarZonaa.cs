@@ -15,6 +15,7 @@ namespace FabricaCEAPE.Vistas
     public partial class FrmEditarZonaa : Form
     {
         int id;
+        bool errorr = true;
         public FrmEditarZonaa(int id)
         {
             InitializeComponent();
@@ -153,20 +154,10 @@ namespace FabricaCEAPE.Vistas
                 errorProvider1.SetError(cbLocalidad, error);
                 resultados = false;
             }
-            else
+
+            if(!errorr)
             {
-                if (DatosZona.existe(nombreTextBox.Text, (int)cbLocalidad.SelectedValue))
-                {
-                    nombreTextBox.BackColor = Color.White;
-                    error = "La zona ya existe en la localidad seleccionada";
-                    errorProvider1.SetError(nombreTextBox, error);
-                    resultados = false;
-                    if (!DatosZona.existeZonaN(id, nombreTextBox.Text))
-                    {
-                        errorProvider1.SetError(nombreTextBox, "sdfdsf");
-                        resultados = false;
-                    }
-                }
+                resultados = false;
             }
 
             return resultados;
@@ -203,10 +194,12 @@ namespace FabricaCEAPE.Vistas
             if (cbLocalidad.SelectedIndex >= 0)
             {
                 errorProvider1.SetError(cbLocalidad, String.Empty);
+                checarExitencia();
             }
             else
             {
                 errorProvider1.SetError(cbLocalidad, "Seleccione la localidad");
+                errorProvider1.SetError(nombreTextBox, String.Empty);
             }
         }
 
@@ -216,10 +209,38 @@ namespace FabricaCEAPE.Vistas
             if (cbLocalidad.SelectedIndex >= 0)
             {
                 errorProvider1.SetError(cbLocalidad, String.Empty);
+                checarExitencia();
             }
             else
             {
                 errorProvider1.SetError(cbLocalidad, "Seleccione la localidad");
+                errorProvider1.SetError(nombreTextBox, String.Empty);
+            }
+        }
+
+        private void checarExitencia()
+        {
+            if (cbLocalidad.SelectedIndex >= 0)
+            {
+                if (DatosZona.existe(nombreTextBox.Text, (int)cbLocalidad.SelectedValue))
+                {
+                    nombreTextBox.BackColor = Color.White;
+                    string error = "La zona ya existe en la localidad seleccionada";
+                    errorProvider1.SetError(nombreTextBox, error);
+                    errorr = false;
+                }
+                else
+                {
+                    nombreTextBox.BackColor = colorOk;
+                    errorProvider1.SetError(nombreTextBox, String.Empty);
+                    errorr = true;
+                }
+                if (DatosZona.existeZonaN(id, nombreTextBox.Text, (int)cbLocalidad.SelectedValue))
+                {
+                    nombreTextBox.BackColor = colorOk;
+                    errorProvider1.SetError(nombreTextBox, String.Empty);
+                    errorr = true;
+                }                
             }
         }
 
@@ -275,6 +296,11 @@ namespace FabricaCEAPE.Vistas
                 nombreTextBox.BackColor = colorOk;
                 errorProvider1.SetError((Control)sender, String.Empty);
             } 
+        }
+
+        private void cbLocalidad_DropDownClosed(object sender, EventArgs e)
+        {
+            checarExitencia();
         }
     }
 }
