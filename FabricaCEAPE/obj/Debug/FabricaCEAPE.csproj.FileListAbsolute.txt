@@ -202,7 +202,6 @@ C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarTipoMateriaPrima.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarTipoProducto.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarUsuario.resources
-C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarUsuarioLimitado.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditarZonaa.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEditTipoEnvasado.resources
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.Vistas.FrmEntradaProducto.resources
@@ -235,3 +234,4 @@ C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.csproj.GenerateResource.Cache
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.exe
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.pdb
+C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.csprojResolveAssemblyReference.cache

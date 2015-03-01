@@ -43,7 +43,6 @@
             System.Windows.Forms.Label numeroDocumentoLabel;
             System.Windows.Forms.Label tipoDocumentoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
@@ -922,6 +921,7 @@
             this.tabPage1.Size = new System.Drawing.Size(398, 413);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos";
+            this.tabPage1.ToolTipText = "Datos de usuario";
             // 
             // label32
             // 
@@ -1224,6 +1224,7 @@
             this.tabPage2.Size = new System.Drawing.Size(398, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editar";
+            this.tabPage2.ToolTipText = "Editar datos de usuario";
             // 
             // btnAceptar
             // 
@@ -1488,7 +1489,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.MinimumSize = new System.Drawing.Size(1000, 500);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "FrmPrincipal";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1521,7 +1522,6 @@
         }
         #endregion
 
-        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonTab ribbonTab2;
         private System.Windows.Forms.RibbonTab ribbonTab3;
