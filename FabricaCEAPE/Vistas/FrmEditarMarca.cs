@@ -95,6 +95,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosMarca.existeMarca(id, nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreTextBox, String.Empty);
             }
             else if (DatosMarca.existe(nombreTextBox.Text))

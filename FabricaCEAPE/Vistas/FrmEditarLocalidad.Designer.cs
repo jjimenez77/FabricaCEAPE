@@ -121,6 +121,7 @@
             this.cbProvincia.Size = new System.Drawing.Size(206, 21);
             this.cbProvincia.TabIndex = 3;
             this.cbProvincia.ValueMember = "Id";
+            this.cbProvincia.DropDownClosed += new System.EventHandler(this.cbProvincia_DropDownClosed);
             this.cbProvincia.Validating += new System.ComponentModel.CancelEventHandler(this.cbProvincia_Validating);
             // 
             // provinciaBindingSource

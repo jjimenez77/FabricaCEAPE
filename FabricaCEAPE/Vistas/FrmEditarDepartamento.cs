@@ -97,6 +97,7 @@ namespace FabricaCEAPE.Datos
             }
             else if (DatosDepartamento.existeDepartamentoN(id, nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreTextBox, String.Empty);
             }
             else if (DatosDepartamento.existe(nombreTextBox.Text))

@@ -48,6 +48,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosProducto.existProductoN(id, nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreTextBox, String.Empty);
             }
             else if (DatosProducto.existe(nombreTextBox.Text))

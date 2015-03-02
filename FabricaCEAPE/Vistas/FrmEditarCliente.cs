@@ -360,6 +360,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosCliente.existeClienteC(id, cuitWaterMarkTextBox.Text))
             {
+                cuitWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(cuitWaterMarkTextBox, String.Empty);
             }
             else if (DatosCliente.existeC(cuitWaterMarkTextBox.Text))
@@ -414,6 +415,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosCliente.existeClienteNT(id, numeroTelefonoWaterMarkTextBox.Text))
             {
+                numeroTelefonoWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroTelefonoWaterMarkTextBox, String.Empty);
             }
             else if (DatosCliente.existeNumeroTelefono(numeroTelefonoWaterMarkTextBox.Text))
@@ -442,6 +444,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosCliente.existeClienteNC(id, numeroCelularWaterMarkTextBox.Text))
             {
+                numeroCelularWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroCelularWaterMarkTextBox, String.Empty);
             }
             else if (DatosCliente.existeNumeroCelular(numeroCelularWaterMarkTextBox.Text))
@@ -483,6 +486,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosCliente.existeClienteCO(id, correoElectronicoWaterMarkTextBox.Text))
             {
+                correoElectronicoWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(correoElectronicoWaterMarkTextBox, String.Empty);
             }
             else if (DatosCliente.existeCorreoE(correoElectronicoWaterMarkTextBox.Text))

@@ -398,6 +398,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosProveedor.existeProveedorC(id, cuitTextBox.Text))
             {
+                cuitTextBox.BackColor = colorOk;
                 errorProvider1.SetError(cuitTextBox, String.Empty);
             }
             else if (DatosProveedor.existeC(cuitTextBox.Text))
@@ -455,6 +456,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosProveedor.existeProveedorNT(id, numeroTelefonoTextBox.Text))
             {
+                numeroTelefonoTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroTelefonoTextBox, String.Empty);
             }
             else if (DatosProveedor.existeNumeroTelefono(numeroTelefonoTextBox.Text))
@@ -509,6 +511,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosProveedor.existeProveedorCO(id, correoElectronicoTextBox.Text))
             {
+                correoElectronicoTextBox.BackColor = colorOk;
                 errorProvider1.SetError(correoElectronicoTextBox, String.Empty);
             }
             else if (DatosProveedor.existeCorreoE(correoElectronicoTextBox.Text))
@@ -551,6 +554,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosProveedor.existeProveedorNC(id, numeroCelularTextBox.Text))
             {
+                numeroCelularTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroCelularTextBox, String.Empty);
             }
             else if (DatosProveedor.existeNumeroCelular(numeroCelularTextBox.Text))

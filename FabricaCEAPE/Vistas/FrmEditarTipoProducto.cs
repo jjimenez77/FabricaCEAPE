@@ -105,6 +105,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosTipoProducto.existeProductoN(id, nombreWaterMarkTextBox.Text))
             {
+                nombreWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreWaterMarkTextBox, String.Empty);
             }
             else if (DatosTipoProducto.existe(nombreWaterMarkTextBox.Text))

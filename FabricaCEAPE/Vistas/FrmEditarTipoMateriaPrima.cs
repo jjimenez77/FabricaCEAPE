@@ -96,6 +96,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosTipoMateriaPrima.existeTipoMateriaPrimaN(id, nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreTextBox, String.Empty);
             }
             else if (DatosTipoMateriaPrima.existe(nombreTextBox.Text))

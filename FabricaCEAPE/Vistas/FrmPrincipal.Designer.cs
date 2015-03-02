@@ -563,6 +563,7 @@
             this.btnProductoTerminado,
             this.btnProducto,
             this.btnTipoProducto,
+            this.btnControlCalidad,
             this.toolStripSeparator4,
             this.btnCliente,
             this.btnRepartidor,
@@ -571,7 +572,6 @@
             this.btnSalidaStock,
             this.btnEntradaStock,
             this.btnDespachoStock,
-            this.btnControlCalidad,
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -777,7 +777,7 @@
             this.btnPedidos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Size = new System.Drawing.Size(53, 51);
+            this.btnPedidos.Size = new System.Drawing.Size(53, 40);
             this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

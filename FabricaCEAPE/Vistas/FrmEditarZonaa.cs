@@ -155,6 +155,7 @@ namespace FabricaCEAPE.Vistas
                 resultados = false;
             }
 
+            checarExitencia();
             if(!errorr)
             {
                 resultados = false;

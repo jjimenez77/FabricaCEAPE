@@ -470,6 +470,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosRepartidor.existeRepartidorNT(id, numeroTelefonoWaterMarkTextBox.Text))
             {
+                numeroTelefonoWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroTelefonoWaterMarkTextBox, String.Empty);
             }
             else if (DatosRepartidor.existeTelefono(numeroTelefonoWaterMarkTextBox.Text))
@@ -498,6 +499,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosRepartidor.existeRepartidorNC(id, numeroCelularWaterMarkTextBox.Text))
             {
+                numeroCelularWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroCelularWaterMarkTextBox, String.Empty);
             }
             else if (DatosRepartidor.existeCelular(numeroCelularWaterMarkTextBox.Text))
@@ -540,6 +542,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosRepartidor.existeRepartidorCE(id, correoElectronicoWaterMarkTextBox.Text))
             {
+                correoElectronicoWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(correoElectronicoWaterMarkTextBox, String.Empty);
             }
             else if (DatosRepartidor.existeCorreoE(correoElectronicoWaterMarkTextBox.Text))
@@ -568,6 +571,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosRepartidor.existeRepartidorCEA(id, correoElectronicoAlternativoWaterMarkTextBox.Text))
             {
+                correoElectronicoAlternativoWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(correoElectronicoAlternativoWaterMarkTextBox, String.Empty);
             }
             else if (DatosRepartidor.existeCorreoEA(correoElectronicoAlternativoWaterMarkTextBox.Text))
@@ -644,6 +648,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosRepartidor.existeRepartidorND(id, numeroDocumentoWaterMarkTextBox.Text))
             {
+                correoElectronicoAlternativoWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroDocumentoWaterMarkTextBox, String.Empty);
             }
             else if (DatosRepartidor.existeDocumento(numeroDocumentoWaterMarkTextBox.Text))

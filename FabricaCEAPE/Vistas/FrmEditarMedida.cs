@@ -104,6 +104,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosMedida.existeMedidaN(id, nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreTextBox, String.Empty);
             }
             else if (DatosMedida.existeN(nombreTextBox.Text))
@@ -156,6 +157,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosMedida.existeMedidaA(id, abreviacionTextBox.Text))
             {
+                abreviacionTextBox.BackColor = colorOk;
                 errorProvider1.SetError(abreviacionTextBox, String.Empty);
             }
             else if (DatosMedida.existeA(abreviacionTextBox.Text))

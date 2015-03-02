@@ -90,6 +90,7 @@
             this.cbPais.Size = new System.Drawing.Size(206, 21);
             this.cbPais.TabIndex = 2;
             this.cbPais.ValueMember = "Id";
+            this.cbPais.DropDownClosed += new System.EventHandler(this.cbPais_DropDownClosed);
             // 
             // paisBindingSource
             // 

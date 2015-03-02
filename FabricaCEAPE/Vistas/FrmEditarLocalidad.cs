@@ -15,6 +15,7 @@ namespace FabricaCEAPE.Vistas
     public partial class FrmEditarLocalidad : Form
     {
         int id;
+        bool errorr = true;
         public FrmEditarLocalidad(int id)
         {
             InitializeComponent();
@@ -94,10 +95,12 @@ namespace FabricaCEAPE.Vistas
             if (cbProvincia.SelectedIndex >= 0)
             {
                 errorProvider1.SetError(cbProvincia, String.Empty);
+                checarExitencia();
             }
             else
             {
                 errorProvider1.SetError(cbProvincia, "Seleccione la provincia");
+                errorProvider1.SetError(nombreTextBox, String.Empty);
             }
         }
 
@@ -158,22 +161,18 @@ namespace FabricaCEAPE.Vistas
                 errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
-            else if (DatosLocalidad.existeLocalidadN(id, nombreTextBox.Text, (int)cbProvincia.SelectedValue))
-            {
-                errorProvider1.SetError(nombreTextBox, String.Empty);
-            }
-            else if (cbProvincia.SelectedIndex < 0)
+
+            if (cbProvincia.SelectedIndex < 0)
             {
                 error = "Seleccione la provincia";
 
                 errorProvider1.SetError(cbProvincia, error);
                 resultados = false;
             }
-            else if (DatosLocalidad.existe(nombreTextBox.Text, (int)cbProvincia.SelectedValue))
+
+            checarExitencia();
+            if (!errorr)
             {
-                nombreTextBox.BackColor = Color.White;
-                error = "La localidad ya existe en la provincia seleccionada";
-                errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
 
@@ -189,6 +188,37 @@ namespace FabricaCEAPE.Vistas
                 e.Cancel = false;
                 errorProvider1.SetError((Control)sender, error);
             }
+        }
+
+        private void checarExitencia()
+        {
+            if (cbProvincia.SelectedIndex >= 0)
+            {
+                if (DatosLocalidad.existe(nombreTextBox.Text, (int)cbProvincia.SelectedValue))
+                {
+                    nombreTextBox.BackColor = Color.White;
+                    string error = "La localidad ya existe en la provincia seleccionada";
+                    errorProvider1.SetError(nombreTextBox, error);
+                    errorr = false;
+                }
+                else
+                {
+                    nombreTextBox.BackColor = colorOk;
+                    errorProvider1.SetError(nombreTextBox, String.Empty);
+                    errorr = true;
+                }
+                if (DatosLocalidad.existeLocalidadN(id, nombreTextBox.Text, (int)cbProvincia.SelectedValue))
+                {
+                    nombreTextBox.BackColor = colorOk;
+                    errorProvider1.SetError(nombreTextBox, String.Empty);
+                    errorr = true;
+                }
+            }
+        }
+
+        private void cbProvincia_DropDownClosed(object sender, EventArgs e)
+        {
+            checarExitencia();
         }
     }
 }

@@ -121,6 +121,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosMateriaPrimaReceta.existeMateriaPrimaRecetaN(id, nombreWaterMarkTextBox.Text))
             {
+                nombreWaterMarkTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreWaterMarkTextBox, String.Empty);
             }
             else if (DatosMateriaPrimaReceta.existe(nombreWaterMarkTextBox.Text))

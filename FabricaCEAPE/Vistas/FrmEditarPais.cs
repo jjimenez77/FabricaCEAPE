@@ -80,6 +80,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosPais.existPaisN(id, nombreTextBox.Text))
             {
+                nombreTextBox.BackColor = colorOk;
                 errorProvider1.SetError(nombreTextBox, String.Empty);
             }
             else if (DatosPais.existe(nombreTextBox.Text))

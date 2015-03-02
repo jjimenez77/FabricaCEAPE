@@ -15,6 +15,7 @@ namespace FabricaCEAPE.Vistas
     public partial class FrmEditarProvincia : Form
     {
         int id;
+        bool errorr = true;
         public FrmEditarProvincia(int id)
         {
             InitializeComponent();
@@ -128,19 +129,53 @@ namespace FabricaCEAPE.Vistas
                 errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
-            else if (DatosProvincia.existeProvinciaN(id, nombreTextBox.Text))
+
+            if (cbPais.SelectedIndex < 0)
             {
-                errorProvider1.SetError(nombreTextBox, String.Empty);
+                error = "Seleccione la el Pais";
+
+                errorProvider1.SetError(cbPais, error);
+                resultados = false;
             }
-            else if (DatosProvincia.existe(nombreTextBox.Text, (int)cbPais.SelectedValue))
+
+            checarExitencia();
+            if (!errorr)
             {
-                nombreTextBox.BackColor = Color.White;
-                error = "La provincia ya existe en el pais seleccionado";
-                errorProvider1.SetError(nombreTextBox, error);
                 resultados = false;
             }
 
             return resultados;
+        }
+
+        private void cbPais_DropDownClosed(object sender, EventArgs e)
+        {
+            checarExitencia();
+        }
+
+        private void checarExitencia()
+        {
+            if (cbPais.SelectedIndex >= 0)
+            {
+                if (DatosProvincia.existe(nombreTextBox.Text, (int)cbPais.SelectedValue))
+                {
+                    nombreTextBox.BackColor = Color.White;
+                    string error = "La localidad ya existe en la provincia seleccionada";
+                    errorProvider1.SetError(nombreTextBox, error);
+                    errorr = false;
+                }
+                else
+                {
+                    nombreTextBox.BackColor = colorOk;
+                    errorProvider1.SetError(nombreTextBox, String.Empty);
+                    errorr = true;
+                }
+                if (DatosProvincia.existeProvinciaN(id, nombreTextBox.Text))
+                {
+                    nombreTextBox.BackColor = colorOk;
+                    errorProvider1.SetError(nombreTextBox, String.Empty);
+                    errorr = true;
+                }
+            }
         }
     }
 }

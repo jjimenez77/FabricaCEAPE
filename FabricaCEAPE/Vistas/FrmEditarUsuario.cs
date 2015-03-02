@@ -213,6 +213,8 @@ namespace FabricaCEAPE.Vistas
         
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
+           // FrmPrincipal usu = new FrmPrincipal();
+
             try
             {
                 if (!validaciones())
@@ -271,6 +273,7 @@ namespace FabricaCEAPE.Vistas
                     DatosUsuario.Modificar(u);
                     DatosLogin.Modificar(l);
                 }
+               // usu.Actualizar();
                 Close();
             }
             catch
@@ -328,6 +331,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosUsuario.existeUsuarioNT(id, numeroTelefonoTextBox.Text))
             {
+                numeroTelefonoTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroTelefonoTextBox, String.Empty);
             }
             else if (DatosUsuario.existeTelefono(numeroTelefonoTextBox.Text))
@@ -356,6 +360,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosUsuario.existeUsuarioNC(id, numeroCelularTextBox.Text))
             {
+                numeroCelularTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroCelularTextBox, String.Empty);
             }
             else if (DatosUsuario.existeCelular(numeroCelularTextBox.Text))
@@ -384,6 +389,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosUsuario.existeUsuarioCE(id, correoElectronicoTextBox.Text))
             {
+                correoElectronicoTextBox.BackColor = colorOk;
                 errorProvider1.SetError(correoElectronicoTextBox, String.Empty);
             }
             else if (DatosUsuario.existeCorreoE(correoElectronicoTextBox.Text))
@@ -412,6 +418,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosUsuario.existeUsuarioCEA(id, correoElectronicoAlternativoTextBox.Text))
             {
+                correoElectronicoAlternativoTextBox.BackColor = colorOk;
                 errorProvider1.SetError(correoElectronicoAlternativoTextBox, String.Empty);
             }
             else if (DatosUsuario.existeCorreoEA(correoElectronicoAlternativoTextBox.Text))
@@ -451,6 +458,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosUsuario.existeUsuarioND(id, numeroDocumentoTextBox.Text))
             {
+                numeroDocumentoTextBox.BackColor = colorOk;
                 errorProvider1.SetError(numeroDocumentoTextBox, String.Empty);
             }
             else if (DatosUsuario.existeDocumento(numeroDocumentoTextBox.Text))
@@ -518,6 +526,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosLogin.existeNombre(id, usuarioTextBox1.Text))
             {
+                usuarioTextBox1.BackColor = colorOk;
                 errorProvider1.SetError(usuarioTextBox1, String.Empty);
             }
             else if (DatosLogin.existe(usuarioTextBox1.Text))
