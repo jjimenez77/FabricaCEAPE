@@ -418,7 +418,7 @@ namespace FabricaCEAPE.Vistas
             }
             else if (DatosReceta.existe((int)cbProducto.SelectedValue))
             {
-                errorProvider1.SetError(cbProducto, "Ya existe una receta sdasdsadpara este producto");
+                errorProvider1.SetError(cbProducto, "Ya existe una receta para este producto");
             }   
             else
             {
