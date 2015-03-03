@@ -234,4 +234,3 @@ C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.csproj.GenerateResource.Cache
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.exe
 C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.pdb
-C:\Users\Jonas\Documents\GitHub\FabricaCEAPE\FabricaCEAPE\obj\Debug\FabricaCEAPE.csprojResolveAssemblyReference.cache

@@ -132,7 +132,7 @@ namespace FabricaCEAPE.Datos
             cnn.Open();
 
             //Recetas
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Producto left join Recetas on Producto.idProducto = Recetas.idProducto where Producto.idProducto = @id");
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Producto left join Recetas on Producto.idProducto = Recetas.idProducto where Recetas.idProducto = @id");
             //Producto terminado
             SqlCommand cmd1 = new SqlCommand("SELECT COUNT(*) FROM Producto left join ProductoTerminado on Producto.idProducto = ProductoTerminado.idProducto where ProductoTerminado.idProducto = @id");
             //ControlPCC
