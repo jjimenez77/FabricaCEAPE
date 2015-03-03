@@ -291,6 +291,7 @@
             this.cbProducto.TabIndex = 31;
             this.cbProducto.ValueMember = "IdProducto";
             this.cbProducto.DropDownClosed += new System.EventHandler(this.cbProducto_DropDownClosed);
+            this.cbProducto.Validating += new System.ComponentModel.CancelEventHandler(this.cbProducto_Validating);
             // 
             // productoBindingSource
             // 
@@ -360,6 +361,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 359);
+            this.ControlBox = false;
             this.Controls.Add(this.cbProducto);
             this.Controls.Add(this.observacionesTextBox);
             this.Controls.Add(this.tiempoTextBox);

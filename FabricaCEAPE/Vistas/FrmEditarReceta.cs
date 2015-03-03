@@ -54,12 +54,12 @@ namespace FabricaCEAPE.Vistas
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Receta r = (Receta)recetaBindingSource.Current;
-            r.Activo = false;
+            //r.Activo = false;
             //if (MessageBox.Show("¿Esta seguro de borrar a " + r.Producto.Nombre + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             //{
             if (crearModificar)
             {
-                DatosReceta.Modificar(r);
+                DatosReceta.Eliminar(r);
             }
             Close();
             //}
@@ -288,20 +288,30 @@ namespace FabricaCEAPE.Vistas
             //    errorProvider1.SetError(cbProducto, String.Empty);
             //}
 
-            if (DatosReceta.existeReceta(id, (int)cbProducto.SelectedValue))
+            if (cbProducto.SelectedIndex >= 1)
             {
-                errorProvider1.SetError(cbProducto, String.Empty);
-            }
-            else if (DatosReceta.existe((int)cbProducto.SelectedValue))
-            {
-                error = "Ya existe una receta para este producto";
+                if (DatosReceta.existeReceta(id, (int)cbProducto.SelectedValue))
+                {
+                    errorProvider1.SetError(cbProducto, String.Empty);
+                }
+                else if (DatosReceta.existe((int)cbProducto.SelectedValue))
+                {
+                    error = "Ya existe una receta para este producto";
 
-                errorProvider1.SetError(cbProducto, error);
-                resultados = false;
+                    errorProvider1.SetError(cbProducto, error);
+                    resultados = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(cbProducto, String.Empty);
+                }
             }
             else
             {
-                errorProvider1.SetError(cbProducto, String.Empty);
+                error = "Seleccione el producto";
+
+                errorProvider1.SetError(cbProducto, error);
+                resultados = false;
             }
 
             if (string.IsNullOrEmpty(observacionesTextBox.Text))
@@ -411,18 +421,35 @@ namespace FabricaCEAPE.Vistas
         private void cbProducto_DropDownClosed(object sender, EventArgs e)
         {
             //seleccionaProducto = true;
-
-            if (DatosReceta.existeReceta(id, (int)cbProducto.SelectedValue))
+            if (cbProducto.SelectedIndex >= 0)
             {
-                errorProvider1.SetError(cbProducto, String.Empty);
+                if (DatosReceta.existeReceta(id, (int)cbProducto.SelectedValue))
+                {
+                    errorProvider1.SetError(cbProducto, String.Empty);
+                }
+                else if (DatosReceta.existe((int)cbProducto.SelectedValue))
+                {
+                    errorProvider1.SetError(cbProducto, "Ya existe una receta para este producto");
+                }
+                else
+                {
+                    errorProvider1.SetError(cbProducto, String.Empty);
+                }
             }
-            else if (DatosReceta.existe((int)cbProducto.SelectedValue))
+            else 
             {
-                errorProvider1.SetError(cbProducto, "Ya existe una receta para este producto");
-            }   
-            else
+                errorProvider1.SetError(cbProducto, "Seleccione el producto");
+            }
+        }
+
+        private void cbProducto_Validating(object sender, CancelEventArgs e)
+        {
+            string error = null;
+            if (cbProducto.SelectedIndex == -1)
             {
-                errorProvider1.SetError(cbProducto, String.Empty);
+                error = "Seleccione el producto";
+                e.Cancel = true;
+                errorProvider1.SetError((Control)sender, error);
             }
         }
     }

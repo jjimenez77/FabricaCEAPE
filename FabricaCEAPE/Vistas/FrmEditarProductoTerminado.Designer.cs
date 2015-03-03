@@ -459,6 +459,7 @@
             this.AutoScroll = true;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(355, 461);
+            this.ControlBox = false;
             this.Controls.Add(this.cbNombreProducto);
             this.Controls.Add(this.waterMarkTextBox5);
             this.Controls.Add(this.waterMarkTextBox4);
@@ -492,6 +493,7 @@
             this.Controls.Add(unidadPorCajaLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmEditarProductoTerminado";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar producto";
             ((System.ComponentModel.ISupportInitialize)(this.productoTerminadoBindingSource)).EndInit();

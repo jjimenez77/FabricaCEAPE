@@ -208,6 +208,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(309, 309);
+            this.ControlBox = false;
             this.Controls.Add(this.cbMateriaPrimaReceta);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);

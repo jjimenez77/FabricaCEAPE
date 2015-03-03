@@ -348,6 +348,7 @@
             this.AutoScroll = true;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(348, 469);
+            this.ControlBox = false;
             this.Controls.Add(this.loteTextBox);
             this.Controls.Add(this.cantidadTextBox);
             this.Controls.Add(this.nombreTextBox);

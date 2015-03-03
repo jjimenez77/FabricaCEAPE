@@ -421,6 +421,7 @@
             this.AutoScroll = true;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(383, 486);
+            this.ControlBox = false;
             this.Controls.Add(pesoNetoLabel1);
             this.Controls.Add(this.pesoNetoTextBox);
             this.Controls.Add(this.label1);
