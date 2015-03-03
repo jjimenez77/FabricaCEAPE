@@ -549,7 +549,7 @@ namespace FabricaCEAPE.Vistas
             if (!Validacion.esContrasena(contrasenaTextBox1))
             {
                 contrasenaTextBox1.BackColor = Color.White;
-                error = "Ingrese la contrasena";
+                error = "Ingrese la contrasena (solo 8 caracteres como maximo)";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }

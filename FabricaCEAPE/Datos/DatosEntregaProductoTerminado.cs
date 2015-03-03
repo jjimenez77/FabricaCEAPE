@@ -231,8 +231,5 @@ namespace FabricaCEAPE.Datos
             return listaventa;
 
         }
-
-
-
     }
 }

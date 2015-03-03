@@ -92,6 +92,7 @@ namespace FabricaCEAPE.Vistas
                 btnSalidaStock.Visible = true;
                 btnEntradaStock.Visible = true;
                 btnDespachoStock.Visible = true;
+                btnEntregar.Visible = true;
 
                 this.Text = "Administrador :: Sistema CEAPE";
             }
@@ -138,6 +139,7 @@ namespace FabricaCEAPE.Vistas
                     btnSalidaStock.Visible = false;
                     btnEntradaStock.Visible = false;
                     btnDespachoStock.Visible = false;
+                    btnEntregar.Visible = false;
                 }
                 //Botones de produccion
                 else if (u.Departamento.Id == 2)
@@ -179,6 +181,7 @@ namespace FabricaCEAPE.Vistas
                     btnSalidaStock.Visible = false;
                     btnEntradaStock.Visible = false;
                     btnDespachoStock.Visible = false;
+                    btnEntregar.Visible = false;
                 }
                 //Botones de producto terminado
                 else if (u.Departamento.Id == 3)
@@ -220,13 +223,14 @@ namespace FabricaCEAPE.Vistas
                     btnSalidaStock.Visible = true;
                     btnEntradaStock.Visible = true;
                     btnDespachoStock.Visible = true;
+                    btnEntregar.Visible = true;
                 }
             }
 
             btnTipoMP.Text = "Tipos de" + Environment.NewLine + "materia prima";
             btnTipoProducto.Text = "Tipos de" + Environment.NewLine + "producto";
-            btnMateriaPrimaReceta.Text = "Materia prima" + Environment.NewLine + "de recetas";
-
+            btnMateriaPrimaReceta.Text = "Ingredientes" + Environment.NewLine + "de recetas";
+            btnProductoTerminado.Text = "Producto" + Environment.NewLine + "terminado";
             foreach (Control control in this.Controls)
             {
                 MdiClient client = control as MdiClient;
@@ -1200,6 +1204,21 @@ namespace FabricaCEAPE.Vistas
             {
                 MessageBox.Show("Complete todos los campos");
             }
+        }
+
+        private void btnEntregar_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(Entregas))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form form1 = new Entregas();
+            form1.MdiParent = this;
+            form1.Show();
         }
     }
 }

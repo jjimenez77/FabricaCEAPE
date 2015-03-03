@@ -431,14 +431,14 @@ namespace FabricaCEAPE.Vistas
 
         private void codigoBarraProductoWaterMarkTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (Validacion.esNumero(codigoBarraProductoWaterMarkTextBox))
+            if (!Validacion.esNumero(codigoBarraProductoWaterMarkTextBox))
             {
-                errorProvider1.SetError(codigoBarraProductoWaterMarkTextBox, String.Empty);
+                errorProvider1.SetError(codigoBarraProductoWaterMarkTextBox, "Introduzca el codigo de barra");
                 codigoBarraProductoWaterMarkTextBox.BackColor = Color.White;
             }
             else
             {
-                errorProvider1.SetError(codigoBarraProductoWaterMarkTextBox, "Introduzca el codigo de barra");
+                errorProvider1.SetError(codigoBarraProductoWaterMarkTextBox, String.Empty);
                 codigoBarraProductoWaterMarkTextBox.BackColor = colorOk;
             }
         }

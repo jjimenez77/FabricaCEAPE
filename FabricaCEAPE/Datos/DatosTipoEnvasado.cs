@@ -157,7 +157,7 @@ namespace FabricaCEAPE.Datos
             cnn.Open();
 
             //Creo el comando sql a utlizar
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM TipoEnvasado where id = @id and nombre = @nombre");
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM TipoEnvasado where idTipoEnvasado = @id and nombre = @nombre");
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@nombre", nombre);

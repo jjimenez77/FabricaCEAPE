@@ -244,7 +244,7 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "FechaIngreso";
-            dataGridViewCellStyle1.Format = "g";
+            dataGridViewCellStyle1.Format = "d";
             dataGridViewCellStyle1.NullValue = null;
             this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn9.HeaderText = "Fecha de ingreso";
@@ -309,6 +309,9 @@
         private System.Windows.Forms.ToolStrip menu;
         private System.Windows.Forms.DataGridView materiaPrimaDataGridView;
         private System.Windows.Forms.ToolStripTextBox txtBuscar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -319,8 +322,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

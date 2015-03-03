@@ -101,6 +101,7 @@
             this.btnProductoTerminado = new System.Windows.Forms.ToolStripButton();
             this.btnProducto = new System.Windows.Forms.ToolStripButton();
             this.btnTipoProducto = new System.Windows.Forms.ToolStripButton();
+            this.btnControlCalidad = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCliente = new System.Windows.Forms.ToolStripButton();
             this.btnRepartidor = new System.Windows.Forms.ToolStripButton();
@@ -109,8 +110,8 @@
             this.btnSalidaStock = new System.Windows.Forms.ToolStripButton();
             this.btnEntradaStock = new System.Windows.Forms.ToolStripButton();
             this.btnDespachoStock = new System.Windows.Forms.ToolStripButton();
-            this.btnControlCalidad = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnEntregar = new System.Windows.Forms.ToolStripButton();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -572,7 +573,8 @@
             this.btnSalidaStock,
             this.btnEntradaStock,
             this.btnDespachoStock,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.btnEntregar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1251, 54);
@@ -703,7 +705,6 @@
             // btnProductoTerminado
             // 
             this.btnProductoTerminado.Image = global::FabricaCEAPE.Properties.Resources.supermarket20;
-            this.btnProductoTerminado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnProductoTerminado.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnProductoTerminado.Name = "btnProductoTerminado";
             this.btnProductoTerminado.Size = new System.Drawing.Size(131, 51);
@@ -734,6 +735,17 @@
             this.btnTipoProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTipoProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTipoProducto.Click += new System.EventHandler(this.btnTipoProducto_Click);
+            // 
+            // btnControlCalidad
+            // 
+            this.btnControlCalidad.Image = global::FabricaCEAPE.Properties.Resources.clipboard105;
+            this.btnControlCalidad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnControlCalidad.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnControlCalidad.Name = "btnControlCalidad";
+            this.btnControlCalidad.Size = new System.Drawing.Size(94, 51);
+            this.btnControlCalidad.Text = "Control Calidad";
+            this.btnControlCalidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnControlCalidad.Click += new System.EventHandler(this.btnControlCalidad_Click);
             // 
             // toolStripSeparator4
             // 
@@ -816,21 +828,21 @@
             this.btnDespachoStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDespachoStock.Click += new System.EventHandler(this.btnDespachoStock_Click);
             // 
-            // btnControlCalidad
-            // 
-            this.btnControlCalidad.Image = global::FabricaCEAPE.Properties.Resources.clipboard105;
-            this.btnControlCalidad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnControlCalidad.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnControlCalidad.Name = "btnControlCalidad";
-            this.btnControlCalidad.Size = new System.Drawing.Size(94, 51);
-            this.btnControlCalidad.Text = "Control Calidad";
-            this.btnControlCalidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnControlCalidad.Click += new System.EventHandler(this.btnControlCalidad_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 54);
+            // 
+            // btnEntregar
+            // 
+            this.btnEntregar.Image = global::FabricaCEAPE.Properties.Resources.logistics3;
+            this.btnEntregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEntregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEntregar.Name = "btnEntregar";
+            this.btnEntregar.Size = new System.Drawing.Size(56, 51);
+            this.btnEntregar.Text = "Entregas";
+            this.btnEntregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEntregar.Click += new System.EventHandler(this.btnEntregar_Click);
             // 
             // miniToolStrip
             // 
@@ -1648,6 +1660,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ToolStripButton btnEntregar;
     }
 }
 

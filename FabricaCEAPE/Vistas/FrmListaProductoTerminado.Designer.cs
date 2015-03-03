@@ -39,8 +39,9 @@
             this.txtBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.cbSelector = new System.Windows.Forms.ToolStripComboBox();
             this.productoDataGridView = new System.Windows.Forms.DataGridView();
-            this.nombreTipoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productoTerminadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreTipoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaElaboracionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaVencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loteProductoTerminadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +53,6 @@
             this.unidadPorCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreTipoEnvasadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreSeleccionProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productoTerminadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).BeginInit();
             this.productoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoDataGridView)).BeginInit();
@@ -165,8 +165,8 @@
             this.productoDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.productoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreTipoProductoDataGridViewTextBoxColumn,
             this.productoDataGridViewTextBoxColumn,
+            this.nombreTipoProductoDataGridViewTextBoxColumn,
             this.fechaElaboracionDataGridViewTextBoxColumn,
             this.fechaVencimientoDataGridViewTextBoxColumn,
             this.loteProductoTerminadoDataGridViewTextBoxColumn,
@@ -190,12 +190,9 @@
             this.productoDataGridView.TabIndex = 1;
             this.productoDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productoDataGridView_CellDoubleClick);
             // 
-            // nombreTipoProductoDataGridViewTextBoxColumn
+            // productoTerminadoBindingSource
             // 
-            this.nombreTipoProductoDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoProducto";
-            this.nombreTipoProductoDataGridViewTextBoxColumn.HeaderText = "NombreTipoProducto";
-            this.nombreTipoProductoDataGridViewTextBoxColumn.Name = "nombreTipoProductoDataGridViewTextBoxColumn";
-            this.nombreTipoProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productoTerminadoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ProductoTerminado);
             // 
             // productoDataGridViewTextBoxColumn
             // 
@@ -204,45 +201,52 @@
             this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
             this.productoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // nombreTipoProductoDataGridViewTextBoxColumn
+            // 
+            this.nombreTipoProductoDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoProducto";
+            this.nombreTipoProductoDataGridViewTextBoxColumn.HeaderText = "Tipo de producto";
+            this.nombreTipoProductoDataGridViewTextBoxColumn.Name = "nombreTipoProductoDataGridViewTextBoxColumn";
+            this.nombreTipoProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // fechaElaboracionDataGridViewTextBoxColumn
             // 
             this.fechaElaboracionDataGridViewTextBoxColumn.DataPropertyName = "FechaElaboracion";
-            this.fechaElaboracionDataGridViewTextBoxColumn.HeaderText = "FechaElaboracion";
+            this.fechaElaboracionDataGridViewTextBoxColumn.HeaderText = "Fecha de elaboracion";
             this.fechaElaboracionDataGridViewTextBoxColumn.Name = "fechaElaboracionDataGridViewTextBoxColumn";
             this.fechaElaboracionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaVencimientoDataGridViewTextBoxColumn
             // 
             this.fechaVencimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaVencimiento";
-            this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "FechaVencimiento";
+            this.fechaVencimientoDataGridViewTextBoxColumn.HeaderText = "Fecha vencimiento";
             this.fechaVencimientoDataGridViewTextBoxColumn.Name = "fechaVencimientoDataGridViewTextBoxColumn";
             this.fechaVencimientoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // loteProductoTerminadoDataGridViewTextBoxColumn
             // 
             this.loteProductoTerminadoDataGridViewTextBoxColumn.DataPropertyName = "LoteProductoTerminado";
-            this.loteProductoTerminadoDataGridViewTextBoxColumn.HeaderText = "LoteProductoTerminado";
+            this.loteProductoTerminadoDataGridViewTextBoxColumn.HeaderText = "Lote";
             this.loteProductoTerminadoDataGridViewTextBoxColumn.Name = "loteProductoTerminadoDataGridViewTextBoxColumn";
             this.loteProductoTerminadoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cajasPorTarimaDataGridViewTextBoxColumn
             // 
             this.cajasPorTarimaDataGridViewTextBoxColumn.DataPropertyName = "CajasPorTarima";
-            this.cajasPorTarimaDataGridViewTextBoxColumn.HeaderText = "CajasPorTarima";
+            this.cajasPorTarimaDataGridViewTextBoxColumn.HeaderText = "Cajas por tarima";
             this.cajasPorTarimaDataGridViewTextBoxColumn.Name = "cajasPorTarimaDataGridViewTextBoxColumn";
             this.cajasPorTarimaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kgPorTarimaDataGridViewTextBoxColumn
             // 
             this.kgPorTarimaDataGridViewTextBoxColumn.DataPropertyName = "KgPorTarima";
-            this.kgPorTarimaDataGridViewTextBoxColumn.HeaderText = "KgPorTarima";
+            this.kgPorTarimaDataGridViewTextBoxColumn.HeaderText = "Kg. por tarima";
             this.kgPorTarimaDataGridViewTextBoxColumn.Name = "kgPorTarimaDataGridViewTextBoxColumn";
             this.kgPorTarimaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // codigoBarraProductoDataGridViewTextBoxColumn
             // 
             this.codigoBarraProductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoBarraProducto";
-            this.codigoBarraProductoDataGridViewTextBoxColumn.HeaderText = "CodigoBarraProducto";
+            this.codigoBarraProductoDataGridViewTextBoxColumn.HeaderText = "Codigo";
             this.codigoBarraProductoDataGridViewTextBoxColumn.Name = "codigoBarraProductoDataGridViewTextBoxColumn";
             this.codigoBarraProductoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -256,21 +260,21 @@
             // gramajeMedidaDataGridViewTextBoxColumn
             // 
             this.gramajeMedidaDataGridViewTextBoxColumn.DataPropertyName = "GramajeMedida";
-            this.gramajeMedidaDataGridViewTextBoxColumn.HeaderText = "GramajeMedida";
+            this.gramajeMedidaDataGridViewTextBoxColumn.HeaderText = "Gramaje";
             this.gramajeMedidaDataGridViewTextBoxColumn.Name = "gramajeMedidaDataGridViewTextBoxColumn";
             this.gramajeMedidaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // unidadPorCajaDataGridViewTextBoxColumn
             // 
             this.unidadPorCajaDataGridViewTextBoxColumn.DataPropertyName = "UnidadPorCaja";
-            this.unidadPorCajaDataGridViewTextBoxColumn.HeaderText = "UnidadPorCaja";
+            this.unidadPorCajaDataGridViewTextBoxColumn.HeaderText = "Unidad por caja";
             this.unidadPorCajaDataGridViewTextBoxColumn.Name = "unidadPorCajaDataGridViewTextBoxColumn";
             this.unidadPorCajaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreTipoEnvasadoDataGridViewTextBoxColumn
             // 
             this.nombreTipoEnvasadoDataGridViewTextBoxColumn.DataPropertyName = "NombreTipoEnvasado";
-            this.nombreTipoEnvasadoDataGridViewTextBoxColumn.HeaderText = "NombreTipoEnvasado";
+            this.nombreTipoEnvasadoDataGridViewTextBoxColumn.HeaderText = "Envasado";
             this.nombreTipoEnvasadoDataGridViewTextBoxColumn.Name = "nombreTipoEnvasadoDataGridViewTextBoxColumn";
             this.nombreTipoEnvasadoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -278,14 +282,10 @@
             // 
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.DataPropertyName = "NombreSeleccionProducto";
-            this.nombreSeleccionProductoDataGridViewTextBoxColumn.HeaderText = "NombreSeleccionProducto";
+            this.nombreSeleccionProductoDataGridViewTextBoxColumn.HeaderText = "Calidad";
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.MinimumWidth = 130;
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.Name = "nombreSeleccionProductoDataGridViewTextBoxColumn";
             this.nombreSeleccionProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productoTerminadoBindingSource
-            // 
-            this.productoTerminadoBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ProductoTerminado);
             // 
             // FrmListaProductoTerminado
             // 
@@ -326,8 +326,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.BindingSource productoTerminadoBindingSource;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreTipoProductoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreTipoProductoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaElaboracionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaVencimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loteProductoTerminadoDataGridViewTextBoxColumn;
