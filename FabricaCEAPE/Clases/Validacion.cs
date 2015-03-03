@@ -16,6 +16,12 @@ namespace FabricaCEAPE.Clases
             return regex.IsMatch(mitextbox.Text);
         }
 
+        public static bool esNumeroCUIT(Control mitextbox)
+        {
+            Regex regex = new Regex(@"^[0-9]{11}$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+        
         public static bool esCadena(Control mitextbox)
         {
             Regex regex = new Regex(@"^[^ ][a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+[^ ]$"); //@"^[^ ][a-zA-Z ]+[^ ]$"

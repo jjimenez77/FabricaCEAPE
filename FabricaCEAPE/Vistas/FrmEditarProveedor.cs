@@ -389,10 +389,10 @@ namespace FabricaCEAPE.Vistas
         private void cuitTextBox_Validating(object sender, CancelEventArgs e)
         {
             string error = null;
-            if (!Validacion.esCadenaNumero(cuitTextBox))
+            if (!Validacion.esNumeroCUIT(cuitTextBox))
             {
                 cuitTextBox.BackColor = Color.White;
-                error = "Ingrese el numero de CUIL/CUIT";
+                error = "Ingrese el numero de CUIL/CUIT, solo 11 numeros";
                 e.Cancel = true;
                 errorProvider1.SetError((Control)sender, error);
             }
@@ -422,22 +422,26 @@ namespace FabricaCEAPE.Vistas
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
             }
-            else if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            //else if (Char.IsLetter(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
             else if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
             }
-            else if (Char.IsControl(e.KeyChar))
+            else if (e.KeyChar == (char)(Keys.Back))
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            //else if (Char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else if (Char.IsSeparator(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //}
             else
             {
                 e.Handled = true;

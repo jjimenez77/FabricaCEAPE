@@ -40,7 +40,6 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.cbSelector = new System.Windows.Forms.ToolStripComboBox();
             this.controlPCCDataGridView = new System.Windows.Forms.DataGridView();
-            this.controlPCCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +57,7 @@
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.controlPCCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.controlPCCDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlPCCBindingSource)).BeginInit();
@@ -77,7 +77,7 @@
             this.cbSelector});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1780, 25);
+            this.menu.Size = new System.Drawing.Size(1362, 25);
             this.menu.TabIndex = 1;
             this.menu.Text = "menu";
             // 
@@ -160,6 +160,9 @@
             this.controlPCCDataGridView.AllowUserToDeleteRows = false;
             this.controlPCCDataGridView.AllowUserToResizeColumns = false;
             this.controlPCCDataGridView.AllowUserToResizeRows = false;
+            this.controlPCCDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.controlPCCDataGridView.AutoGenerateColumns = false;
             this.controlPCCDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.controlPCCDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -188,13 +191,9 @@
             this.controlPCCDataGridView.ReadOnly = true;
             this.controlPCCDataGridView.RowHeadersVisible = false;
             this.controlPCCDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.controlPCCDataGridView.Size = new System.Drawing.Size(1754, 267);
+            this.controlPCCDataGridView.Size = new System.Drawing.Size(1338, 267);
             this.controlPCCDataGridView.StandardTab = true;
             this.controlPCCDataGridView.TabIndex = 2;
-            // 
-            // controlPCCBindingSource
-            // 
-            this.controlPCCBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ControlPCC);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -316,11 +315,15 @@
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             this.dataGridViewTextBoxColumn13.Width = 150;
             // 
+            // controlPCCBindingSource
+            // 
+            this.controlPCCBindingSource.DataSource = typeof(FabricaCEAPE.Clases.ControlPCC);
+            // 
             // FrmListaControlPCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1780, 307);
+            this.ClientSize = new System.Drawing.Size(1362, 307);
             this.Controls.Add(this.controlPCCDataGridView);
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
