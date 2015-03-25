@@ -8,3 +8,24 @@
         set { m_globalVar = value; }
     }
 }
+
+
+//class Variables
+
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+
+//namespace YourNamespaceName
+//{
+//    class Variables
+//    {
+//        public static string var = "";
+//    }
+//}
+
+
+//call it from any other class like Variables.var
+
+
+
